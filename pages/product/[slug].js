@@ -103,7 +103,7 @@ export default function ProductScreen(props) {
           </Box>
           <div className="productdetails-container">
             <div className="productdetail-main">
-              <div item md={4} xs={12} className="productdetails-image">
+              <div className="productdetails-image">
                 <Image
                   src={urlFor(product.image)}
                   alt={product.name}

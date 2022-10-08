@@ -4,7 +4,6 @@ import {
   Badge,
   Box,
   Button,
-  Container,
   CssBaseline,
   Link,
   Menu,
@@ -108,7 +107,7 @@ export default function Layout({ title, description, children }) {
               ></Switch>
               <NextLink href="/cart" passHref>
                 <Link>
-                  <Typography component="span">
+                  <Typography>
                     {cart.cartItems.length > 0 ? (
                       <Badge
                         color="secondary"
@@ -162,9 +161,7 @@ export default function Layout({ title, description, children }) {
             </Box>
           </Toolbar>
         </AppBar>
-        <div component="main" className={classes.main}>
-          {children}
-        </div>
+        <div className={classes.main}>{children}</div>
         <Box component="footer" sx={classes.footer}>
           <Typography>All rights reserved. Miody Konarscy.</Typography>
         </Box>
