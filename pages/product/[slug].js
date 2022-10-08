@@ -89,7 +89,12 @@ export default function ProductScreen(props) {
             <NextLink href="/" passHref>
               <Link>
                 <div className="productdetails-banner">
-                  <Image width={1700} height={650} src={image}></Image>
+                  <Image
+                    width={1700}
+                    height={650}
+                    src={image}
+                    alt="chuj"
+                  ></Image>
                 </div>
               </Link>
             </NextLink>
