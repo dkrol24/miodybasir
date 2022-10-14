@@ -3,7 +3,7 @@ import { createContext, useReducer } from "react";
 
 export const Store = createContext();
 
-const initialState = {
+const initialstate = {
   darkMode: Cookies.get("darkMode") === "ON" ? true : false,
   cart: {
     cartItems: Cookies.get("cartItems")
@@ -83,7 +83,7 @@ function reducer(state, action) {
 }
 
 export function StoreProvider(props) {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialstate);
   const value = { state, dispatch };
   return <Store.Provider value={value}>{props.children}</Store.Provider>;
 }

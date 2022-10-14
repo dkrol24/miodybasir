@@ -1,10 +1,14 @@
-import { Step, StepLabel, Stepper } from '@mui/material';
-import React from 'react';
+import { Step, StepLabel, Stepper } from "@mui/material";
+import React from "react";
 
 export default function CheckoutWizard({ activeStep = 0 }) {
   return (
-    <Stepper activeStep={activeStep} alternativeLabel>
-      {['Login', 'Shipping Address', 'Payment Method', 'Place Order'].map(
+    <Stepper
+      style={{ marginTop: "7rem" }}
+      activeStep={activeStep}
+      alternativeLabel
+    >
+      {["Login", "Shipping Address", "Payment Method", "Place Order"].map(
         (step) => (
           <Step key={step}>
             <StepLabel>{step}</StepLabel>

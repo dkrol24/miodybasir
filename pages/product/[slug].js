@@ -21,7 +21,7 @@ import { urlFor, urlForThumbnail } from "../../utils/image";
 import { Store } from "../../utils/Store";
 import axios from "axios";
 import { useRouter } from "next/router";
-import image from "../../public/images/banner.jpg";
+import logo from "../../public/images/logomiody.png";
 export default function ProductScreen(props) {
   const router = useRouter();
   const { slug } = props;
@@ -89,23 +89,15 @@ export default function ProductScreen(props) {
             <NextLink href="/" passHref>
               <Link>
                 <div className="productdetails-banner">
-                  <Image
-                    width={1700}
-                    height={650}
-                    src={image}
-                    alt="chuj"
-                  ></Image>
+                  <h1 className="banner-h1">{product.name}</h1>
+                  <div>
+                    <Image src={logo}></Image>
+                  </div>
                 </div>
               </Link>
             </NextLink>
           </Box>
-          <Box sx={classes.section}>
-            <NextLink href="/" passHref>
-              <Link>
-                <Typography>back to result</Typography>
-              </Link>
-            </NextLink>
-          </Box>
+
           <div className="productdetails-container">
             <div className="productdetail-main">
               <div className="productdetails-image">
@@ -113,13 +105,13 @@ export default function ProductScreen(props) {
                   src={urlFor(product.image)}
                   alt={product.name}
                   layout="responsive"
-                  width={680}
-                  height={680}
-                  className="productdetails-image"
+                  width={1}
+                  height={1}
+                  className="productdetails-image-img"
                 />
               </div>
 
-              <List style={{ width: "50vw" }}>
+              <List style={{ width: "100%" }}>
                 <ListItem>
                   <Typography component="h1" variant="h1">
                     {product.name}

@@ -63,7 +63,7 @@ function OrderHistoryScreen() {
   }, [router, userInfo]);
   return (
     <Layout title="Order History">
-      <Typography component="h1" variant="h1">
+      <Typography style={{ marginTop: "7rem" }} component="h1" variant="h1">
         Order History
       </Typography>
       {loading ? (

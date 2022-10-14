@@ -87,8 +87,9 @@ function PlaceOrderScreen() {
       enqueueSnackbar(getError(err), { variant: "error" });
     }
   };
+
   return (
-    <Layout title="Place Order">
+    <Layout style={{ marginTop: "7rem" }} title="Place Order">
       <CheckoutWizard activeStep={3}></CheckoutWizard>
       <Typography component="h1" variant="h1">
         Place Order

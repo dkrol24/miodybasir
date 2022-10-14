@@ -4,47 +4,118 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    scroll-behavior: smooth;
 }
-
+:root{
+  --main: rgba(222,151,9,255);
+}
 a {
   color: inherit;
   text-decoration: none;
 }
+a:link {
+  text-decoration: none;
+  color: inherit;
+}
 
-* {
-  box-sizing: border-box;
+/* visited link */
+a:visited {
+  text-decoration: none;
+  color: inherit;
 }
-.h1-banner{
-  font-size: 50px;
-  margin-left: 15rem;
+
+/* mouse over link */
+a:hover {
+  text-decoration: none;
+  color: inherit;
 }
-.banner-image{
+
+/* selected link */
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
+.banner-main{
   display: flex;
-  width: 100%;
-  min-height: 100vh;
-  height: 100%;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: yellow;
-  border-radius: 0 0 280px 280px;
-  overflow: hidden;
+  width: 100%;
+  height: 100vh;
 
+  background: linear-gradient(rgba(0,0,0,0.83),rgba(0,0,0,0.83),rgba(0,0,0,0.86)),url(../public/images/pexhoney.jpg);
+  background-attachment: fixed;
+  background-position: center;
 }
+.banner-text{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 900px;
+  text-align: start;
+}
+.banner-logo{
+ position: absolute;
+  left: 0;
+   bottom: 0;
+}
+.banner-h1{
+  color: rgba(222,151,9,255);
+  font-size: 3.5rem;
+  margin: 0;
+  z-index: 1;
+}
+.banner-p{
+  color: white;
+  font-size: 2rem;
+  margin: 0;
+  z-index: 1;
+}
+.banner-p2{
+  color: white;
+  font-size: 1rem;
+  z-index: 1;
+}
+.banner-p3{
+  z-index: 1;
+    width: 100%;
+    font-weight: 300;
+    display: flex;
+    text-align: right;
+    justify-content: end;
+    color: rgba(222,151,9,255);
+}
+
+
 .productdetails-banner{
-  background: linear-gradient(180deg, rgba(247,226,10, 1)19%, rgba(251,196,68, 1) 57%, rgba(248,149,32,1) 75%);
-  
-  min-height: 34vh;
+  min-height: 45vh;
+  border-bottom: 5px dotted rgba(222,151,9,255);
+  box-shadow: 0 4px 30px rgba(222, 151, 9, 0.5);
   height: 100%;
   width: 100%;
+
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   text-align: start;
+
+  background: linear-gradient(rgba(0,0,0,0.83),rgba(0,0,0,0.83),rgba(0,0,0,0.86)),url(../public/images/pexhoney.jpg);
+  background-attachment: fixed;
+  background-position: center;
 }
 .productdetails-image{
   margin: 3rem;
-  width: 40vw;
-  height: auto;
+  background-color: red;
+  width: 60vw;
+  height: 100%;
+}
+.productdetails-image-img{
+
+  width: 100%;
+  height: 100%;
 }
 .productdetails-container{
   display: flex;
@@ -59,9 +130,183 @@ a {
 }
 
 
-@media only screen and (max-width: 755px) {
+@media only screen and (min-width: 755px) {
   .h1-banner{
 
     margin-left: 1rem;
   }
+  .navbar-mobile-btn{
+    display: none;
+  }
+  .navbar-large-menu{
+    display: flex;
+  }
+
 }   
+@media only screen and (max-width: 755px) {
+
+
+}   
+
+
+
+/*NAVBAR*/
+.navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  transition: ease-in 0.3s;
+}
+.logo{
+  display: flex;
+  margin-left: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+.navbar__later{
+  display: flex;
+  align-items: center;
+  top:10px;
+  border-radius: 212px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+.navbar-nav{
+
+  align-items: center;
+list-style-type: none;
+padding: 0;
+margin: 0;
+}
+.navbar-brand{
+  color: #ffffff;
+}
+.hamburger-menu{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 26px;
+  width: 34px;
+  cursor: pointer;
+  z-index: 10;
+  
+}
+.bar-top, .bar-middle, .bar-bottom{
+  height: 3px;
+  background-color:#ffffff;
+  transform-origin: left;
+  transition: ease-in 0.3s;
+}
+.hamburger-menu-change .bar-top{
+  transform: rotate(42deg);
+}
+.hamburger-menu-change .bar-middle{
+  transform: translateX(1rem);
+  opacity: 0;
+}
+.hamburger-menu-change .bar-bottom{
+  transform: rotate(-42deg);
+}
+.navbar-collapse{
+  position: fixed;
+  right: 0;
+  top: 0;
+
+
+  height: 100%;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transform: translateX(100%);
+  transition: ease-in 0.3s;
+}
+.show-navbar-collapse{
+  transform: translateX(0);
+}
+.navbar-nav li{
+  margin: 1rem;
+  padding: 1rem;
+  transition: ease-in 0.3s;
+}
+.navbar-nav li a{
+  color: rgba(222,151,9,255);
+  font-size: 1.2rem;
+  transition: ease-in 0.3s;
+}
+.navbar-nav li a:hover{
+  color: white;
+}
+.navbar-social li{
+  padding: 0;
+  display: flex;
+  font-size: 1rem;
+}
+
+.navbar-btns button{
+  border: 1px solid #5b3e68;
+  transition: ease-in 0.3s;
+}
+
+.navbar-btns button:hover{
+  background-color: #5b3e68;
+}
+
+@media screen and (min-width: 578px){
+  .navbar-collapse{
+      width: 320px;
+  }
+}
+
+@media screen and (min-width: 992px){
+  .navbar-collapse{
+      transform: translateX(0);
+      position: relative;
+      background-color: transparent;
+      box-shadow: none;
+      top: 0;
+      height: auto;
+      width: 100%;
+  }
+  .navbar-collapse-content{
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+  }
+  .hamburger-menu{
+      display: none;
+  }
+  .navbar-nav{
+      display: flex!important;
+      margin-bottom: 0;
+  }
+
+  .navbar-nav li{
+
+      font-size: 1.9rem;
+      font-weight: 500;
+
+  }
+  .navbar-nav li:hover{
+      color: #5b3e68;
+  }
+
+  .navbar-social li{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: ease-in 0.3s;
+  }
+  .navbar-social li:hover{
+      color: #5b3e68;
+  }
+}
+
+/*NAVBAR END*/
