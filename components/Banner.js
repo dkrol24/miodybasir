@@ -21,8 +21,8 @@ const Banner = () => {
           właściwości odżywcze i walory lecznicze.
         </p>
         <p className="banner-p3">
-          ,,Gdy zginie ostatnia pszczoła na kuli ziemskiej, <br /> ludzkości
-          zostanie tylko cztery lata życia" <br /> A.Einstein
+          &quot;Gdy zginie ostatnia pszczoła na kuli ziemskiej, <br /> ludzkości
+          zostanie tylko cztery lata życia&quot; <br /> A.Einstein
         </p>
       </div>
       <div
