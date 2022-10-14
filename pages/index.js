@@ -92,7 +92,6 @@ export default function Home() {
               marginTop: "4rem",
               borderLeft: "5px dotted rgba(222,151,9,255)",
               borderRight: "5px dotted rgba(222,151,9,255)",
-              marginTop: "2rem",
             }}
           >
             {products.map((product) => (

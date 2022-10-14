@@ -5,7 +5,6 @@ import {
   CardActions,
   CardContent,
   CardMedia,
-  Typography,
 } from "@mui/material";
 import NextLink from "next/link";
 import React from "react";

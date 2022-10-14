@@ -10,17 +10,13 @@ import jsCookie from "js-cookie";
 import { useRouter } from "next/router";
 import { createTheme } from "@mui/material/styles";
 import {
-  AppBar,
   Badge,
-  Box,
   Button,
   CssBaseline,
   Link,
   Menu,
   MenuItem,
   ThemeProvider,
-  Toolbar,
-  Typography,
 } from "@mui/material";
 const Navbar = () => {
   const router = useRouter();
@@ -218,6 +214,7 @@ const Navbar = () => {
                   <li>
                     <a
                       target="_blank"
+                      rel="noreferrer"
                       href="https://www.facebook.com/profile.php?id=100063740554419"
                     >
                       <AiFillFacebook
