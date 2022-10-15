@@ -19,6 +19,9 @@ export default function ProductItem({ product, addToCartHandler }) {
         justifyContent: "flex-end",
         minHeight: "515px",
         width: "100%",
+        borderLeft: "1px dotted rgba(222,151,9,255)",
+        borderRight: "1px dotted rgba(222,151,9,255)",
+        boxShadow: "0 4px 30px rgba(222,151,9,0.1)",
       }}
     >
       <NextLink href={`/product/${product.slug.current}`} passHref>

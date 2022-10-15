@@ -1,6 +1,8 @@
 import React from "react";
 import bee from "../public/images/beemiody.png";
 import logo from "../public/images/logomiody.png";
+import hright from "../public/images/hright.png";
+
 import Image from "next/image";
 
 const Banner = () => {
@@ -28,13 +30,25 @@ const Banner = () => {
       <div
         style={{
           position: "absolute",
-          bottom: "0",
-          right: "0",
+          right: "150px",
+          top: "150px",
           zIndex: "0",
         }}
       >
         <Image src={bee}></Image>
       </div>
+      <div
+        style={{
+          position: "absolute",
+          bottom: "-7px",
+          right: "0",
+          zIndex: "1",
+          overflow: "hidden",
+        }}
+      >
+        <Image src={hright}></Image>
+      </div>
+
       <div className="banner-logo">
         <Image src={logo}></Image>
       </div>

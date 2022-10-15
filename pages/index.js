@@ -10,8 +10,8 @@ import ProductItem from "../components/ProductItem";
 import client from "../utils/client";
 import { urlForThumbnail } from "../utils/image";
 import { Store } from "../utils/Store";
-import Image from "next/image";
-import ulo from "../public/images/honey7.jpg";
+
+import Uloterapia from "../components/Uloterapia";
 export default function Home() {
   const {
     state: { cart },
@@ -111,100 +111,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <div
-            style={{
-              display: "flex",
-              width: "90%",
-              justifyContent: "center",
-              alignItems: "center",
-              flexWrap: "wrap",
-              height: "100%",
-              marginTop: "4rem",
-              borderLeft: "5px dotted rgba(222,151,9,255)",
-              borderRight: "5px dotted rgba(222,151,9,255)",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                width: "45vw",
-
-                padding: "2rem",
-                marginTop: "2rem",
-              }}
-            >
-              <h1 style={{ color: "rgba(222,151,9,255)", fontSize: "3.5rem" }}>
-                Uloterapia
-              </h1>
-              <p style={{ color: "grey", fontSize: "1.2rem" }}>
-                <span
-                  style={{
-                    color: "rgba(222,151,9,255)",
-                    fontSize: "1.5rem",
-                    fontWeight: "500",
-                  }}
-                >
-                  Apiinhalacja
-                </span>
-                , potocznie nazywana uloterapią, jest jednym z elementów
-                stosowanej w medycynie naturalnej tzw. Apiterapii, czyli
-                leczenia produktami pszczelego pochodzenia.
-              </p>
-              <p style={{ color: "grey", fontSize: "1.2rem" }}>
-                <span
-                  style={{
-                    color: "rgba(222,151,9,255)",
-                    fontSize: "1.5rem",
-                    fontWeight: "500",
-                  }}
-                >
-                  Uloterapia
-                </span>{" "}
-                (apiinhalacja), to nic innego jak oddychanie powietrzem z
-                wnętrza ula. Tych z bogatą wyobraźnią uspokajamy - nie musicie w
-                tym celu przytulać się do pszczół. Domek, w którym odbywa się
-                apiinhalacja, został skonstruowany tak, aby był bezpieczny
-                zarówno dla dzieci jak i dorosłych. Pszczoły nie mają
-                bezpośredniego kontaktu z człowiekiem, a więc nie musimy się
-                martwić ani koniecznością podtrzymywania rozmowy, ani groźbą
-                ewentualnego użądlenia w przypadku odmiennych poglądów.
-              </p>
-              <button
-                style={{
-                  background: "rgba(222,151,9,255)",
-                  cursor: "pointer",
-                  padding: "1rem",
-                  border: "none",
-                  borderRadius: "32px",
-                }}
-              >
-                <p
-                  style={{
-                    color: "white",
-                    fontSize: "1.2rem",
-                    margin: "0",
-                    padding: "0",
-                  }}
-                >
-                  Zobacz więcej
-                </p>
-              </button>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                minWidth: "400px",
-                width: "40vw",
-                margin: "1rem",
-                borderRadius: "40px",
-                overflow: "hidden",
-              }}
-            >
-              <Image src={ulo}></Image>
-            </div>
-          </div>
+          <Uloterapia />
         </div>
       )}
     </Layout>

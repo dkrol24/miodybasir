@@ -13,31 +13,10 @@ a {
   color: inherit;
   text-decoration: none;
 }
-a:link {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* visited link */
-a:visited {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* mouse over link */
-a:hover {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* selected link */
-a:active {
-  text-decoration: none;
-  color: inherit;
-}
 
 
 
+/*BANNER START                            */
 .banner-main{
   display: flex;
   flex-direction: column;
@@ -67,6 +46,7 @@ a:active {
   font-size: 3.5rem;
   margin: 0;
   z-index: 1;
+  text-align: center;
 }
 .banner-p{
   color: white;
@@ -88,8 +68,8 @@ a:active {
     justify-content: end;
     color: rgba(222,151,9,255);
 }
-
-
+/*BANNER END                            */
+/*PRODUCT DETAILS START*/
 .productdetails-banner{
   min-height: 45vh;
   border-bottom: 5px dotted rgba(222,151,9,255);
@@ -108,8 +88,7 @@ a:active {
 }
 .productdetails-image{
   margin: 3rem;
-  background-color: red;
-  width: 60vw;
+  width: 100%;
   height: 100%;
 }
 .productdetails-image-img{
@@ -143,14 +122,11 @@ a:active {
   }
 
 }   
-@media only screen and (max-width: 755px) {
-
-
-}   
+/*PRODUCT DETAILS START*/
 
 
 
-/*NAVBAR*/
+/*NAVBAR START*/
 .navbar{
   position: fixed;
   top: 0;
@@ -310,3 +286,160 @@ margin: 0;
 }
 
 /*NAVBAR END*/
+
+/*ULOTERAPIA START */
+.app__ulo-page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.app__ulo-page-container{
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  border-left: 5px dotted rgba(222,151,9,255);
+  border-right: 5px dotted rgba(222,151,9,255);
+
+
+}
+.app__ulo-page-ul{
+
+display: flex;
+flex-direction: column;
+text-align: start;
+
+
+}
+.app__ulo-page-ul > li{
+  color: grey;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin-top: 0.5rem;
+}
+.app__ulo-container{ 
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100%;
+  margin-top: 4rem;
+  border-left: 5px dotted rgba(222,151,9,255);
+  border-right: 5px dotted rgba(222,151,9,255);
+  position: relative;
+}
+.app__ulo-text{ 
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 45vw;
+  padding: 1rem;
+
+}
+.app__ulo-text > h1{ 
+  color: rgba(222,151,9,255);
+   font-size:3.5rem;
+}
+.yellow-span{ 
+  color: rgba(222,151,9,255);
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+.yellow-button{ 
+  background-color: rgba(222,151,9,255);
+  cursor: pointer;
+  padding: 1rem;
+  border: none;
+  border-radius: 32px;
+}
+.yellow-button:hover{ 
+  opacity: 0.9;
+}
+
+.yellow-button > p{ 
+color: white;
+font-size: 1.2rem;
+margin: 0;
+padding: 0;
+}
+
+.app__ulo-text > p{ 
+color: grey;
+font-size: 1.1rem;
+}
+.app__ulo-image{  
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+  width: 40vw;
+  margin: 1rem;
+  border-radius: 40px;
+  overflow: hidden;
+}
+.app__ulo-more-container{
+
+    margin-top: 5rem;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    border-left: 5px dotted rgba(222,151,9,255);
+    border-right: 5px dotted rgba(222,151,9,255);
+    padding: 1rem;
+
+}
+.app__ulo-more-wskazania{
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+
+}
+.app__ulo-more-knowhow{
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+
+}
+.app__ulo-more-info{
+
+    text-align: center;
+    border-right: 2px dotted rgba(222,151,9,255);
+    border-left: 2px dotted rgba(222,151,9,255);
+    padding: 1rem;
+
+}
+
+@media only screen and (max-width: 800px) {
+  .app__ulo-page-container{
+    flex-direction: column-reverse;
+  }
+  .app__ulo-more-container{
+    flex-direction: column;
+}
+}
+/*ULOTERAPIA END */
+/*LOGIN REGISTER*/
+.loginregister{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(0,0,0,0.83),rgba(0,0,0,0.83),rgba(0,0,0,0.86)),url(../public/images/pexhoney.jpg);
+  background-attachment: fixed;
+  background-position: center;
+
+}
+/*LOGIN REGISTER*/

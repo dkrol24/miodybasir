@@ -64,15 +64,19 @@ function CartScreen() {
   };
   return (
     <Layout title="Shopping Cart">
-      <Typography style={{ marginTop: "7rem" }} component="h1" variant="h1">
-        Shopping Cart
+      <Typography
+        style={{ margin: "7rem 0 0 1rem" }}
+        component="h1"
+        variant="h1"
+      >
+        Lista zakupów
       </Typography>
       {cartItems.length === 0 ? (
         <Box>
           <Typography>
-            Cart is empty.{" "}
+            Koszyk jest pusty.
             <NextLink href="/" passHref>
-              <Link>Go shopping</Link>
+              <Link>Powrót do sklepu</Link>
             </NextLink>
           </Typography>
         </Box>
@@ -83,11 +87,11 @@ function CartScreen() {
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell>Image</TableCell>
-                    <TableCell>Name</TableCell>
-                    <TableCell align="right">Qauntity</TableCell>
-                    <TableCell align="right">Price</TableCell>
-                    <TableCell align="right">Action</TableCell>
+                    <TableCell>Zdjęcie</TableCell>
+                    <TableCell>Nazwa</TableCell>
+                    <TableCell align="right">Ilość</TableCell>
+                    <TableCell align="right">Cena</TableCell>
+                    <TableCell align="right">Usuń</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -149,9 +153,9 @@ function CartScreen() {
               <List>
                 <ListItem>
                   <Typography variant="h2">
-                    Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}{" "}
-                    items) : ${" "}
-                    {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
+                    Suma ({cartItems.reduce((a, c) => a + c.quantity, 0)}{" "}
+                    produkt) :
+                    {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}zł
                   </Typography>
                 </ListItem>
                 <ListItem>
@@ -163,7 +167,7 @@ function CartScreen() {
                     color="primary"
                     variant="contained"
                   >
-                    Checkout
+                    Zapłać
                   </Button>
                 </ListItem>
               </List>

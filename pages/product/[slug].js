@@ -85,18 +85,12 @@ export default function ProductScreen(props) {
         <Alert variant="error">{error}</Alert>
       ) : (
         <Box>
-          <Box sx={classes.section}>
-            <NextLink href="/" passHref>
-              <Link>
-                <div className="productdetails-banner">
-                  <h1 className="banner-h1">{product.name}</h1>
-                  <div>
-                    <Image src={logo}></Image>
-                  </div>
-                </div>
-              </Link>
-            </NextLink>
-          </Box>
+          <div className="productdetails-banner">
+            <h1 className="banner-h1">{product.name}</h1>
+            <div>
+              <Image src={logo}></Image>
+            </div>
+          </div>
 
           <div className="productdetails-container">
             <div className="productdetail-main">
@@ -126,10 +120,10 @@ export default function ProductScreen(props) {
                     <ListItem>
                       <Grid container>
                         <Grid item xs={6}>
-                          <Typography>Price</Typography>
+                          <Typography>Cena</Typography>
                         </Grid>
                         <Grid item xs={6}>
-                          <Typography>${product.price}</Typography>
+                          <Typography>{product.price}zł</Typography>
                         </Grid>
                       </Grid>
                     </ListItem>
@@ -141,20 +135,19 @@ export default function ProductScreen(props) {
                         <Grid item xs={6}>
                           <Typography>
                             {product.countInStock > 0
-                              ? "In stock"
-                              : "Unavailable"}
+                              ? "Dostępny"
+                              : "Niedostępny"}
                           </Typography>
                         </Grid>
                       </Grid>
                     </ListItem>
                     <ListItem>
-                      <Button
+                      <button
+                        className="yellow-button"
                         onClick={addToCartHandler}
-                        fullWidth
-                        variant="contained"
                       >
-                        Add to cart
-                      </Button>
+                        Dodaj do koszyka
+                      </button>
                     </ListItem>
                   </List>
                 </Card>
