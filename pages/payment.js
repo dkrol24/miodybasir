@@ -49,7 +49,7 @@ export default function PaymentScreen() {
       <CheckoutWizard activeStep={2}></CheckoutWizard>
       <Form style={{ marginTop: "7rem" }} onSubmit={submitHandler}>
         <Typography component="h1" variant="h1">
-          Payment Method
+          Metoda płatności
         </Typography>
         <List>
           <ListItem>
@@ -61,17 +61,13 @@ export default function PaymentScreen() {
                 onChange={(e) => setPaymentMethod(e.target.value)}
               >
                 <FormControlLabel
-                  label="PayPal"
+                  label="Przelew bankowy"
                   value="PayPal"
                   control={<Radio />}
                 ></FormControlLabel>
+
                 <FormControlLabel
-                  label="Stripe"
-                  value="Stripe"
-                  control={<Radio />}
-                ></FormControlLabel>
-                <FormControlLabel
-                  label="Cash"
+                  label="Gotówka"
                   value="Cash"
                   control={<Radio />}
                 ></FormControlLabel>
@@ -79,20 +75,23 @@ export default function PaymentScreen() {
             </FormControl>
           </ListItem>
           <ListItem>
-            <Button fullWidth type="submit" variant="contained" color="primary">
-              Continue
-            </Button>
+            <button
+              style={{ width: "100%" }}
+              className="yellow-button"
+              type="submit"
+            >
+              Przejdź dalej
+            </button>
           </ListItem>
           <ListItem>
-            <Button
-              fullWidth
+            <button
+              style={{ width: "100%" }}
+              className="yellow-button"
               type="button"
-              variant="contained"
-              color="secondary"
               onClick={() => router.push("/shipping")}
             >
-              Back
-            </Button>
+              Cofnij
+            </button>
           </ListItem>
         </List>
       </Form>

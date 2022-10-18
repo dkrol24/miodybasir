@@ -8,44 +8,12 @@ import classes from "../utils/classes";
 import { Store } from "../utils/Store";
 import jsCookie from "js-cookie";
 import { useRouter } from "next/router";
-import { createTheme } from "@mui/material/styles";
-import {
-  Badge,
-  Button,
-  CssBaseline,
-  Link,
-  Menu,
-  MenuItem,
-  ThemeProvider,
-} from "@mui/material";
+
+import { Badge, Button, CssBaseline, Link, Menu } from "@mui/material";
 const Navbar = () => {
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
   const { cart, userInfo } = state;
-  const theme = createTheme({
-    components: {
-      MuiLink: {
-        defaultProps: {
-          underline: "hover",
-        },
-      },
-    },
-    typography: {
-      h1: {
-        fontSize: "1.6rem",
-        fontWeight: 400,
-        margin: "1rem 0",
-      },
-      h2: {
-        fontSize: "1.4rem",
-        fontWeight: 400,
-        margin: "1rem 0",
-      },
-    },
-    main: {
-      width: "50vw",
-    },
-  });
 
   const [anchorEl, setAnchorEl] = useState(null);
   const loginMenuCloseHandler = (e, redirect) => {
@@ -67,174 +35,166 @@ const Navbar = () => {
     router.push("/");
   };
 
-  const [show, handleShow] = useState(false);
   const [navToggle, setNavToggle] = useState(false);
   const navHandler = () => {
     setNavToggle((prevData) => !prevData);
   };
-  const transitionNavBar = () => {
-    if (window.scrollY > 100) {
-      handleShow(true);
-    } else {
-      handleShow(false);
-    }
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", transitionNavBar);
-    return () => window.removeEventListener("scroll", transitionNavBar);
-  }, []);
 
   return (
-    <ThemeProvider theme={theme}>
+    <nav className="navbar">
       <CssBaseline />
-      <nav className={`navbar ${show && "navbar__later"}`}>
-        <div style={{ width: "100%" }}>
+      <div
+        style={{
+          width: "100%",
+          justifyContent: "center",
+          alignContent: "center",
+
+          padding: "1rem",
+          overflow: "hidden",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            height: "100%",
+            justifyContent: "center",
+            alignContent: "center",
+
+            overflow: "hidden",
+          }}
+        >
           <div
             style={{
               display: "flex",
-              justifyContent: "center",
-              alignContent: "center",
+              justifyContent: "space-between",
+              alignItems: "center",
+              width: "100%",
+
+              overflow: "hidden",
             }}
           >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                width: "100%",
-              }}
-            >
-              <div className="logo">
-                <NextLink href="/" passHref>
-                  <Link>
-                    <h1 style={{ color: "rgba(222,151,9,255)" }}>
-                      Miody Konarscy
-                    </h1>
-                  </Link>
-                </NextLink>
-              </div>
-              <div
-                type="button"
-                className={`hamburger-menu ${
-                  navToggle ? "hamburger-menu-change" : ""
-                }`}
-                onClick={navHandler}
-              >
-                <div className="bar-top"></div>
-                <div className="bar-middle"></div>
-                <div className="bar-bottom"></div>
-              </div>
+            <div className="logo">
+              <NextLink href="/" passHref>
+                <Link style={{ textDecoration: "none" }}>
+                  <h1 style={{ color: "rgba(222,151,9,255)" }}>
+                    Miody Konarscy
+                  </h1>
+                </Link>
+              </NextLink>
             </div>
-
             <div
-              className={`navbar-collapse ${
-                navToggle ? "show-navbar-collapse" : ""
+              type="button"
+              className={`hamburger-menu ${
+                navToggle ? "hamburger-menu-change" : ""
               }`}
+              onClick={navHandler}
             >
-              <div className="navbar-collapse-content">
-                <ul className="navbar-nav">
-                  <li>
-                    <NextLink href="/" passHref>
-                      <Link>
-                        <a onClick={navHandler}>Start</a>
-                      </Link>
-                    </NextLink>
-                  </li>
-                  <li>
-                    <NextLink href="/uloterapia" passHref>
-                      <Link>
-                        <a onClick={navHandler}>Uloterapia</a>
-                      </Link>
-                    </NextLink>
-                  </li>
+              <div className="bar-top"></div>
+              <div className="bar-middle"></div>
+              <div className="bar-bottom"></div>
+            </div>
+          </div>
 
-                  <li>
-                    <a onClick={navHandler}>Kontakt</a>
-                  </li>
-                  <li onClick={navHandler}>
-                    <NextLink href="/cart" passHref>
-                      <Link>
-                        {cart.cartItems.length > 0 ? (
-                          <Badge
-                            color="secondary"
-                            badgeContent={cart.cartItems.length}
-                          >
-                            <a>Koszyk</a>
-                          </Badge>
-                        ) : (
-                          "Koszyk"
-                        )}
-                      </Link>
-                    </NextLink>
-                  </li>
-                  <li>
-                    {userInfo ? (
-                      <>
-                        <Button
-                          aria-controls="simple-menu"
-                          aria-haspopup="true"
-                          sx={classes.navbarButton}
-                          onClick={loginClickHandler}
-                        >
-                          {userInfo.name}
-                        </Button>
-                        <Menu
-                          id="simple-menu"
-                          anchorEl={anchorEl}
-                          keepMounted
-                          open={Boolean(anchorEl)}
-                          onClose={loginMenuCloseHandler}
-                        >
-                          <MenuItem
-                            onClick={(e) =>
-                              loginMenuCloseHandler(e, "/profile")
-                            }
-                          >
-                            Profil
-                          </MenuItem>
-                          <MenuItem
-                            onClick={(e) =>
-                              loginMenuCloseHandler(e, "/order-history")
-                            }
-                          >
-                            Historia zamówień
-                          </MenuItem>
-                          <MenuItem onClick={logoutClickHandler}>
-                            Wyloguj
-                          </MenuItem>
-                        </Menu>
-                      </>
-                    ) : (
-                      <NextLink href="/login" passHref>
-                        <Link>Zaloguj</Link>
-                      </NextLink>
-                    )}
-                  </li>
-                </ul>
-                <ul style={{ display: "flex" }} className="navbar-social">
-                  <li>
-                    <a
-                      target="_blank"
-                      rel="noreferrer"
-                      href="https://www.facebook.com/profile.php?id=100063740554419"
-                    >
-                      <AiFillFacebook
-                        style={{ fontSize: "22px", color: "#3b5998" }}
-                      />
-                    </a>
-                  </li>
+          <div
+            className={`navbar-collapse ${
+              navToggle ? "show-navbar-collapse" : ""
+            }`}
+          >
+            <div className="navbar-collapse-content">
+              <ul className="navbar-nav">
+                <li style={{ margin: "0 1rem 0 0", padding: "0" }}>
+                  <NextLink href="/" passHref>
+                    <Link style={{ textDecoration: "none" }}>
+                      <a onClick={navHandler}>Start</a>
+                    </Link>
+                  </NextLink>
+                </li>
+                <li style={{ margin: "0 1rem 0 0", padding: "0" }}>
+                  <NextLink href="/uloterapia" passHref>
+                    <Link style={{ textDecoration: "none" }}>
+                      <a onClick={navHandler}>Uloterapia</a>
+                    </Link>
+                  </NextLink>
+                </li>
 
-                  <li>
-                    <a href="#map">
-                      <GoLocation style={{ fontSize: "22px" }} />
-                    </a>
-                  </li>
-                </ul>
-              </div>
+                <li style={{ margin: "0 1rem 0 0", padding: "0" }}>
+                  <a href="/kontakt" onClick={navHandler}>
+                    Kontakt
+                  </a>
+                </li>
+                <li
+                  style={{ margin: "0 1rem 0 0", padding: "0" }}
+                  onClick={navHandler}
+                >
+                  <NextLink href="/cart" passHref>
+                    <Link style={{ textDecoration: "none" }}>
+                      {cart.cartItems.length > 0 ? (
+                        <Badge badgeContent={cart.cartItems.length}>
+                          <a>Koszyk</a>
+                        </Badge>
+                      ) : (
+                        "Koszyk"
+                      )}
+                    </Link>
+                  </NextLink>
+                </li>
+                <li style={{ margin: "0 1rem 0 0", padding: "0" }}>
+                  {userInfo ? (
+                    <>
+                      <Button
+                        style={{ color: "black" }}
+                        aria-controls="simple-menu"
+                        aria-haspopup="true"
+                        sx={classes.navbarButton}
+                        onClick={loginClickHandler}
+                      >
+                        {userInfo.name}
+                      </Button>
+                      <Menu
+                        id="simple-menu"
+                        anchorEl={anchorEl}
+                        keepMounted
+                        open={Boolean(anchorEl)}
+                        onClose={loginMenuCloseHandler}
+                      >
+                        <li
+                          style={{
+                            margin: "0 1rem 0 0",
+                            padding: "0",
+                          }}
+                          onClick={(e) => loginMenuCloseHandler(e, "/profile")}
+                        >
+                          Profil
+                        </li>
+                        <li
+                          style={{ margin: "0 1rem 0 0", padding: "0" }}
+                          onClick={(e) =>
+                            loginMenuCloseHandler(e, "/order-history")
+                          }
+                        >
+                          Historia zamówień
+                        </li>
+                        <li
+                          style={{ margin: "0 1rem 0 0", padding: "0" }}
+                          onClick={logoutClickHandler}
+                        >
+                          Wyloguj
+                        </li>
+                      </Menu>
+                    </>
+                  ) : (
+                    <NextLink href="/login" passHref>
+                      <Link style={{ textDecoration: "none" }}>Zaloguj</Link>
+                    </NextLink>
+                  )}
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-      </nav>
-    </ThemeProvider>
+      </div>
+    </nav>
   );
 };
 

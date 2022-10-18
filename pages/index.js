@@ -12,6 +12,9 @@ import { urlForThumbnail } from "../utils/image";
 import { Store } from "../utils/Store";
 
 import Uloterapia from "../components/Uloterapia";
+import Contact from "../components/Contact";
+import Map from "../components/Map";
+import Navbar from "../components/Navbar";
 export default function Home() {
   const {
     state: { cart },
@@ -112,6 +115,10 @@ export default function Home() {
             ))}
           </div>
           <Uloterapia />
+
+          <Contact />
+
+          <Map />
         </div>
       )}
     </Layout>

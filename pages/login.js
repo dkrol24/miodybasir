@@ -57,15 +57,15 @@ export default function LoginScreen() {
                   pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
                 }}
                 render={({ field }) => (
-                  <input
+                  <TextField
                     style={{
-                      border: "1px solid rgba(222,151,9,255)",
-                      outline: "none",
-                      width: "100%",
-                      background: "transparent",
-                      padding: "1rem",
-                      color: "white",
+                      padding: "0",
+                      margin: "0",
+                      border: "3px solid rgba(222,151,9,255)",
+                      background: "white",
                     }}
+                    variant="filled"
+                    color="none"
                     fullWidth
                     id="email"
                     placeholder="E-mail"
@@ -79,7 +79,7 @@ export default function LoginScreen() {
                         : ""
                     }
                     {...field}
-                  ></input>
+                  ></TextField>
                 )}
               ></Controller>
             </ListItem>
@@ -93,15 +93,16 @@ export default function LoginScreen() {
                   minLength: 6,
                 }}
                 render={({ field }) => (
-                  <input
+                  <TextField
                     style={{
-                      border: "1px solid rgba(222,151,9,255)",
-                      outline: "none",
-                      width: "100%",
-                      background: "transparent",
-                      padding: "1rem",
-                      color: "white",
+                      padding: "0",
+                      margin: "0",
+                      border: "3px solid rgba(222,151,9,255)",
+                      background: "white",
                     }}
+                    fullWidth
+                    variant="filled"
+                    color="none"
                     id="password"
                     placeholder="Hasło"
                     inputProps={{ type: "password" }}
@@ -114,7 +115,7 @@ export default function LoginScreen() {
                         : ""
                     }
                     {...field}
-                  ></input>
+                  ></TextField>
                 )}
               ></Controller>
             </ListItem>

@@ -9,10 +9,14 @@ import {
 import NextLink from "next/link";
 import React from "react";
 import { urlForThumbnail } from "../utils/image";
-
+import { useScroll } from "./useScroll";
+import { motion } from "framer-motion";
+import { portfolioAnimations } from "./animation";
 export default function ProductItem({ product, addToCartHandler }) {
+  const [element, controls] = useScroll();
   return (
     <Card
+      ref={element}
       style={{
         display: "flex",
         flexDirection: "column",
@@ -42,7 +46,14 @@ export default function ProductItem({ product, addToCartHandler }) {
               justifyContent: "center",
             }}
           >
-            <h1
+            <motion.h1
+              variants={portfolioAnimations}
+              animate={controls}
+              transition={{
+                delay: 0.1,
+                type: "tween",
+                duration: 0.5,
+              }}
               style={{
                 color: "rgba(222,151,9,255)",
                 fontSize: "1.3rem",
@@ -50,7 +61,7 @@ export default function ProductItem({ product, addToCartHandler }) {
               }}
             >
               {product.name}
-            </h1>
+            </motion.h1>
           </CardContent>
         </CardActionArea>
       </NextLink>
@@ -64,20 +75,32 @@ export default function ProductItem({ product, addToCartHandler }) {
           justifyContent: "center",
         }}
       >
-        <p style={{ color: "grey", fontSize: "1.5rem", margin: "0" }}>
-          {product.price}zł
-        </p>
-        <Button
-          size="small"
-          style={{
-            background: "rgba(222,151,9,255)",
-            color: "white",
-            borderRadius: "16px",
+        <motion.p
+          variants={portfolioAnimations}
+          animate={controls}
+          transition={{
+            delay: 0.1,
+            type: "tween",
+            duration: 0.5,
           }}
+          style={{ color: "grey", fontSize: "1.5rem", margin: "0" }}
+        >
+          {product.price}zł
+        </motion.p>
+        <motion.button
+          variants={portfolioAnimations}
+          animate={controls}
+          transition={{
+            delay: 0.1,
+            type: "tween",
+            duration: 0.5,
+          }}
+          style={{ width: "100%" }}
+          className="yellow-button"
           onClick={() => addToCartHandler(product)}
         >
-          Dodaj do koszyka
-        </Button>
+          <p>Dodaj do koszyka</p>
+        </motion.button>
       </CardActions>
     </Card>
   );

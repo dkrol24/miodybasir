@@ -2,17 +2,28 @@ import React from "react";
 import bee from "../public/images/beemiody.png";
 import logo from "../public/images/logomiody.png";
 import hright from "../public/images/hright.png";
-
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Banner = () => {
   return (
     <div className="banner-main">
-      <div className="banner-text">
+      <motion.div
+        initial={{
+          opacity: 0,
+          scale: 0,
+        }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+        }}
+        transition={{
+          duration: 0.5,
+        }}
+        className="banner-text"
+      >
         <h1 className="banner-h1">Naturalne miody</h1>
-        <h1 style={{ fontSize: "2rem" }} className="banner-h1">
-          z własnej pasieki
-        </h1>
+        <h2 className="banner-h2">z własnej pasieki</h2>
         <p className="banner-p">
           Miód akacjowy, wielokwiatowy, rzepakowy czy miody spadziowe?
         </p>
@@ -26,32 +37,47 @@ const Banner = () => {
           &quot;Gdy zginie ostatnia pszczoła na kuli ziemskiej, <br /> ludzkości
           zostanie tylko cztery lata życia&quot; <br /> A.Einstein
         </p>
-      </div>
-      <div
-        style={{
-          position: "absolute",
-          right: "150px",
-          top: "150px",
-          zIndex: "0",
+      </motion.div>
+      <motion.div
+        className="banner-bee"
+        initial={{
+          y: 200,
+          opacity: 0,
+          scale: 0.5,
+        }}
+        animate={{
+          y: 0,
+          opacity: 1,
+          scale: 1,
+        }}
+        transition={{
+          duration: 1.5,
         }}
       >
         <Image src={bee}></Image>
-      </div>
-      <div
-        style={{
-          position: "absolute",
-          bottom: "-7px",
-          right: "0",
-          zIndex: "1",
-          overflow: "hidden",
-        }}
-      >
+      </motion.div>
+      <div className="banner-hright">
         <Image src={hright}></Image>
       </div>
 
-      <div className="banner-logo">
+      <motion.div
+        initial={{
+          x: -100,
+          opacity: 0,
+          scale: 0.5,
+        }}
+        animate={{
+          x: 0,
+          opacity: 1,
+          scale: 1,
+        }}
+        transition={{
+          duration: 1.5,
+        }}
+        className="banner-logo"
+      >
         <Image src={logo}></Image>
-      </div>
+      </motion.div>
     </div>
   );
 };

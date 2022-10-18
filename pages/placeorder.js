@@ -92,7 +92,7 @@ function PlaceOrderScreen() {
     <Layout style={{ marginTop: "7rem" }} title="Place Order">
       <CheckoutWizard activeStep={3}></CheckoutWizard>
       <Typography component="h1" variant="h1">
-        Place Order
+        Złóż zamówienie
       </Typography>
 
       <Grid container spacing={1}>
@@ -101,7 +101,7 @@ function PlaceOrderScreen() {
             <List>
               <ListItem>
                 <Typography component="h2" variant="h2">
-                  Shipping Address
+                  Adres dostawy
                 </Typography>
               </ListItem>
               <ListItem>
@@ -115,7 +115,7 @@ function PlaceOrderScreen() {
                   variant="contianed"
                   color="secondary"
                 >
-                  Edit
+                  Edytuj
                 </Button>
               </ListItem>
             </List>
@@ -134,7 +134,7 @@ function PlaceOrderScreen() {
                   variant="contianed"
                   color="secondary"
                 >
-                  Edit
+                  Edytuj
                 </Button>
               </ListItem>
             </List>
@@ -143,7 +143,7 @@ function PlaceOrderScreen() {
             <List>
               <ListItem>
                 <Typography component="h2" variant="h2">
-                  Order Items
+                  Zamówione przedmioty
                 </Typography>
               </ListItem>
               <ListItem>
@@ -151,10 +151,10 @@ function PlaceOrderScreen() {
                   <Table>
                     <TableHead>
                       <TableRow>
-                        <TableCell>Image</TableCell>
-                        <TableCell>Name</TableCell>
-                        <TableCell align="right">Quantity</TableCell>
-                        <TableCell align="right">Price</TableCell>
+                        <TableCell>Zdjęcie</TableCell>
+                        <TableCell>Nazwa</TableCell>
+                        <TableCell align="right">Ilość</TableCell>
+                        <TableCell align="right">Cena</TableCell>
                       </TableRow>
                     </TableHead>
                     <TableBody>
@@ -183,7 +183,7 @@ function PlaceOrderScreen() {
                             <Typography>{item.quantity}</Typography>
                           </TableCell>
                           <TableCell align="right">
-                            <Typography>${item.price}</Typography>
+                            <Typography>{item.price}zł</Typography>
                           </TableCell>
                         </TableRow>
                       ))}
@@ -198,25 +198,25 @@ function PlaceOrderScreen() {
           <Card sx={classes.section}>
             <List>
               <ListItem>
-                <Typography variant="h2">Order Summary</Typography>
+                <Typography variant="h2">Podsumowanie zamówienia</Typography>
               </ListItem>
               <ListItem>
                 <Grid container>
                   <Grid item xs={6}>
-                    <Typography>Items:</Typography>
+                    <Typography>Przedmioty:</Typography>
                   </Grid>
                   <Grid item xs={6}>
-                    <Typography align="right">${itemsPrice}</Typography>
+                    <Typography align="right">{itemsPrice}zł</Typography>
                   </Grid>
                 </Grid>
               </ListItem>
               <ListItem>
                 <Grid container>
                   <Grid item xs={6}>
-                    <Typography>Shipping:</Typography>
+                    <Typography>Dostawa:</Typography>
                   </Grid>
                   <Grid item xs={6}>
-                    <Typography align="right">${shippingPrice}</Typography>
+                    <Typography align="right">{shippingPrice}zł</Typography>
                   </Grid>
                 </Grid>
               </ListItem>
@@ -224,26 +224,25 @@ function PlaceOrderScreen() {
                 <Grid container>
                   <Grid item xs={6}>
                     <Typography>
-                      <strong>Total:</strong>
+                      <strong>Suma:</strong>
                     </Typography>
                   </Grid>
                   <Grid item xs={6}>
                     <Typography align="right">
-                      <strong>${totalPrice}</strong>
+                      <strong>{totalPrice}zł</strong>
                     </Typography>
                   </Grid>
                 </Grid>
               </ListItem>
               <ListItem>
-                <Button
+                <button
+                  style={{ width: "100%" }}
+                  className="yellow-button"
                   onClick={placeOrderHandler}
-                  variant="contained"
-                  color="primary"
-                  fullWidth
                   disabled={loading}
                 >
-                  Place Order
-                </Button>
+                  Złóż zamówienie
+                </button>
               </ListItem>
               {loading && (
                 <ListItem>

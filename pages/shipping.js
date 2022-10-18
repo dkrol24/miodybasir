@@ -76,14 +76,14 @@ export default function ShippingScreen() {
                   variant="outlined"
                   fullWidth
                   id="fullName"
-                  label="Full Name"
+                  label="Imię i nazwisko"
                   inputProps={{ type: "fullName" }}
                   error={Boolean(errors.fullName)}
                   helperText={
                     errors.fullName
                       ? errors.fullName.type === "minLength"
-                        ? "Full Name length is more than 1"
-                        : "Full Name is required"
+                        ? "Imię musi mieć więcej niż 1 znak"
+                        : "To pole jest wymagane"
                       : ""
                   }
                   {...field}
@@ -105,14 +105,14 @@ export default function ShippingScreen() {
                   variant="outlined"
                   fullWidth
                   id="address"
-                  label="Address"
+                  label="Ulica"
                   inputProps={{ type: "address" }}
                   error={Boolean(errors.address)}
                   helperText={
                     errors.address
                       ? errors.address.type === "minLength"
-                        ? "Address length is more than 1"
-                        : "Address is required"
+                        ? "Imię musi mieć więcej niż 1 znak"
+                        : "To pole jest wymagane"
                       : ""
                   }
                   {...field}
@@ -134,14 +134,14 @@ export default function ShippingScreen() {
                   variant="outlined"
                   fullWidth
                   id="city"
-                  label="City"
+                  label="Miasto"
                   inputProps={{ type: "city" }}
                   error={Boolean(errors.city)}
                   helperText={
                     errors.city
                       ? errors.city.type === "minLength"
-                        ? "City length is more than 1"
-                        : "City is required"
+                        ? "Imię musi mieć więcej niż 1 znak"
+                        : "To pole jest wymagane"
                       : ""
                   }
                   {...field}
@@ -163,14 +163,14 @@ export default function ShippingScreen() {
                   variant="outlined"
                   fullWidth
                   id="postalCode"
-                  label="Postal Code"
+                  label="Kod pocztowy"
                   inputProps={{ type: "postalCode" }}
                   error={Boolean(errors.postalCode)}
                   helperText={
                     errors.postalCode
                       ? errors.postalCode.type === "minLength"
-                        ? "Postal Code length is more than 1"
-                        : "Postal Code is required"
+                        ? "Imię musi mieć więcej niż 1 znak"
+                        : "To pole jest wymagane"
                       : ""
                   }
                   {...field}
@@ -192,14 +192,14 @@ export default function ShippingScreen() {
                   variant="outlined"
                   fullWidth
                   id="postalCode"
-                  label="Country"
+                  label="Kraj"
                   inputProps={{ type: "country" }}
                   error={Boolean(errors.country)}
                   helperText={
                     errors.country
                       ? errors.country.type === "minLength"
-                        ? "Country length is more than 1"
-                        : "Country is required"
+                        ? "Imię musi mieć więcej niż 1 znak"
+                        : "To pole jest wymagane"
                       : ""
                   }
                   {...field}
@@ -208,9 +208,13 @@ export default function ShippingScreen() {
             ></Controller>
           </ListItem>
           <ListItem>
-            <Button variant="contained" type="submit" fullWidth color="primary">
-              Continue
-            </Button>
+            <button
+              className="yellow-button"
+              style={{ width: "100%" }}
+              type="submit"
+            >
+              Przejdź dalej
+            </button>
           </ListItem>
         </List>
       </Form>

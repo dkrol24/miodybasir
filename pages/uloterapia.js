@@ -1,7 +1,5 @@
 import React from "react";
-import hright from "../public/images/hright.png";
-import hleft from "../public/images/hleft.png";
-import bee from "../public/images/beemiody.png";
+import { motion } from "framer-motion";
 import logo from "../public/images/logomiody.png";
 import ulo from "../public/images/honey7.jpg";
 import Image from "next/image";
@@ -9,10 +7,41 @@ const uloterapia = () => {
   return (
     <div className="app__ulo-page">
       <div className="productdetails-banner">
-        <h1 className="banner-h1">Uloterapia</h1>
-        <div>
+        <motion.h1
+          initial={{
+            x: -400,
+            opacity: 0,
+            scale: 0,
+          }}
+          animate={{
+            x: 0,
+            opacity: 1,
+            scale: 1,
+          }}
+          transition={{
+            duration: 1,
+          }}
+          className="banner-h1"
+        >
+          Uloterapia
+        </motion.h1>
+        <motion.div
+          initial={{
+            x: 400,
+            opacity: 0,
+            scale: 0,
+          }}
+          animate={{
+            x: 0,
+            opacity: 1,
+            scale: 1,
+          }}
+          transition={{
+            duration: 0.5,
+          }}
+        >
           <Image src={logo}></Image>
-        </div>
+        </motion.div>
       </div>
       <p
         style={{
@@ -21,6 +50,7 @@ const uloterapia = () => {
           fontSize: "1.2rem",
           borderRight: "2px dotted rgba(222,151,9,255)",
           borderLeft: "2px dotted rgba(222,151,9,255)",
+          width: "90%",
           padding: "1rem",
         }}
       >

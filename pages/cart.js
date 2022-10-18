@@ -131,16 +131,15 @@ function CartScreen() {
                         </Select>
                       </TableCell>
                       <TableCell align="right">
-                        <Typography>${item.price}</Typography>
+                        <Typography>{item.price}zł</Typography>
                       </TableCell>
                       <TableCell align="right">
-                        <Button
-                          variant="contained"
-                          color="secondary"
+                        <button
+                          className="yellow-button"
                           onClick={() => removeItemHandler(item)}
                         >
-                          x
-                        </Button>
+                          X
+                        </button>
                       </TableCell>
                     </TableRow>
                   ))}
@@ -159,16 +158,15 @@ function CartScreen() {
                   </Typography>
                 </ListItem>
                 <ListItem>
-                  <Button
+                  <button
+                    style={{ width: "100%" }}
                     onClick={() => {
                       router.push("/shipping");
                     }}
-                    fullWidth
-                    color="primary"
-                    variant="contained"
+                    className="yellow-button"
                   >
                     Zapłać
-                  </Button>
+                  </button>
                 </ListItem>
               </List>
             </Card>

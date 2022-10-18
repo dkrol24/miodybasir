@@ -65,16 +65,15 @@ export default function RegisterScreen() {
                   minLength: 2,
                 }}
                 render={({ field }) => (
-                  <input
+                  <TextField
                     style={{
-                      border: "1px solid rgba(222,151,9,255)",
-                      outline: "none",
-                      width: "100%",
-                      background: "transparent",
-                      padding: "1rem",
-                      color: "white",
+                      padding: "0",
+                      margin: "0",
+                      border: "3px solid rgba(222,151,9,255)",
+                      background: "white",
                     }}
-                    variant="outlined"
+                    variant="filled"
+                    color="none"
                     fullWidth
                     id="name"
                     placeholder="Nazwa"
@@ -88,7 +87,7 @@ export default function RegisterScreen() {
                         : ""
                     }
                     {...field}
-                  ></input>
+                  ></TextField>
                 )}
               ></Controller>
             </ListItem>
@@ -103,16 +102,15 @@ export default function RegisterScreen() {
                   pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
                 }}
                 render={({ field }) => (
-                  <input
+                  <TextField
                     style={{
-                      border: "1px solid rgba(222,151,9,255)",
-                      outline: "none",
-                      width: "100%",
-                      background: "transparent",
-                      padding: "1rem",
-                      color: "white",
+                      padding: "0",
+                      margin: "0",
+                      border: "3px solid rgba(222,151,9,255)",
+                      background: "white",
                     }}
-                    variant="outlined"
+                    variant="filled"
+                    color="none"
                     fullWidth
                     id="email"
                     placeholder="E-mail"
@@ -126,7 +124,7 @@ export default function RegisterScreen() {
                         : ""
                     }
                     {...field}
-                  ></input>
+                  ></TextField>
                 )}
               ></Controller>
             </ListItem>
@@ -140,16 +138,15 @@ export default function RegisterScreen() {
                   minLength: 6,
                 }}
                 render={({ field }) => (
-                  <input
+                  <TextField
                     style={{
-                      border: "1px solid rgba(222,151,9,255)",
-                      outline: "none",
-                      width: "100%",
-                      background: "transparent",
-                      padding: "1rem",
-                      color: "white",
+                      padding: "0",
+                      margin: "0",
+                      border: "3px solid rgba(222,151,9,255)",
+                      background: "white",
                     }}
-                    variant="outlined"
+                    color="none"
+                    variant="filled"
                     fullWidth
                     id="password"
                     placeholder="Hasło"
@@ -163,7 +160,7 @@ export default function RegisterScreen() {
                         : ""
                     }
                     {...field}
-                  ></input>
+                  ></TextField>
                 )}
               ></Controller>
             </ListItem>
@@ -177,16 +174,15 @@ export default function RegisterScreen() {
                   minLength: 6,
                 }}
                 render={({ field }) => (
-                  <input
+                  <TextField
                     style={{
-                      border: "1px solid rgba(222,151,9,255)",
-                      outline: "none",
-                      width: "100%",
-                      background: "transparent",
-                      padding: "1rem",
-                      color: "white",
+                      padding: "0",
+                      margin: "0",
+                      border: "3px solid rgba(222,151,9,255)",
+                      background: "white",
                     }}
-                    variant="outlined"
+                    variant="filled"
+                    color="none"
                     fullWidth
                     id="confirmPassword"
                     placeholder="Powtórz hasło"
@@ -200,7 +196,7 @@ export default function RegisterScreen() {
                         : ""
                     }
                     {...field}
-                  ></input>
+                  ></TextField>
                 )}
               ></Controller>
             </ListItem>

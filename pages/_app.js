@@ -5,7 +5,7 @@ import { StoreProvider } from "../utils/Store";
 import { SnackbarProvider } from "notistack";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import Navbar from "../components/Navbar";
-
+import { AnimatePresence } from "framer-motion";
 const clientSideEmotionCache = createCache({ key: "css" });
 
 function MyApp({
@@ -15,16 +15,18 @@ function MyApp({
 }) {
   return (
     <CacheProvider value={emotionCache}>
-      <SnackbarProvider
-        anchorOrigin={{ vertical: "top", horizontal: "center" }}
-      >
-        <StoreProvider>
-          <PayPalScriptProvider deferLoading={true}>
+      <AnimatePresence>
+        <SnackbarProvider
+          anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        >
+          <StoreProvider>
             <Navbar />
-            <Component {...pageProps} />
-          </PayPalScriptProvider>
-        </StoreProvider>
-      </SnackbarProvider>
+            <PayPalScriptProvider deferLoading={true}>
+              <Component {...pageProps} />
+            </PayPalScriptProvider>
+          </StoreProvider>
+        </SnackbarProvider>
+      </AnimatePresence>
     </CacheProvider>
   );
 }

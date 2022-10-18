@@ -155,8 +155,8 @@ function OrderScreen({ params }) {
 
   return (
     <Layout title={`Order ${orderId}`}>
-      <Typography component="h1" variant="h1">
-        Order {orderId}
+      <Typography style={{ marginTop: "7rem" }} component="h1" variant="h1">
+        Zamówienie: {orderId}
       </Typography>
 
       {loading ? (
@@ -170,7 +170,7 @@ function OrderScreen({ params }) {
               <List>
                 <ListItem>
                   <Typography component="h2" variant="h2">
-                    Shipping Address
+                    Adres dostawy
                   </Typography>
                 </ListItem>
                 <ListItem>
@@ -181,8 +181,8 @@ function OrderScreen({ params }) {
                 <ListItem>
                   Status:{" "}
                   {isDelivered
-                    ? `delivered at ${deliveredAt}`
-                    : "not delivered"}
+                    ? `dostarczono ${deliveredAt}`
+                    : "nie dostarczono"}
                 </ListItem>
               </List>
             </Card>
@@ -191,12 +191,12 @@ function OrderScreen({ params }) {
               <List>
                 <ListItem>
                   <Typography component="h2" variant="h2">
-                    Payment Method
+                    Metoda płatności
                   </Typography>
                 </ListItem>
                 <ListItem>{paymentMethod}</ListItem>
                 <ListItem>
-                  Status: {isPaid ? `paid at ${paidAt}` : "not paid"}
+                  Status: {isPaid ? `zapłacono ${paidAt}` : "nie zapłacono"}
                 </ListItem>
               </List>
             </Card>
@@ -205,7 +205,7 @@ function OrderScreen({ params }) {
               <List>
                 <ListItem>
                   <Typography component="h2" variant="h2">
-                    Order Items
+                    Zamówione produkty
                   </Typography>
                 </ListItem>
                 <ListItem>
@@ -213,10 +213,10 @@ function OrderScreen({ params }) {
                     <Table>
                       <TableHead>
                         <TableRow>
-                          <TableCell>Image</TableCell>
-                          <TableCell>Name</TableCell>
-                          <TableCell align="right">Quantity</TableCell>
-                          <TableCell align="right">Price</TableCell>
+                          <TableCell>Zdjęcie</TableCell>
+                          <TableCell>Nazwa</TableCell>
+                          <TableCell align="right">Ilość</TableCell>
+                          <TableCell align="right">Cena</TableCell>
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -245,7 +245,7 @@ function OrderScreen({ params }) {
                               <Typography>{item.quantity}</Typography>
                             </TableCell>
                             <TableCell align="right">
-                              <Typography>${item.price}</Typography>
+                              <Typography>{item.price}zł</Typography>
                             </TableCell>
                           </TableRow>
                         ))}
@@ -260,12 +260,12 @@ function OrderScreen({ params }) {
             <Card sx={classes.section}>
               <List>
                 <ListItem>
-                  <Typography variant="h2">Order Summary</Typography>
+                  <Typography variant="h2">Podsumowanie zamówienia</Typography>
                 </ListItem>
                 <ListItem>
                   <Grid container>
                     <Grid item xs={6}>
-                      <Typography>Items:</Typography>
+                      <Typography>Przedmioty:</Typography>
                     </Grid>
                     <Grid item xs={6}>
                       <Typography align="right">${itemsPrice}</Typography>
@@ -275,20 +275,20 @@ function OrderScreen({ params }) {
                 <ListItem>
                   <Grid container>
                     <Grid item xs={6}>
-                      <Typography>Tax:</Typography>
+                      <Typography>Podatek:</Typography>
                     </Grid>
                     <Grid item xs={6}>
-                      <Typography align="right">${taxPrice}</Typography>
+                      <Typography align="right">{taxPrice}zł</Typography>
                     </Grid>
                   </Grid>
                 </ListItem>
                 <ListItem>
                   <Grid container>
                     <Grid item xs={6}>
-                      <Typography>Shipping:</Typography>
+                      <Typography>Dostawa:</Typography>
                     </Grid>
                     <Grid item xs={6}>
-                      <Typography align="right">${shippingPrice}</Typography>
+                      <Typography align="right">{shippingPrice}zł</Typography>
                     </Grid>
                   </Grid>
                 </ListItem>
@@ -296,12 +296,12 @@ function OrderScreen({ params }) {
                   <Grid container>
                     <Grid item xs={6}>
                       <Typography>
-                        <strong>Total:</strong>
+                        <strong>Suma:</strong>
                       </Typography>
                     </Grid>
                     <Grid item xs={6}>
                       <Typography align="right">
-                        <strong>${totalPrice}</strong>
+                        <strong>{totalPrice}zł</strong>
                       </Typography>
                     </Grid>
                   </Grid>
