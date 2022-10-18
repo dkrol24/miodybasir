@@ -95,7 +95,7 @@ const Contact = () => {
             placeholder="Imię i nazwisko"
             name="fullName"
             value={values.fullName}
-            handleChange={handleChange}
+            onClick={handleChange}
           />
 
           <motion.input
@@ -120,7 +120,7 @@ const Contact = () => {
             placeholder="Adres e-mail"
             name="email"
             value={values.email}
-            handleChange={handleChange}
+            onClick={handleChange}
           />
 
           <motion.input
@@ -144,7 +144,7 @@ const Contact = () => {
             placeholder="Numer telefonu"
             name="phone"
             value={values.phone}
-            handleChange={handleChange}
+            onClick={handleChange}
           />
 
           <motion.textarea
@@ -169,7 +169,7 @@ const Contact = () => {
             placeholder="Napisz do Nas"
             value={values.message}
             name="message"
-            handleChange={handleChange}
+            onClick={handleChange}
           />
 
           <motion.button
@@ -202,7 +202,7 @@ const Contact = () => {
                 maxWidth: "600px",
                 margin: "0",
               }}
-              handleChange={handleChange}
+              onClick={handleChange}
             >
               Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z ustawą o
               ochronie danych osobowych w związku z wysłaniem zapytania przez
