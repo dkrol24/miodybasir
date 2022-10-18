@@ -95,7 +95,7 @@ const Contact = () => {
             placeholder="Imię i nazwisko"
             name="fullName"
             value={values.fullName}
-            onChange={handleChange}
+            handleChange={handleChange}
           />
 
           <motion.input
@@ -120,7 +120,7 @@ const Contact = () => {
             placeholder="Adres e-mail"
             name="email"
             value={values.email}
-            onChange={handleChange}
+            handleChange={handleChange}
           />
 
           <motion.input
@@ -144,7 +144,7 @@ const Contact = () => {
             placeholder="Numer telefonu"
             name="phone"
             value={values.phone}
-            onChange={handleChange}
+            handleChange={handleChange}
           />
 
           <motion.textarea
@@ -169,7 +169,7 @@ const Contact = () => {
             placeholder="Napisz do Nas"
             value={values.message}
             name="message"
-            onChange={handleChange}
+            handleChange={handleChange}
           />
 
           <motion.button
