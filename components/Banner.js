@@ -54,10 +54,10 @@ const Banner = () => {
           duration: 1.5,
         }}
       >
-        <Image src={bee}></Image>
+        <Image alt="miodykonarscy" src={bee}></Image>
       </motion.div>
       <div className="banner-hright">
-        <Image src={hright}></Image>
+        <Image alt="miodykonarscy" src={hright}></Image>
       </div>
 
       <motion.div
@@ -76,7 +76,7 @@ const Banner = () => {
         }}
         className="banner-logo"
       >
-        <Image src={logo}></Image>
+        <Image alt="miodykonarscy" src={logo}></Image>
       </motion.div>
     </div>
   );

@@ -16,7 +16,6 @@ const Contact = () => {
     warning: "",
   });
   const [status, setStatus] = useState(false);
-  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setValues((values) => ({
@@ -36,10 +35,10 @@ const Contact = () => {
             email: "",
             phone: "",
             message: "",
+
             warning: "",
           });
           setStatus(true);
-          setLoading(true);
         },
         (error) => {
           console.log("Podaj dane i zaakceptuj regulamin.", error);

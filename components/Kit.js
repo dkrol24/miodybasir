@@ -45,6 +45,7 @@ const Kit = () => {
         } = index;
         return (
           <div
+            key={index}
             style={{
               display: "flex",
               flexDirection: "column",

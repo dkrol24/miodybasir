@@ -1,6 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
-import { GoLocation } from "react-icons/go";
-import { AiFillFacebook } from "react-icons/ai";
+import React, { useState, useContext } from "react";
 
 import NextLink from "next/link";
 import classes from "../utils/classes";
@@ -119,9 +117,11 @@ const Navbar = () => {
                 </li>
 
                 <li style={{ margin: "0 1rem 0 0", padding: "0" }}>
-                  <a href="/kontakt" onClick={navHandler}>
-                    Kontakt
-                  </a>
+                  <NextLink href="/kontakt" passHref>
+                    <Link style={{ textDecoration: "none" }}>
+                      <a onClick={navHandler}>Kontakt</a>
+                    </Link>
+                  </NextLink>
                 </li>
                 <li
                   style={{ margin: "0 1rem 0 0", padding: "0" }}

@@ -71,7 +71,7 @@ const Uloterapia = () => {
         </motion.button>
       </div>
       <div className="app__ulo-image">
-        <Image src={ulo}></Image>
+        <Image alt="miodykonarscy" src={ulo}></Image>
       </div>
     </div>
   );

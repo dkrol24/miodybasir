@@ -14,7 +14,6 @@ const Kontakt = () => {
     warning: "",
   });
   const [status, setStatus] = useState(false);
-  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setValues((values) => ({
@@ -37,7 +36,6 @@ const Kontakt = () => {
             warning: "",
           });
           setStatus(true);
-          setLoading(true);
         },
         (error) => {
           console.log("Podaj dane i zaakceptuj regulamin.", error);
@@ -223,7 +221,7 @@ const Kontakt = () => {
                 margin: "0",
                 color: "white",
               }}
-              handleChange={handleChange}
+              onChange={handleChange}
             >
               Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z ustawą o
               ochronie danych osobowych w związku z wysłaniem zapytania przez

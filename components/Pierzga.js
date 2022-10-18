@@ -1,5 +1,5 @@
 import React from "react";
-import { pierzga } from "./data";
+
 const Pierzga = () => {
   return (
     <div

@@ -40,7 +40,7 @@ const uloterapia = () => {
             duration: 0.5,
           }}
         >
-          <Image src={logo}></Image>
+          <Image alt="ulo" src={logo}></Image>
         </motion.div>
       </div>
       <p
@@ -101,7 +101,7 @@ const uloterapia = () => {
           </p>
         </div>
         <div className="app__ulo-image">
-          <Image src={ulo}></Image>
+          <Image alt="ulo" src={ulo}></Image>
         </div>
       </div>
       <div className="app__ulo-more-container">
