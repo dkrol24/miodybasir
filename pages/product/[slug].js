@@ -19,7 +19,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import logo from "../../public/images/logomiody.png";
 import { motion } from "framer-motion";
-import Kit from "../../components/kit";
+import Kit from "../../components/Kit";
 import Pierzga from "../../components/Pierzga";
 export default function ProductScreen(props) {
   const router = useRouter();
