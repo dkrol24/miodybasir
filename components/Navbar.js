@@ -139,18 +139,20 @@ const Navbar = () => {
                     </Link>
                   </NextLink>
                 </li>
-                <li style={{ margin: "0 1rem 0 0", padding: "0" }}>
+                <li style={{ margin: "0 0 0 0", padding: "0" }}>
                   {userInfo ? (
                     <>
-                      <Button
-                        style={{ color: "black" }}
-                        aria-controls="simple-menu"
-                        aria-haspopup="true"
-                        sx={classes.navbarButton}
-                        onClick={loginClickHandler}
-                      >
-                        {userInfo.name}
-                      </Button>
+                      <li onClick={navHandler}>
+                        <Button
+                          style={{ margin: "0 0 0 0", padding: "0" }}
+                          aria-controls="simple-menu"
+                          aria-haspopup="true"
+                          sx={classes.navbarButton}
+                          onClick={loginClickHandler}
+                        >
+                          <a>{userInfo.name}</a>
+                        </Button>
+                      </li>
                       <Menu
                         id="simple-menu"
                         anchorEl={anchorEl}
@@ -162,13 +164,18 @@ const Navbar = () => {
                           style={{
                             margin: "0 1rem 0 0",
                             padding: "0",
+                            cursor: "pointer",
                           }}
                           onClick={(e) => loginMenuCloseHandler(e, "/profile")}
                         >
                           Profil
                         </li>
                         <li
-                          style={{ margin: "0 1rem 0 0", padding: "0" }}
+                          style={{
+                            margin: "0 1rem 0 0",
+                            padding: "0",
+                            cursor: "pointer",
+                          }}
                           onClick={(e) =>
                             loginMenuCloseHandler(e, "/order-history")
                           }
@@ -176,7 +183,11 @@ const Navbar = () => {
                           Historia zamówień
                         </li>
                         <li
-                          style={{ margin: "0 1rem 0 0", padding: "0" }}
+                          style={{
+                            margin: "0 1rem 0 0",
+                            padding: "0",
+                            cursor: "pointer",
+                          }}
                           onClick={logoutClickHandler}
                         >
                           Wyloguj

@@ -155,9 +155,9 @@ function OrderScreen({ params }) {
 
   return (
     <Layout title={`Order ${orderId}`}>
-      <Typography style={{ marginTop: "7rem" }} component="h1" variant="h1">
-        Zamówienie: {orderId}
-      </Typography>
+      <h1 className="banner-h1" style={{ marginTop: "7rem" }}>
+        Zamówienie {orderId}
+      </h1>
 
       {loading ? (
         <CircularProgress />
@@ -169,9 +169,7 @@ function OrderScreen({ params }) {
             <Card sx={classes.section}>
               <List>
                 <ListItem>
-                  <Typography component="h2" variant="h2">
-                    Adres dostawy
-                  </Typography>
+                  <h1 className="yellow-span">Adres dostawy</h1>
                 </ListItem>
                 <ListItem>
                   {shippingAddress.fullName}, {shippingAddress.address},{" "}
@@ -190,9 +188,7 @@ function OrderScreen({ params }) {
             <Card sx={classes.section}>
               <List>
                 <ListItem>
-                  <Typography component="h2" variant="h2">
-                    Metoda płatności
-                  </Typography>
+                  <h1 className="yellow-span">Metoda płatności</h1>
                 </ListItem>
                 <ListItem>{paymentMethod}</ListItem>
                 <ListItem>
@@ -204,9 +200,7 @@ function OrderScreen({ params }) {
             <Card sx={classes.section}>
               <List>
                 <ListItem>
-                  <Typography component="h2" variant="h2">
-                    Zamówione produkty
-                  </Typography>
+                  <h1 className="yellow-span">Zamówione produkty</h1>
                 </ListItem>
                 <ListItem>
                   <TableContainer>
@@ -236,8 +230,8 @@ function OrderScreen({ params }) {
                             </TableCell>
                             <TableCell>
                               <NextLink href={`/product/${item.slug}`} passHref>
-                                <Link>
-                                  <Typography>{item.name}</Typography>
+                                <Link style={{ textDecoration: "none" }}>
+                                  <h1 className="yellow-span">{item.name}</h1>
                                 </Link>
                               </NextLink>
                             </TableCell>
@@ -260,15 +254,15 @@ function OrderScreen({ params }) {
             <Card sx={classes.section}>
               <List>
                 <ListItem>
-                  <Typography variant="h2">Podsumowanie zamówienia</Typography>
+                  <h1 className="yellow-span">Podsumowanie zamówienia</h1>
                 </ListItem>
                 <ListItem>
                   <Grid container>
                     <Grid item xs={6}>
-                      <Typography>Przedmioty:</Typography>
+                      <Typography>Cena:</Typography>
                     </Grid>
                     <Grid item xs={6}>
-                      <Typography align="right">${itemsPrice}</Typography>
+                      <Typography align="right">{itemsPrice}zł</Typography>
                     </Grid>
                   </Grid>
                 </ListItem>

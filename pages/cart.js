@@ -63,19 +63,15 @@ function CartScreen() {
   };
   return (
     <Layout title="Shopping Cart">
-      <Typography
-        style={{ margin: "7rem 0 0 1rem" }}
-        component="h1"
-        variant="h1"
-      >
+      <h1 className="banner-h1" style={{ marginTop: "7rem" }}>
         Lista zakupów
-      </Typography>
+      </h1>
       {cartItems.length === 0 ? (
         <Box>
           <Typography>
             Koszyk jest pusty.
             <NextLink href="/" passHref>
-              <Link>Powrót do sklepu</Link>
+              <Link style={{ textDecoration: "none" }}>Powrót</Link>
             </NextLink>
           </Typography>
         </Box>
@@ -110,8 +106,8 @@ function CartScreen() {
                       </TableCell>
                       <TableCell>
                         <NextLink href={`/product/${item.slug}`} passHref>
-                          <Link>
-                            <Typography>{item.name}</Typography>
+                          <Link style={{ textDecoration: "none" }}>
+                            <h1 className="yellow-span">{item.name}</h1>
                           </Link>
                         </NextLink>
                       </TableCell>
@@ -150,7 +146,7 @@ function CartScreen() {
             <Card>
               <List>
                 <ListItem>
-                  <Typography variant="h2">
+                  <Typography>
                     Suma ({cartItems.reduce((a, c) => a + c.quantity, 0)}{" "}
                     produkt) :
                     {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}zł

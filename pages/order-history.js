@@ -1,6 +1,5 @@
 import {
   Alert,
-  Button,
   CircularProgress,
   Table,
   TableBody,
@@ -8,7 +7,6 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  Typography,
 } from "@mui/material";
 import NextLink from "next/link";
 import axios from "axios";
@@ -63,9 +61,9 @@ function OrderHistoryScreen() {
   }, [router, userInfo]);
   return (
     <Layout title="Order History">
-      <Typography style={{ marginTop: "7rem" }} component="h1" variant="h1">
-        Order History
-      </Typography>
+      <h1 className="banner-h1" style={{ marginTop: "7rem" }}>
+        Historia zamówień
+      </h1>
       {loading ? (
         <CircularProgress />
       ) : error ? (
@@ -76,10 +74,10 @@ function OrderHistoryScreen() {
             <TableHead>
               <TableRow>
                 <TableCell>ID</TableCell>
-                <TableCell>DATE</TableCell>
-                <TableCell>TOTAL</TableCell>
-                <TableCell>PAID</TableCell>
-                <TableCell>ACTION</TableCell>
+                <TableCell>DATA</TableCell>
+                <TableCell>KWOTA</TableCell>
+                <TableCell>ZAPŁACONE?</TableCell>
+                <TableCell>AKCJE</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -87,13 +85,15 @@ function OrderHistoryScreen() {
                 <TableRow key={order._id}>
                   <TableCell>{order._id}</TableCell>
                   <TableCell>{order.createdAt}</TableCell>
-                  <TableCell>${order.totalPrice}</TableCell>
+                  <TableCell>{order.totalPrice}zł</TableCell>
                   <TableCell>
-                    {order.isPaid ? `paid at ${order.paidAt}` : "not paid"}
+                    {order.isPaid
+                      ? `zapłacone - ${order.paidAt}`
+                      : "nie zapłacone"}
                   </TableCell>
                   <TableCell>
                     <NextLink href={`/order/${order._id}`} passHref>
-                      <Button variant="contained">Details</Button>
+                      <button className="yellow-button">Szczegóły</button>
                     </NextLink>
                   </TableCell>
                 </TableRow>

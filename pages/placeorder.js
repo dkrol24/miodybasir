@@ -41,9 +41,9 @@ function PlaceOrderScreen() {
   const itemsPrice = round2(
     cartItems.reduce((a, c) => a + c.price * c.quantity, 0)
   );
-  const shippingPrice = itemsPrice > 200 ? 0 : 15;
+
   const taxPrice = round2(itemsPrice * 0.15);
-  const totalPrice = round2(itemsPrice + shippingPrice + taxPrice);
+  const totalPrice = round2(itemsPrice + taxPrice);
 
   useEffect(() => {
     if (!paymentMethod) {
@@ -68,7 +68,7 @@ function PlaceOrderScreen() {
           shippingAddress,
           paymentMethod,
           itemsPrice,
-          shippingPrice,
+
           taxPrice,
           totalPrice,
         },
@@ -210,16 +210,7 @@ function PlaceOrderScreen() {
                   </Grid>
                 </Grid>
               </ListItem>
-              <ListItem>
-                <Grid container>
-                  <Grid item xs={6}>
-                    <Typography>Dostawa:</Typography>
-                  </Grid>
-                  <Grid item xs={6}>
-                    <Typography align="right">{shippingPrice}zł</Typography>
-                  </Grid>
-                </Grid>
-              </ListItem>
+
               <ListItem>
                 <Grid container>
                   <Grid item xs={6}>

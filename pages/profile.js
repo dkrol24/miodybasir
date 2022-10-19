@@ -1,4 +1,4 @@
-import { Button, List, ListItem, TextField, Typography } from "@mui/material";
+import { List, ListItem, TextField } from "@mui/material";
 import axios from "axios";
 import jsCookie from "js-cookie";
 import dynamic from "next/dynamic";
@@ -56,132 +56,163 @@ function ProfileScreen() {
   };
   return (
     <Layout title="Profile">
-      <Typography component="h1" variant="h1">
-        Profile
-      </Typography>
-      <Form onSubmit={handleSubmit(submitHandler)}>
-        <List>
-          <ListItem>
-            <Controller
-              name="name"
-              control={control}
-              defaultValue=""
-              rules={{
-                required: true,
-                minLength: 2,
-              }}
-              render={({ field }) => (
-                <TextField
-                  variant="outlined"
-                  fullWidth
-                  id="name"
-                  label="Name"
-                  inputProps={{ type: "text" }}
-                  error={Boolean(errors.name)}
-                  helperText={
-                    errors.name
-                      ? errors.name.type === "minLength"
-                        ? "Name length is more than 1"
-                        : "Name is required"
-                      : ""
-                  }
-                  {...field}
-                ></TextField>
-              )}
-            ></Controller>
-          </ListItem>
-          <ListItem>
-            <Controller
-              name="email"
-              control={control}
-              defaultValue=""
-              rules={{
-                required: true,
-                pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
-              }}
-              render={({ field }) => (
-                <TextField
-                  variant="outlined"
-                  fullWidth
-                  id="email"
-                  label="Email"
-                  inputProps={{ type: "email" }}
-                  error={Boolean(errors.email)}
-                  helperText={
-                    errors.email
-                      ? errors.email.type === "pattern"
-                        ? "Email is not valid"
-                        : "Email is required"
-                      : ""
-                  }
-                  {...field}
-                ></TextField>
-              )}
-            ></Controller>
-          </ListItem>
-          <ListItem>
-            <Controller
-              name="password"
-              control={control}
-              defaultValue=""
-              rules={{
-                validate: (value) =>
-                  value === "" ||
-                  value.length > 5 ||
-                  "Password length is more than 5",
-              }}
-              render={({ field }) => (
-                <TextField
-                  variant="outlined"
-                  fullWidth
-                  id="password"
-                  label="password"
-                  inputProps={{ type: "password" }}
-                  error={Boolean(errors.password)}
-                  helperText={
-                    errors.password ? "Password length is more than 5" : ""
-                  }
-                  {...field}
-                ></TextField>
-              )}
-            ></Controller>
-          </ListItem>
-          <ListItem>
-            <Controller
-              name="confirmPassword"
-              control={control}
-              defaultValue=""
-              rules={{
-                validate: (value) =>
-                  value === "" ||
-                  value.length > 5 ||
-                  "confirmPassword length is more than 5",
-              }}
-              render={({ field }) => (
-                <TextField
-                  variant="outlined"
-                  fullWidth
-                  id="confirmPassword"
-                  label="Confirm Password"
-                  inputProps={{ type: "password" }}
-                  error={Boolean(errors.confirmPassword)}
-                  helperText={
-                    errors.confirmPassword
-                      ? "Confirm Password length is more than 5"
-                      : ""
-                  }
-                  {...field}
-                ></TextField>
-              )}
-            ></Controller>
-          </ListItem>
-          <ListItem>
-            <Button variant="contained" type="submit" fullWidth color="primary">
-              Update
-            </Button>
-          </ListItem>
-        </List>
-      </Form>
+      <div className="loginregister">
+        <h1 className="banner-h1">Profil</h1>
+        <Form onSubmit={handleSubmit(submitHandler)}>
+          <List>
+            <ListItem>
+              <Controller
+                name="name"
+                control={control}
+                defaultValue=""
+                rules={{
+                  required: true,
+                  minLength: 2,
+                }}
+                render={({ field }) => (
+                  <TextField
+                    style={{
+                      padding: "0",
+                      margin: "0",
+                      border: "3px solid rgba(222,151,9,255)",
+                      background: "white",
+                    }}
+                    variant="filled"
+                    color="none"
+                    fullWidth
+                    placeholder="Nazwa"
+                    id="name"
+                    inputProps={{ type: "text" }}
+                    error={Boolean(errors.name)}
+                    helperText={
+                      errors.name
+                        ? errors.name.type === "minLength"
+                          ? "Nazwa musi zawierać co najmniej jeden znak"
+                          : "To pole jest wymagane"
+                        : ""
+                    }
+                    {...field}
+                  ></TextField>
+                )}
+              ></Controller>
+            </ListItem>
+            <ListItem>
+              <Controller
+                name="email"
+                control={control}
+                defaultValue=""
+                rules={{
+                  required: true,
+                  pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
+                }}
+                render={({ field }) => (
+                  <TextField
+                    style={{
+                      padding: "0",
+                      margin: "0",
+                      border: "3px solid rgba(222,151,9,255)",
+                      background: "white",
+                    }}
+                    variant="filled"
+                    color="none"
+                    fullWidth
+                    placeholder="E-mail"
+                    id="email"
+                    d
+                    inputProps={{ type: "email" }}
+                    error={Boolean(errors.email)}
+                    helperText={
+                      errors.email
+                        ? errors.email.type === "pattern"
+                          ? "To nie wygląda jak adres e-mail"
+                          : "To pole jest wymagane"
+                        : ""
+                    }
+                    {...field}
+                  ></TextField>
+                )}
+              ></Controller>
+            </ListItem>
+            <ListItem>
+              <Controller
+                name="password"
+                control={control}
+                defaultValue=""
+                rules={{
+                  validate: (value) =>
+                    value === "" ||
+                    value.length > 5 ||
+                    "Hasło musi być dłuższe niż 5 znaków",
+                }}
+                render={({ field }) => (
+                  <TextField
+                    style={{
+                      padding: "0",
+                      margin: "0",
+                      border: "3px solid rgba(222,151,9,255)",
+                      background: "white",
+                    }}
+                    variant="filled"
+                    color="none"
+                    fullWidth
+                    placeholder="Hasło"
+                    id="password"
+                    inputProps={{ type: "password" }}
+                    error={Boolean(errors.password)}
+                    helperText={
+                      errors.password
+                        ? "Hasło musi być dłuższe niż 5 znaków"
+                        : ""
+                    }
+                    {...field}
+                  ></TextField>
+                )}
+              ></Controller>
+            </ListItem>
+            <ListItem>
+              <Controller
+                name="confirmPassword"
+                control={control}
+                defaultValue=""
+                rules={{
+                  validate: (value) =>
+                    value === "" ||
+                    value.length > 5 ||
+                    "Hasło musi być dłuższe niż 5 znaków",
+                }}
+                render={({ field }) => (
+                  <TextField
+                    style={{
+                      padding: "0",
+                      margin: "0",
+                      border: "3px solid rgba(222,151,9,255)",
+                      background: "white",
+                    }}
+                    variant="filled"
+                    color="none"
+                    fullWidth
+                    placeholder="Powtórz hasło"
+                    id="confirmPassword"
+                    inputProps={{ type: "password" }}
+                    error={Boolean(errors.confirmPassword)}
+                    helperText={
+                      errors.confirmPassword
+                        ? "Hasło musi być dłuższe niż 5 znaków"
+                        : ""
+                    }
+                    {...field}
+                  ></TextField>
+                )}
+              ></Controller>
+            </ListItem>
+            <ListItem>
+              <button type="submit" className="yellow-button">
+                Aktualizuj
+              </button>
+            </ListItem>
+          </List>
+        </Form>
+      </div>
     </Layout>
   );
 }

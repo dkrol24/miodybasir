@@ -51,6 +51,7 @@ const uloterapia = () => {
           borderRight: "2px dotted rgba(222,151,9,255)",
           borderLeft: "2px dotted rgba(222,151,9,255)",
           width: "90%",
+          maxWidth: "750px",
           padding: "1rem",
         }}
       >

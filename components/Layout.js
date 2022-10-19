@@ -16,9 +16,10 @@ export default function Layout({ title, description, children }) {
       <div
         style={{
           width: "100%",
+          minHeight: "100vh",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
+          justifyContent: "start",
           alignItems: "center",
           textDecoration: "none",
         }}

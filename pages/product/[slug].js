@@ -138,13 +138,7 @@ export default function ProductScreen(props) {
 
               <List style={{ width: "100%" }}>
                 <ListItem>
-                  <Typography
-                    className="yellow-span"
-                    component="h1"
-                    variant="h1"
-                  >
-                    {product.name}
-                  </Typography>
+                  <h1 className="yellow-span">{product.name}</h1>
                 </ListItem>
 
                 <ListItem>
