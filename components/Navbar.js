@@ -211,21 +211,50 @@ const Navbar = () => {
                         <li
                           onClick={(e) => loginMenuCloseHandler(e, "/profile")}
                         >
-                          Profil
+                          <a
+                            className={`nav-li-a ${
+                              show && "nav-li-a nav-li-active"
+                            }`}
+                          >
+                            Profil
+                          </a>
                         </li>
                         <li
                           onClick={(e) =>
                             loginMenuCloseHandler(e, "/order-history")
                           }
                         >
-                          Historia zamówień
+                          <a
+                            className={`nav-li-a ${
+                              show && "nav-li-a nav-li-active"
+                            }`}
+                          >
+                            Historia zamówień
+                          </a>
                         </li>
-                        <li onClick={logoutClickHandler}>Wyloguj</li>
+                        <li onClick={logoutClickHandler}>
+                          <a
+                            className={`nav-li-a ${
+                              show && "nav-li-a nav-li-active"
+                            }`}
+                          >
+                            Wyloguj
+                          </a>
+                        </li>
                       </Menu>
                     </>
                   ) : (
                     <NextLink href="/login" passHref>
-                      <Link style={{ textDecoration: "none" }}>Zaloguj</Link>
+                      <Link style={{ textDecoration: "none" }}>
+                        {" "}
+                        <a
+                          className={`nav-li-a ${
+                            show && "nav-li-a nav-li-active"
+                          }`}
+                        >
+                          Zaloguj
+                        </a>
+                      </Link>
                     </NextLink>
                   )}
                 </li>

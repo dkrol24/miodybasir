@@ -1,4 +1,4 @@
-import { List, ListItem, TextField, Typography } from "@mui/material";
+import { List, ListItem, TextField } from "@mui/material";
 import React, { useContext, useEffect } from "react";
 import CheckoutWizard from "../components/CheckoutWizard";
 import Layout from "../components/Layout";
@@ -58,9 +58,7 @@ export default function ShippingScreen() {
         style={{ marginTop: "7rem" }}
         onSubmit={handleSubmit(submitHandler)}
       >
-        <Typography component="h1" variant="h1">
-          Shipping Address
-        </Typography>
+        <h1 className="banner-h1">Dane dostawy</h1>
         <List>
           <ListItem>
             <Controller

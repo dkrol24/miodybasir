@@ -56,6 +56,7 @@ function ProfileScreen() {
   };
   return (
     <Layout title="Profile">
+      <div className="productdetails-banner" />
       <div className="loginregister">
         <h1 className="banner-h1">Profil</h1>
         <Form onSubmit={handleSubmit(submitHandler)}>

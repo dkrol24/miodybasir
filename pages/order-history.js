@@ -61,6 +61,7 @@ function OrderHistoryScreen() {
   }, [router, userInfo]);
   return (
     <Layout title="Order History">
+      <div className="productdetails-banner" />
       <h1 className="banner-h1" style={{ marginTop: "7rem" }}>
         Historia zamówień
       </h1>

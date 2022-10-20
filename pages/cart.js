@@ -63,6 +63,7 @@ function CartScreen() {
   };
   return (
     <Layout title="Shopping Cart">
+      <div className="productdetails-banner" />
       <h1 className="banner-h1" style={{ marginTop: "7rem" }}>
         Lista zakupów
       </h1>

@@ -91,18 +91,14 @@ function PlaceOrderScreen() {
   return (
     <Layout style={{ marginTop: "7rem" }} title="Place Order">
       <CheckoutWizard activeStep={3}></CheckoutWizard>
-      <Typography component="h1" variant="h1">
-        Złóż zamówienie
-      </Typography>
+      <h1 className="banner-h1">Złóż zamówienie</h1>
 
       <Grid container spacing={1}>
         <Grid item md={9} xs={12}>
           <Card sx={classes.section}>
             <List>
               <ListItem>
-                <Typography component="h2" variant="h2">
-                  Adres dostawy
-                </Typography>
+                <h1 className="yellow-span">Adres dostawy</h1>
               </ListItem>
               <ListItem>
                 {shippingAddress.fullName}, {shippingAddress.address},{" "}
@@ -123,9 +119,7 @@ function PlaceOrderScreen() {
           <Card sx={classes.section}>
             <List>
               <ListItem>
-                <Typography component="h2" variant="h2">
-                  Payment Method
-                </Typography>
+                <h1 className="yellow-span">Metoda płatności</h1>
               </ListItem>
               <ListItem>{paymentMethod}</ListItem>
               <ListItem>
@@ -142,9 +136,7 @@ function PlaceOrderScreen() {
           <Card sx={classes.section}>
             <List>
               <ListItem>
-                <Typography component="h2" variant="h2">
-                  Zamówione przedmioty
-                </Typography>
+                <h1 className="yellow-span">Zamówione przedmioty</h1>
               </ListItem>
               <ListItem>
                 <TableContainer>
@@ -198,7 +190,7 @@ function PlaceOrderScreen() {
           <Card sx={classes.section}>
             <List>
               <ListItem>
-                <Typography variant="h2">Podsumowanie zamówienia</Typography>
+                <h1 className="yellow-span">Podsumowanie zamówienia</h1>
               </ListItem>
               <ListItem>
                 <Grid container>

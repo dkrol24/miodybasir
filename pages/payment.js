@@ -5,7 +5,6 @@ import {
   ListItem,
   Radio,
   RadioGroup,
-  Typography,
 } from "@mui/material";
 import jsCookie from "js-cookie";
 import { useRouter } from "next/router";
@@ -47,9 +46,7 @@ export default function PaymentScreen() {
     <Layout title="Payment Method">
       <CheckoutWizard activeStep={2}></CheckoutWizard>
       <Form style={{ marginTop: "7rem" }} onSubmit={submitHandler}>
-        <Typography component="h1" variant="h1">
-          Metoda płatności
-        </Typography>
+        <h1 className="banner-h1">Metoda płatności</h1>
         <List>
           <ListItem>
             <FormControl component="fieldset">

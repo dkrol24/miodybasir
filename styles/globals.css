@@ -8,10 +8,21 @@ body {
     scroll-behavior: smooth;
 
 }
+::-webkit-scrollbar {
+  background: rgba(70, 34, 7, 0.8);
+  width: 0.2rem;
+}
 
+::-webkit-scrollbar-thumb {
+  background-color: rgba(222,151,9,255);
+}
+@media screen and (min-width: 280px) and (max-width: 1080px) {
+  body::-webkit-scrollbar {
+    display: none;
+  }
+}
 :root{
   --main: rgba(222,151,9,255);
-
 }
 a {
   color: inherit;
@@ -197,10 +208,11 @@ transition: 0.4s ease-in;
   background-position: center;
 }
 .productdetails-image{
-  margin: 1rem;
+
   border-radius: 50%;
   max-width:600px;
   width: 100%;
+  padding: 1rem;
 }
 
 .productdetails-container{
@@ -353,6 +365,7 @@ justify-content: center;
   color: white;
   font-size: 1.4rem;
   transition: ease-in 0.3s;
+  cursor: pointer;
 }
 .nav-li-active{
   color: white;
