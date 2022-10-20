@@ -60,13 +60,6 @@ const Contact = () => {
 
       {!status ? (
         <form
-          variants={portfolioAnimations}
-          animate={controls}
-          transition={{
-            delay: 0.1,
-            type: "tween",
-            duration: 0.7,
-          }}
           ref={element}
           onSubmit={handleSubmit}
           style={{
