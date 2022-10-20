@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
-
 import { motion } from "framer-motion";
 import Map from "../components/Map";
 import { AiOutlinePhone } from "react-icons/ai";
@@ -45,9 +44,8 @@ const Kontakt = () => {
 
   return (
     <div className="loginregister">
-      <h1 style={{ marginTop: "5rem" }} className="banner-h1">
-        Kontakt
-      </h1>
+      <div className="productdetails-banner" />
+      <h1 className="banner-h1">Kontakt</h1>
       {!status ? (
         <form
           onSubmit={handleSubmit}
@@ -62,17 +60,15 @@ const Kontakt = () => {
         >
           <motion.input
             initial={{
-              x: 400,
               opacity: 0,
               scale: 0,
             }}
             animate={{
-              x: 0,
               opacity: 1,
               scale: 1,
             }}
             transition={{
-              duration: 0.5,
+              duration: 0.2,
             }}
             style={{
               padding: "1rem",
@@ -93,17 +89,15 @@ const Kontakt = () => {
 
           <motion.input
             initial={{
-              x: -400,
               opacity: 0,
               scale: 0,
             }}
             animate={{
-              x: 0,
               opacity: 1,
               scale: 1,
             }}
             transition={{
-              duration: 0.5,
+              duration: 0.4,
             }}
             style={{
               padding: "1rem",
@@ -124,17 +118,15 @@ const Kontakt = () => {
 
           <motion.input
             initial={{
-              x: 400,
               opacity: 0,
               scale: 0,
             }}
             animate={{
-              x: 0,
               opacity: 1,
               scale: 1,
             }}
             transition={{
-              duration: 0.5,
+              duration: 0.6,
             }}
             style={{
               padding: "1rem",
@@ -155,17 +147,15 @@ const Kontakt = () => {
 
           <motion.textarea
             initial={{
-              x: -400,
               opacity: 0,
               scale: 0,
             }}
             animate={{
-              x: 0,
               opacity: 1,
               scale: 1,
             }}
             transition={{
-              duration: 0.5,
+              duration: 0.8,
             }}
             required
             style={{
@@ -186,17 +176,15 @@ const Kontakt = () => {
 
           <motion.button
             initial={{
-              x: 400,
               opacity: 0,
               scale: 0,
             }}
             animate={{
-              x: 0,
               opacity: 1,
               scale: 1,
             }}
             transition={{
-              duration: 0.5,
+              duration: 1,
             }}
             type="submit"
             className="yellow-button"

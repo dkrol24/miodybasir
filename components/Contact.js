@@ -3,7 +3,7 @@ import emailjs from "@emailjs/browser";
 
 import { useScroll } from "./useScroll";
 import { motion } from "framer-motion";
-import { homeInfoAnimation, footerTextAnimation } from "./animation";
+import { portfolioAnimations } from "./animation";
 import { AiOutlinePhone } from "react-icons/ai";
 const Contact = () => {
   const [element, controls] = useScroll();
@@ -60,6 +60,13 @@ const Contact = () => {
 
       {!status ? (
         <form
+          variants={portfolioAnimations}
+          animate={controls}
+          transition={{
+            delay: 0.1,
+            type: "tween",
+            duration: 0.7,
+          }}
           ref={element}
           onSubmit={handleSubmit}
           style={{
@@ -74,7 +81,7 @@ const Contact = () => {
           }}
         >
           <motion.input
-            variants={footerTextAnimation}
+            variants={portfolioAnimations}
             animate={controls}
             transition={{
               delay: 0.1,
@@ -99,7 +106,7 @@ const Contact = () => {
           />
 
           <motion.input
-            variants={homeInfoAnimation}
+            variants={portfolioAnimations}
             animate={controls}
             transition={{
               delay: 0.1,
@@ -124,7 +131,7 @@ const Contact = () => {
           />
 
           <motion.input
-            variants={footerTextAnimation}
+            variants={portfolioAnimations}
             animate={controls}
             transition={{
               delay: 0.1,
@@ -148,7 +155,7 @@ const Contact = () => {
           />
 
           <motion.textarea
-            variants={homeInfoAnimation}
+            variants={portfolioAnimations}
             animate={controls}
             transition={{
               delay: 0.1,
@@ -173,7 +180,7 @@ const Contact = () => {
           />
 
           <motion.button
-            variants={footerTextAnimation}
+            variants={portfolioAnimations}
             animate={controls}
             transition={{
               delay: 0.1,

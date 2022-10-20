@@ -89,7 +89,7 @@ function OrderHistoryScreen() {
                   <TableCell>
                     {order.isPaid
                       ? `zapłacone - ${order.paidAt}`
-                      : "nie zapłacone"}
+                      : `nie zapłacone - ${order.paymentMethod}`}
                   </TableCell>
                   <TableCell>
                     <NextLink href={`/order/${order._id}`} passHref>

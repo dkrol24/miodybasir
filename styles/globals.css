@@ -149,10 +149,7 @@ transition: 0.4s ease-in;
   .banner-h1{
     font-size: 2rem;
   }
-  .banner-bee{
-    display: flex;
-    top: 430px;
-  }
+
   .banner-h2{
     color: rgba(222,151,9,255);
     font-size: 1.5rem;
@@ -186,38 +183,29 @@ transition: 0.4s ease-in;
 /*BANNER END                            */
 /*PRODUCT DETAILS START*/
 .productdetails-banner{
-  min-height: 45vh;
+  min-height: 35vh;
   border-bottom: 5px dotted rgba(222,151,9,255);
   box-shadow: 0 4px 30px rgba(222, 151, 9, 0.5);
   height: 100%;
   width: 100%;
-
   display: flex;
   justify-content: space-around;
   align-items: center;
   text-align: start;
-
-  background: linear-gradient(rgba(0,0,0,0.83),rgba(0,0,0,0.83),rgba(0,0,0,0.86)),url(../public/images/pexhoney.jpg);
-  background-attachment: fixed;
+  background:url(../public/images/sz450w300.png);
+  background-size: cover;
   background-position: center;
 }
 .productdetails-image{
-  margin: 3rem;
-
+  margin: 1rem;
   border-radius: 50%;
-  padding: 4rem;
-  width:900px;
-
-
-}
-.productdetails-image-img{
+  max-width:600px;
   width: 100%;
-  height: 100%;
 }
-.productdetails-container{
 
+.productdetails-container{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -225,14 +213,18 @@ transition: 0.4s ease-in;
 }
 .productdetail-main{
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0 5rem 0;
+  
 }
 .productdetail-kit{
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 90vw;
+    width: 90%;
     margin: 5rem 0 5rem 0;
     padding: 1rem;
     border-left: 5px dotted rgba(222,151,9,255);
@@ -251,7 +243,21 @@ transition: 0.4s ease-in;
   .navbar-large-menu{
     display: flex;
   }
-
+  
+}   
+@media only screen and (min-width: 820px) {
+  .productdetails-banner{
+    min-height: 55vh;
+    background:url(../public/images/sz1391w500.png);
+    background-size: cover;
+    background-position: center;
+  }
+  .productdetail-main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
 }   
 /*PRODUCT DETAILS END*/
 
@@ -277,7 +283,12 @@ position: fixed;
   justify-content: center;
   align-items: center;
 }
-
+.navbar__later{
+  top:10px;
+  border-radius: 212px;
+  background:linear-gradient(90deg, rgba(249,157,37,255) 0%, rgba(252,210,85,255) 50%, rgba(249,157,37,255) 100%);
+ 
+}
 .navbar-nav{
 width: 100%;
   align-items: center;
@@ -331,45 +342,35 @@ justify-content: center;
   transform: translateX(100%);
   transition: ease-in 0.3s;
 }
-.show-navbar-collapse{
 
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  transform: translateX(0);
-  height: 100%;
-  background-color: rgba(222,151,9,255);
-  overflow: hidden;
-}
 .navbar-nav li{
-  height: 4rem;
-  height:100px;
   transition: ease-in 0.3s;
+  margin: 2rem 0 0 0;
+  height: auto;
 }
-.navbar-nav li a{
+
+.nav-li-a{
   color: white;
-  font-size: 2rem;
+  font-size: 1.4rem;
   transition: ease-in 0.3s;
 }
-
-.navbar-social li{
-  padding: 0;
-  display: flex;
-  font-size: 1rem;
+.nav-li-active{
+  color: white;
 }
-
-.navbar-btns button{
-  border: 1px solid #5b3e68;
-  transition: ease-in 0.3s;
-}
-
-.navbar-btns button:hover{
-  background-color: #5b3e68;
-}
-
 @media screen and (min-width: 578px){
   .navbar-collapse{
       width: 100%;
+  }
+}
+@media screen and (max-width: 992px){
+  .show-navbar-collapse{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transform: translateX(0);
+    height: 100%;
+    background:linear-gradient(90deg, rgba(252,210,85,255) 0%, rgba(249,157,37,255) 50%, rgba(252,210,85,255) 100%);
+    overflow: hidden;
   }
 }
 
@@ -398,22 +399,18 @@ justify-content: center;
       margin-bottom: 0;
   }
 
-  .navbar-nav li a{
+  .nav-li-a{
     color: rgba(222,151,9,255);
     font-size: 1.4rem;
     transition: ease-in 0.3s;
   }
+  .nav-li-active{
+    color: white;
+  }
+  .navbar-nav li{
+    margin: 0 1.5rem 0 0;
+  }
  
-
-  .navbar-social li{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: ease-in 0.3s;
-  }
-  .navbar-social li:hover{
-      color: #5b3e68;
-  }
 }
 
 /*NAVBAR END*/

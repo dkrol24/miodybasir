@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 import NextLink from "next/link";
 import classes from "../utils/classes";
@@ -32,14 +32,24 @@ const Navbar = () => {
     jsCookie.remove("paymentMethod");
     router.push("/");
   };
-
+  const [show, handleShow] = useState(false);
   const [navToggle, setNavToggle] = useState(false);
   const navHandler = () => {
     setNavToggle((prevData) => !prevData);
   };
-
+  const transitionNavBar = () => {
+    if (window.scrollY > 100) {
+      handleShow(true);
+    } else {
+      handleShow(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", transitionNavBar);
+    return () => window.removeEventListener("scroll", transitionNavBar);
+  }, []);
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${show && "navbar navbar__later"}`}>
       <CssBaseline />
       <div
         style={{
@@ -75,7 +85,9 @@ const Navbar = () => {
             <div className="logo">
               <NextLink href="/" passHref>
                 <Link style={{ textDecoration: "none" }}>
-                  <h1 style={{ color: "rgba(222,151,9,255)" }}>
+                  <h1
+                    className={`nav-li-a ${show && "nav-li-a nav-li-active"}`}
+                  >
                     Miody Konarscy
                   </h1>
                 </Link>
@@ -101,45 +113,75 @@ const Navbar = () => {
           >
             <div className="navbar-collapse-content">
               <ul className="navbar-nav">
-                <li style={{ margin: "0 1rem 0 0", padding: "0" }}>
+                <li>
                   <NextLink href="/" passHref>
                     <Link style={{ textDecoration: "none" }}>
-                      <a onClick={navHandler}>Start</a>
+                      <a
+                        className={`nav-li-a ${
+                          show && "nav-li-a nav-li-active"
+                        }`}
+                        onClick={navHandler}
+                      >
+                        Start
+                      </a>
                     </Link>
                   </NextLink>
                 </li>
-                <li style={{ margin: "0 1rem 0 0", padding: "0" }}>
+                <li>
                   <NextLink href="/uloterapia" passHref>
                     <Link style={{ textDecoration: "none" }}>
-                      <a onClick={navHandler}>Uloterapia</a>
+                      <a
+                        className={`nav-li-a ${
+                          show && "nav-li-a nav-li-active"
+                        }`}
+                        onClick={navHandler}
+                      >
+                        Uloterapia
+                      </a>
                     </Link>
                   </NextLink>
                 </li>
 
-                <li style={{ margin: "0 1rem 0 0", padding: "0" }}>
+                <li>
                   <NextLink href="/kontakt" passHref>
                     <Link style={{ textDecoration: "none" }}>
-                      <a onClick={navHandler}>Kontakt</a>
+                      <a
+                        className={`nav-li-a ${
+                          show && "nav-li-a nav-li-active"
+                        }`}
+                        onClick={navHandler}
+                      >
+                        Kontakt
+                      </a>
                     </Link>
                   </NextLink>
                 </li>
-                <li
-                  style={{ margin: "0 1rem 0 0", padding: "0" }}
-                  onClick={navHandler}
-                >
+                <li onClick={navHandler}>
                   <NextLink href="/cart" passHref>
                     <Link style={{ textDecoration: "none" }}>
                       {cart.cartItems.length > 0 ? (
                         <Badge badgeContent={cart.cartItems.length}>
-                          <a>Koszyk</a>
+                          <a
+                            className={`nav-li-a ${
+                              show && "nav-li-a nav-li-active"
+                            }`}
+                          >
+                            Koszyk
+                          </a>
                         </Badge>
                       ) : (
-                        "Koszyk"
+                        <a
+                          className={`nav-li-a ${
+                            show && "nav-li-a nav-li-active"
+                          }`}
+                        >
+                          Koszyk
+                        </a>
                       )}
                     </Link>
                   </NextLink>
                 </li>
-                <li style={{ margin: "0 0 0 0", padding: "0" }}>
+                <li>
                   {userInfo ? (
                     <>
                       <li onClick={navHandler}>
@@ -150,7 +192,13 @@ const Navbar = () => {
                           sx={classes.navbarButton}
                           onClick={loginClickHandler}
                         >
-                          <a>{userInfo.name}</a>
+                          <a
+                            className={`nav-li-a ${
+                              show && "nav-li-a nav-li-active"
+                            }`}
+                          >
+                            {userInfo.name}
+                          </a>
                         </Button>
                       </li>
                       <Menu
@@ -161,37 +209,18 @@ const Navbar = () => {
                         onClose={loginMenuCloseHandler}
                       >
                         <li
-                          style={{
-                            margin: "0 1rem 0 0",
-                            padding: "0",
-                            cursor: "pointer",
-                          }}
                           onClick={(e) => loginMenuCloseHandler(e, "/profile")}
                         >
                           Profil
                         </li>
                         <li
-                          style={{
-                            margin: "0 1rem 0 0",
-                            padding: "0",
-                            cursor: "pointer",
-                          }}
                           onClick={(e) =>
                             loginMenuCloseHandler(e, "/order-history")
                           }
                         >
                           Historia zamówień
                         </li>
-                        <li
-                          style={{
-                            margin: "0 1rem 0 0",
-                            padding: "0",
-                            cursor: "pointer",
-                          }}
-                          onClick={logoutClickHandler}
-                        >
-                          Wyloguj
-                        </li>
+                        <li onClick={logoutClickHandler}>Wyloguj</li>
                       </Menu>
                     </>
                   ) : (

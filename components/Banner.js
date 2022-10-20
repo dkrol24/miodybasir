@@ -29,7 +29,7 @@ const Banner = () => {
         </p>
         <p className="banner-p2">
           Wybór zależy od pożądanych rezultatów: zwiększona energia, złagodzony
-          przebieg przeziębienia czy też zdrowszy żołącek. Istnieje wiele
+          przebieg przeziębienia czy też zdrowszy żołądek. Istnieje wiele
           rodzajów miodów pszczelich i każdy z nich ma inną charakterystykę,
           właściwości odżywcze i walory lecznicze.
         </p>

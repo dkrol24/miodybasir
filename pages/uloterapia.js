@@ -1,48 +1,10 @@
 import React from "react";
-import { motion } from "framer-motion";
-import logo from "../public/images/logomiody.png";
 import ulo from "../public/images/honey7.jpg";
 import Image from "next/image";
 const uloterapia = () => {
   return (
     <div className="app__ulo-page">
-      <div className="productdetails-banner">
-        <motion.h1
-          initial={{
-            x: -400,
-            opacity: 0,
-            scale: 0,
-          }}
-          animate={{
-            x: 0,
-            opacity: 1,
-            scale: 1,
-          }}
-          transition={{
-            duration: 1,
-          }}
-          className="banner-h1"
-        >
-          Uloterapia
-        </motion.h1>
-        <motion.div
-          initial={{
-            x: 400,
-            opacity: 0,
-            scale: 0,
-          }}
-          animate={{
-            x: 0,
-            opacity: 1,
-            scale: 1,
-          }}
-          transition={{
-            duration: 0.5,
-          }}
-        >
-          <Image alt="ulo" src={logo}></Image>
-        </motion.div>
-      </div>
+      <div className="productdetails-banner" />
       <p
         style={{
           color: "rgba(222,151,9,255)",

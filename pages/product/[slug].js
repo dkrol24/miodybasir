@@ -1,6 +1,5 @@
 import {
   Alert,
-  Box,
   Card,
   CircularProgress,
   Grid,
@@ -17,8 +16,7 @@ import { urlFor, urlForThumbnail } from "../../utils/image";
 import { Store } from "../../utils/Store";
 import axios from "axios";
 import { useRouter } from "next/router";
-import logo from "../../public/images/logomiody.png";
-import { motion } from "framer-motion";
+
 import Kit from "../../components/Kit";
 import Pierzga from "../../components/Pierzga";
 export default function ProductScreen(props) {
@@ -85,122 +83,77 @@ export default function ProductScreen(props) {
       ) : error ? (
         <Alert variant="error">{error}</Alert>
       ) : (
-        <Box>
-          <div className="productdetails-banner">
-            <motion.h1
-              initial={{
-                x: -400,
-                opacity: 0,
-                scale: 0,
-              }}
-              animate={{
-                x: 0,
-                opacity: 1,
-                scale: 1,
-              }}
-              transition={{
-                duration: 1,
-              }}
-              className="banner-h1"
-            >
-              {product.name}
-            </motion.h1>
-            <motion.div
-              initial={{
-                x: 400,
-                opacity: 0,
-                scale: 0,
-              }}
-              animate={{
-                x: 0,
-                opacity: 1,
-                scale: 1,
-              }}
-              transition={{
-                duration: 0.5,
-              }}
-            >
-              <Image src={logo}></Image>
-            </motion.div>
-          </div>
+        <div>
+          <div className="productdetails-banner" />
 
-          <div className="productdetails-container">
-            <div className="productdetail-main">
-              <div className="productdetails-image">
-                <Image
-                  src={urlFor(product.image)}
-                  alt={product.name}
-                  layout="responsive"
-                  width={1}
-                  height={1}
-                />
-              </div>
-
-              <List style={{ width: "100%" }}>
-                <ListItem>
-                  <h1 className="yellow-span">{product.name}</h1>
-                </ListItem>
-
-                <ListItem>
-                  <Typography className="grey-ptext">
-                    {product.description}
-                  </Typography>
-                </ListItem>
-                <Card>
-                  <List>
-                    <ListItem>
-                      <Grid container>
-                        <Grid item xs={6}>
-                          <Typography className="yellow-span">Cena</Typography>
-                        </Grid>
-                        <Grid item xs={6}>
-                          <Typography>{product.price}zł</Typography>
-                        </Grid>
-                      </Grid>
-                    </ListItem>
-                    <ListItem>
-                      <Grid container>
-                        <Grid item xs={6}>
-                          <Typography className="yellow-span">
-                            Status
-                          </Typography>
-                        </Grid>
-                        <Grid item xs={6}>
-                          <Typography>
-                            {product.countInStock > 0
-                              ? "Dostępny"
-                              : "Niedostępny"}
-                          </Typography>
-                        </Grid>
-                      </Grid>
-                    </ListItem>
-                    <ListItem>
-                      <button
-                        className="yellow-button"
-                        onClick={addToCartHandler}
-                      >
-                        Dodaj do koszyka
-                      </button>
-                    </ListItem>
-                  </List>
-                </Card>
-              </List>
+          <div className="productdetail-main">
+            <div className="productdetails-image">
+              <Image
+                src={urlFor(product.image)}
+                alt={product.name}
+                layout="responsive"
+                width={1}
+                height={1}
+              />
             </div>
-          </div>
-          <Grid item md={3} xs={12}>
-            <List>
+
+            <List style={{ width: "100%" }}>
               <ListItem>
-                {product.name == "Kit pszczeli - propolis" ? (
-                  <Kit />
-                ) : product.name == "Pierzga" ? (
-                  <Pierzga />
-                ) : (
-                  ""
-                )}
+                <h1 className="yellow-span">{product.name}</h1>
               </ListItem>
+
+              <ListItem>
+                <Typography className="grey-ptext">
+                  {product.description}
+                </Typography>
+              </ListItem>
+              <Card>
+                <List>
+                  <ListItem>
+                    <Grid container>
+                      <Grid item xs={6}>
+                        <Typography className="yellow-span">Cena</Typography>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <Typography>{product.price}zł</Typography>
+                      </Grid>
+                    </Grid>
+                  </ListItem>
+                  <ListItem>
+                    <Grid container>
+                      <Grid item xs={6}>
+                        <Typography className="yellow-span">Status</Typography>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <Typography>
+                          {product.countInStock > 0
+                            ? "Dostępny"
+                            : "Niedostępny"}
+                        </Typography>
+                      </Grid>
+                    </Grid>
+                  </ListItem>
+                  <ListItem>
+                    <button
+                      className="yellow-button"
+                      onClick={addToCartHandler}
+                    >
+                      Dodaj do koszyka
+                    </button>
+                  </ListItem>
+                </List>
+              </Card>
             </List>
-          </Grid>
-        </Box>
+          </div>
+
+          {product.name == "Kit pszczeli - propolis" ? (
+            <Kit />
+          ) : product.name == "Pierzga" ? (
+            <Pierzga />
+          ) : (
+            ""
+          )}
+        </div>
       )}
     </Layout>
   );
