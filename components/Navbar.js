@@ -248,6 +248,7 @@ const Navbar = () => {
                       <Link style={{ textDecoration: "none" }}>
                         {" "}
                         <a
+                          onClick={navHandler}
                           className={`nav-li-a ${
                             show && "nav-li-a nav-li-active"
                           }`}
