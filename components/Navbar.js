@@ -57,7 +57,6 @@ const Navbar = () => {
           justifyContent: "center",
           alignContent: "center",
 
-          padding: "1rem",
           overflow: "hidden",
         }}
       >
@@ -68,7 +67,6 @@ const Navbar = () => {
             height: "100%",
             justifyContent: "center",
             alignContent: "center",
-
             overflow: "hidden",
           }}
         >
