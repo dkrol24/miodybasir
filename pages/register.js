@@ -50,7 +50,7 @@ export default function RegisterScreen() {
     }
   };
   return (
-    <Layout title="Register">
+    <Layout title="Rejestracja">
       <div className="loginregister">
         <Form onSubmit={handleSubmit(submitHandler)}>
           <h1 className="banner-h1">Zarejestruj się</h1>

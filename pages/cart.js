@@ -62,7 +62,7 @@ function CartScreen() {
     dispatch({ type: "CART_REMOVE_ITEM", payload: item });
   };
   return (
-    <Layout title="Shopping Cart">
+    <Layout title="Lista zakupów">
       <div className="productdetails-banner" />
       <h1 className="banner-h1" style={{ marginTop: "7rem" }}>
         Lista zakupów

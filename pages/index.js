@@ -68,7 +68,7 @@ export default function Home() {
   };
 
   return (
-    <Layout>
+    <Layout title="Strona główna">
       {loading ? (
         <CircularProgress />
       ) : error ? (

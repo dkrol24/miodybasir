@@ -6,6 +6,7 @@ import { SnackbarProvider } from "notistack";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import Navbar from "../components/Navbar";
 import { AnimatePresence } from "framer-motion";
+
 const clientSideEmotionCache = createCache({ key: "css" });
 
 function MyApp({
