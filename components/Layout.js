@@ -2,13 +2,13 @@ import { Box, CssBaseline, Typography } from "@mui/material";
 import Head from "next/head";
 
 import classes from "../utils/classes";
-import favicon from "../public/images/logomiody.png";
+
 export default function Layout({ title, description, children }) {
   return (
     <>
       <Head>
         <title>{title ? `${title} - Miody Konarscy` : "Miody Konarscy"}</title>
-        <link rel="favicon" href={favicon} />
+
         {description && <meta name="description" content={description}></meta>}
       </Head>
 
