@@ -1,13 +1,20 @@
 import React, { useState, useEffect, useContext } from "react";
 
 import NextLink from "next/link";
-import classes from "../utils/classes";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 import { Store } from "../utils/Store";
 import jsCookie from "js-cookie";
 import { useRouter } from "next/router";
 
-import { Badge, Button, CssBaseline, Link, Menu } from "@mui/material";
+import {
+  Badge,
+  Button,
+  CssBaseline,
+  Link,
+  Menu,
+  MenuItem,
+} from "@mui/material";
 const Navbar = () => {
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
@@ -181,66 +188,30 @@ const Navbar = () => {
                 </li>
                 <li>
                   {userInfo ? (
-                    <>
-                      <li onClick={navHandler}>
-                        <Button
-                          style={{ margin: "0 0 0 0", padding: "0" }}
-                          aria-controls="simple-menu"
-                          aria-haspopup="true"
-                          sx={classes.navbarButton}
-                          onClick={loginClickHandler}
-                        >
-                          <a
-                            className={`nav-li-a ${
-                              show && "nav-li-a nav-li-active"
-                            }`}
-                          >
-                            {userInfo.name}
-                          </a>
-                        </Button>
-                      </li>
-                      <Menu
-                        id="simple-menu"
-                        anchorEl={anchorEl}
-                        keepMounted
-                        open={Boolean(anchorEl)}
-                        onClose={loginMenuCloseHandler}
+                    <ul className="navbar-nav">
+                      <li
+                        onClick={(e) =>
+                          loginMenuCloseHandler(e, "/order-history")
+                        }
                       >
-                        <li
-                          onClick={(e) => loginMenuCloseHandler(e, "/profile")}
+                        <a
+                          className={`nav-li-a ${
+                            show && "nav-li-a nav-li-active"
+                          }`}
                         >
-                          <a
-                            className={`nav-li-a ${
-                              show && "nav-li-a nav-li-active"
-                            }`}
-                          >
-                            Profil
-                          </a>
-                        </li>
-                        <li
-                          onClick={(e) =>
-                            loginMenuCloseHandler(e, "/order-history")
-                          }
+                          Zamówienia
+                        </a>
+                      </li>
+                      <li onClick={logoutClickHandler}>
+                        <a
+                          className={`nav-li-a ${
+                            show && "nav-li-a nav-li-active"
+                          }`}
                         >
-                          <a
-                            className={`nav-li-a ${
-                              show && "nav-li-a nav-li-active"
-                            }`}
-                          >
-                            Historia zamówień
-                          </a>
-                        </li>
-                        <li onClick={logoutClickHandler}>
-                          <a
-                            className={`nav-li-a ${
-                              show && "nav-li-a nav-li-active"
-                            }`}
-                          >
-                            Wyloguj
-                          </a>
-                        </li>
-                      </Menu>
-                    </>
+                          Wyloguj
+                        </a>
+                      </li>
+                    </ul>
                   ) : (
                     <NextLink href="/login" passHref>
                       <Link style={{ textDecoration: "none" }}>

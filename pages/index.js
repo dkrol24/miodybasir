@@ -46,7 +46,9 @@ export default function Home() {
     const quantity = existItem ? existItem.quantity + 1 : 1;
     const { data } = await axios.get(`/api/products/${product._id}`);
     if (data.countInStock < quantity) {
-      enqueueSnackbar("Sorry. Product is out of stock", { variant: "error" });
+      enqueueSnackbar("Produkt chwilowo niedostępny, skontaktuj się z nami", {
+        variant: "error",
+      });
       return;
     }
     dispatch({
@@ -61,7 +63,7 @@ export default function Home() {
         quantity,
       },
     });
-    enqueueSnackbar(`${product.name} added to the cart`, {
+    enqueueSnackbar(`${product.name} dodany do karty`, {
       variant: "success",
     });
     router.push("/cart");
@@ -115,9 +117,7 @@ export default function Home() {
             ))}
           </div>
           <Uloterapia />
-
           <Contact />
-
           <Map />
         </div>
       )}
