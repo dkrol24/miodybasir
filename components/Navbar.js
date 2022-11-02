@@ -12,16 +12,7 @@ const Navbar = () => {
   const { state, dispatch } = useContext(Store);
   const { cart, userInfo } = state;
 
-  const [anchorEl, setAnchorEl] = useState(null);
-  const loginMenuCloseHandler = (e, redirect) => {
-    setAnchorEl(null);
-    if (redirect) {
-      router.push(redirect);
-    }
-  };
-
   const logoutClickHandler = () => {
-    setAnchorEl(null);
     dispatch({ type: "USER_LOGOUT" });
     jsCookie.remove("userInfo");
     jsCookie.remove("cartItems");
@@ -179,18 +170,18 @@ const Navbar = () => {
                 <li>
                   {userInfo ? (
                     <ul className="navbar-nav">
-                      <li
-                        onClick={(e) =>
-                          loginMenuCloseHandler(e, "/order-history")
-                        }
-                      >
-                        <a
-                          className={`nav-li-a ${
-                            show && "nav-li-a nav-li-active"
-                          }`}
-                        >
-                          Zamówienia
-                        </a>
+                      <li onClick={navHandler}>
+                        <NextLink href="/order-history" passHref>
+                          <Link style={{ textDecoration: "none" }}>
+                            <a
+                              className={`nav-li-a ${
+                                show && "nav-li-a nav-li-active"
+                              }`}
+                            >
+                              Zamówienia
+                            </a>
+                          </Link>
+                        </NextLink>
                       </li>
                       <li onClick={logoutClickHandler}>
                         <a
