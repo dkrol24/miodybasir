@@ -2,17 +2,13 @@ html,
 body {
   padding: 0;
   margin: 0;
-
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    scroll-behavior: smooth;
-
+  scroll-behavior: smooth;
 }
 ::-webkit-scrollbar {
   background: rgba(70, 34, 7, 0.8);
   width: 0.2rem;
 }
-
+h1,h2,h3,p,span{font-family: 'Poppins', sans-serif;}
 ::-webkit-scrollbar-thumb {
   background-color: rgba(222,151,9,255);
 }
@@ -43,14 +39,16 @@ a {
   background: linear-gradient(rgba(0,0,0,0.83),rgba(0,0,0,0.83),rgba(0,0,0,0.86)),url(../public/images/pexhoney.jpg);
   background-attachment: fixed;
   background-position: center;
+  position: relative;
 }
 
 .banner-top{
   display: flex;
   width: 100%;
+ height: 100%;
   justify-content: center;
   align-items: center;
-  margin-top: 7rem;
+
   position: relative;
 }
 .banner-bee{
@@ -63,6 +61,7 @@ a {
   width: 100%;
   justify-content: space-between;
   align-items: flex-end;
+ 
 
 }
 .banner-hright{
@@ -79,7 +78,7 @@ height: 100%;
 .banner-text{
   display: flex;
   flex-direction: column;
- 
+  margin-top: 6rem;
   width: 90%;
   max-width: 750px;
   text-align: start;
@@ -118,16 +117,32 @@ height: 100%;
     justify-content: end;
     color: rgba(222,151,9,255);
 }
-@media only screen and (max-width: 766px) {
+@media only screen and (min-width: 1200px) {
+  .banner-down{
+   position: absolute;
+   bottom: 0;
+  }
+  .banner-main{
+    height: 100vh;
+    justify-content: center;
+  }
+  .banner-text{
+    margin-top: 0;
+  }
+  .banner-bee{
+    position: absolute;
+    right: 0;
+    bottom: 350px;
+  }
+}
+@media only screen and (max-width: 768px) {
   .banner-bee{
 display: none;
   }
 }
 @media only screen and (max-width: 474px) {
   .banner-main{
- 
     flex-direction: column;
- 
   }
   .banner-top{
     flex-direction: column;
@@ -188,11 +203,10 @@ display: none;
   background-position: center;
 }
 .productdetails-image{
-
-  border-radius: 50%;
-  max-width:600px;
-  width: 100%;
+  max-width:500px;
+  width: 90%;
   padding: 1rem;
+  background-color: white;
 }
 
 .productdetails-container{
@@ -208,8 +222,11 @@ display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 90%;
   margin: 2rem 0 5rem 0;
-  
+  background-color: white;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.8)
+
 }
 .productdetail-kit{
     display: flex;
@@ -351,12 +368,9 @@ padding: 0;
   color: white;
 }
 
-@media screen and (min-width: 578px){
-  .navbar-collapse{
-      width: 100%;
-  }
-}
-@media screen and (max-width: 992px){
+
+
+@media screen and (max-width: 578px){
   .show-navbar-collapse{
     display: flex;
     flex-direction: column;
@@ -365,13 +379,38 @@ padding: 0;
     width: 100%;
     height: 100%;
     transform: translateX(0);
-
-    background:linear-gradient(90deg, rgba(252,210,85,255) 0%, rgba(249,157,37,255) 50%, rgba(252,210,85,255) 100%);
+    background:linear-gradient( rgba(248,149,32,255)0%,rgba(246,162,45,255)75%, rgba(248,149,32,0.1)100%),url(../public/images/sz450w300.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    overflow: hidden;
+  }
+}
+@media screen and (min-width: 578px){
+  .show-navbar-collapse{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transform: translateX(0);
+    background:linear-gradient( rgba(248,149,32,255)0%,rgba(246,162,45,255)50%, rgba(248,149,32,0.3)100%),url(../public/images/sz450w300.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
     overflow: hidden;
   }
 }
 
+
 @media screen and (min-width: 992px){
+  .show-navbar-collapse{
+    background:transparent;
+  }
+  .navbar-mobile-banner{
+    display: none;
+  }
   .navbar-collapse{
       transform: translateX(0);
       position: relative;
@@ -472,13 +511,24 @@ text-align: start;
 .grey-ptext{
   color: rgb(98, 98, 98);
   font-size: 1.1rem;
-
+  margin: 0;
+  padding: 0;
 }
 .yellow-span{ 
   color: rgba(222,151,9,255);
   font-size: 1.7rem;
   font-weight: 500;
-
+  margin: 0;
+  padding:0;
+}
+.product-button{
+  background-color: rgba(222,151,9,255);
+    width: 50%;
+    margin: 0 0 0 0;
+    padding: 0;
+    height: 50px;
+    border: none;
+    cursor: pointer;
 }
 .yellow-button{ 
   background-color: rgba(222,151,9,255);

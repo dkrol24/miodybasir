@@ -1,20 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
 
 import NextLink from "next/link";
-import LogoutIcon from "@mui/icons-material/Logout";
 
 import { Store } from "../utils/Store";
 import jsCookie from "js-cookie";
 import { useRouter } from "next/router";
 
-import {
-  Badge,
-  Button,
-  CssBaseline,
-  Link,
-  Menu,
-  MenuItem,
-} from "@mui/material";
+import { Badge, CssBaseline, Link } from "@mui/material";
 const Navbar = () => {
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
@@ -27,9 +19,7 @@ const Navbar = () => {
       router.push(redirect);
     }
   };
-  const loginClickHandler = (e) => {
-    setAnchorEl(e.currentTarget);
-  };
+
   const logoutClickHandler = () => {
     setAnchorEl(null);
     dispatch({ type: "USER_LOGOUT" });

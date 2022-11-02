@@ -79,11 +79,22 @@ export default function ProductScreen(props) {
   return (
     <Layout title={product?.title}>
       {loading ? (
-        <CircularProgress />
+        <div style={{ width: "100%", height: "100vh" }}>
+          <CircularProgress />
+        </div>
       ) : error ? (
         <Alert variant="error">{error}</Alert>
       ) : (
-        <div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            width: "100%",
+            background: "rgba(222,151,9,0.1)",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <div className="productdetails-banner" />
 
           <div className="productdetail-main">
@@ -92,12 +103,17 @@ export default function ProductScreen(props) {
                 src={urlFor(product.image)}
                 alt={product.name}
                 layout="responsive"
-                width={1}
-                height={1}
+                width={800}
+                height={800}
               />
             </div>
 
-            <List style={{ width: "100%" }}>
+            <List
+              style={{
+                width: "100%",
+                height: "100%",
+              }}
+            >
               <ListItem>
                 <h1 className="yellow-span">{product.name}</h1>
               </ListItem>
@@ -107,7 +123,7 @@ export default function ProductScreen(props) {
                   {product.description}
                 </Typography>
               </ListItem>
-              <Card>
+              <Card style={{ boxShadow: "none" }}>
                 <List>
                   <ListItem>
                     <Grid container>

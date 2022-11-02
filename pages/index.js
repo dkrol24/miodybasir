@@ -89,25 +89,31 @@ export default function Home() {
           <Banner />
           <div
             style={{
-              width: "90%",
               display: "flex",
               flexWrap: "wrap",
               justifyContent: "center",
-              alignItems: "start",
-              marginTop: "4rem",
-              borderLeft: "5px dotted rgba(222,151,9,255)",
-              borderRight: "5px dotted rgba(222,151,9,255)",
+              alignItems: "center",
+              maxWidth: "1500px",
+              width: "90%",
+              marginTop: "2rem",
+              padding: "3rem",
+              borderRadius: "16px",
+              background: "rgba(222,151,9,0.1)",
             }}
           >
+            <h1 className="banner-h1" style={{ width: "100%" }}>
+              Produkty pszczele
+            </h1>
+
             {products.map((product) => (
               <div
+                key={product.slug}
                 style={{
+                  maxWidth: "330px",
                   width: "100%",
-                  maxWidth: "250px",
-                  height: "100%",
+                  height: "450px",
                   margin: "2rem",
                 }}
-                key={product.slug}
               >
                 <ProductItem
                   product={product}

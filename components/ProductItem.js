@@ -1,105 +1,76 @@
-import {
-  Card,
-  CardActionArea,
-  CardActions,
-  CardContent,
-  CardMedia,
-} from "@mui/material";
+import { Card, CardActions, CardContent, CardMedia } from "@mui/material";
 import NextLink from "next/link";
 import React from "react";
 import { urlForThumbnail } from "../utils/image";
-import { useScroll } from "./useScroll";
-import { motion } from "framer-motion";
-import { portfolioAnimations } from "./animation";
+
 export default function ProductItem({ product, addToCartHandler }) {
-  const [element, controls] = useScroll();
   return (
     <Card
-      ref={element}
       style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "flex-end",
-        minHeight: "515px",
         width: "100%",
-        borderLeft: "1px dotted rgba(222,151,9,255)",
-        borderRight: "1px dotted rgba(222,151,9,255)",
-        boxShadow: "0 4px 30px rgba(222,151,9,0.1)",
+        height: "100%",
+        justifyContent: "space-between",
+        display: "flex",
+        boxShadow: "0 4px 5px rgba(0, 0, 0, 0.8)",
+        flexDirection: "column",
       }}
     >
-      <NextLink href={`/product/${product.slug.current}`} passHref>
-        <CardActionArea>
-          <CardMedia
-            style={{ padding: "3rem" }}
-            component="img"
-            image={urlForThumbnail(product.image)}
-            title={product.name}
-          ></CardMedia>
-          <CardContent
+      <div>
+        <CardMedia
+          style={{
+            maxWidth: "330px",
+            height: "270px",
+            padding: "0.5rem",
+          }}
+          component="img"
+          image={urlForThumbnail(product.image)}
+          title={product.name}
+        ></CardMedia>
+        <CardContent style={{ textAlign: "center" }}>
+          <p
             style={{
-              display: "flex",
-              flexDirection: "column",
-              width: "100%",
-              textAlign: "center",
-              alignItems: "center",
-              justifyContent: "center",
+              fontSize: "1.2rem",
+              margin: "0",
+              padding: "0",
+              fontWeight: "600",
+              color: "rgba(222,151,9,255)",
             }}
           >
-            <motion.h1
-              variants={portfolioAnimations}
-              animate={controls}
-              transition={{
-                delay: 0.1,
-                type: "tween",
-                duration: 0.5,
-              }}
-              style={{
-                color: "rgba(222,151,9,255)",
-                fontSize: "1.3rem",
-                fontWeight: "500",
-              }}
-            >
-              {product.name}
-            </motion.h1>
-          </CardContent>
-        </CardActionArea>
-      </NextLink>
-      <CardActions
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          width: "100%",
-          textAlign: "start",
-          alignItems: "start",
-          justifyContent: "center",
-        }}
-      >
-        <motion.p
-          variants={portfolioAnimations}
-          animate={controls}
-          transition={{
-            delay: 0.1,
-            type: "tween",
-            duration: 0.5,
+            {product.name}
+          </p>
+        </CardContent>
+      </div>
+
+      <CardActions style={{ justifyContent: "center" }}>
+        <p
+          style={{
+            fontWeight: "400",
+
+            margin: "0",
+            padding: "0",
           }}
-          style={{ color: "grey", fontSize: "1.5rem", margin: "0" }}
         >
           {product.price}zł
-        </motion.p>
-        <motion.button
-          variants={portfolioAnimations}
-          animate={controls}
-          transition={{
-            delay: 0.1,
-            type: "tween",
-            duration: 0.5,
-          }}
-          style={{ width: "100%" }}
-          className="yellow-button"
+        </p>
+      </CardActions>
+      <CardActions
+        style={{
+          width: "100%",
+          padding: "0.2rem",
+          margin: "0 0 0 0",
+        }}
+      >
+        <button
+          className="product-button"
           onClick={() => addToCartHandler(product)}
         >
-          <p>Dodaj do koszyka</p>
-        </motion.button>
+          <p style={{ fontWeight: "400" }}>Do koszyka</p>
+        </button>
+        <NextLink href={`/product/${product.slug.current}`} passHref>
+          <button className="product-button">
+            <p style={{ fontWeight: "300" }}>Opis</p>
+          </button>
+        </NextLink>
       </CardActions>
     </Card>
   );
