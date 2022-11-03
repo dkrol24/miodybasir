@@ -106,15 +106,7 @@ export default function Home() {
             </h1>
 
             {products.map((product) => (
-              <div
-                key={product.slug}
-                style={{
-                  maxWidth: "330px",
-                  width: "100%",
-                  height: "450px",
-                  margin: "2rem",
-                }}
-              >
+              <div key={product.slug} className="index-productitem">
                 <ProductItem
                   product={product}
                   addToCartHandler={addToCartHandler}
