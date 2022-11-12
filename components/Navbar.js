@@ -5,7 +5,8 @@ import NextLink from "next/link";
 import { Store } from "../utils/Store";
 import jsCookie from "js-cookie";
 import { useRouter } from "next/router";
-
+import Image from "next/image";
+import test from "../public/images/sz1391w500.png";
 import { Badge, CssBaseline, Link } from "@mui/material";
 const Navbar = () => {
   const router = useRouter();
@@ -79,6 +80,7 @@ const Navbar = () => {
                 </Link>
               </NextLink>
             </div>
+
             <div
               type="button"
               className={`hamburger-menu ${
@@ -97,6 +99,9 @@ const Navbar = () => {
               navToggle ? "show-navbar-collapse" : ""
             }`}
           >
+            <div className="szybki">
+              <Image src={test} alt="image" />
+            </div>
             <div className="navbar-collapse-content">
               <ul className="navbar-nav">
                 <li>

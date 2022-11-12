@@ -1,7 +1,7 @@
-import { Card, CardActions, CardContent } from "@mui/material";
+import { Card, CardActions, CardContent, CardMedia } from "@mui/material";
 import NextLink from "next/link";
 import React from "react";
-
+import { urlForThumbnail } from "../utils/image";
 export default function ProductItem({ product, addToCartHandler }) {
   return (
     <Card
@@ -22,10 +22,16 @@ export default function ProductItem({ product, addToCartHandler }) {
           justifyContent: "center",
         }}
       >
+        <CardMedia
+          style={{ padding: "1rem", height: "370px" }}
+          component="img"
+          image={urlForThumbnail(product.image)}
+          title={product.name}
+        ></CardMedia>
         <CardContent style={{ textAlign: "center" }}>
           <p
             style={{
-              fontSize: "1.2rem",
+              fontSize: "1.6rem",
               margin: "0",
               padding: "0",
               fontWeight: "600",
@@ -40,8 +46,8 @@ export default function ProductItem({ product, addToCartHandler }) {
       <CardActions style={{ justifyContent: "center" }}>
         <p
           style={{
-            fontWeight: "400",
-
+            fontWeight: "700",
+            color: "rgba(222,151,9,255)",
             margin: "0",
             padding: "0",
           }}

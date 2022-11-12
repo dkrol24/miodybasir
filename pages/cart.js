@@ -24,7 +24,7 @@ import { useSnackbar } from "notistack";
 import { useContext } from "react";
 import Layout from "../components/Layout";
 import { Store } from "../utils/Store";
-
+import testowo from "../public/images/testowo.jpg";
 function CartScreen() {
   const router = useRouter();
   const {
@@ -68,13 +68,34 @@ function CartScreen() {
         Lista zakupów
       </h1>
       {cartItems.length === 0 ? (
-        <Box>
-          <Typography>
+        <Box
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+          }}
+        >
+          <Typography style={{ alignSelf: "center" }}>
             Koszyk jest pusty.
             <NextLink href="/" passHref>
               <Link style={{ textDecoration: "none" }}>Powrót</Link>
             </NextLink>
           </Typography>
+          <div
+            style={{
+              maxWidth: "1000px",
+              width: "90%",
+
+              display: "flex",
+              justifyContent: "center",
+
+              alignItems: "center",
+            }}
+          >
+            <Image src={testowo} alt="image" />
+          </div>
         </Box>
       ) : (
         <Grid container spacing={1}>

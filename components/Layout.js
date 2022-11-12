@@ -1,8 +1,7 @@
 import { Box, CssBaseline, Typography } from "@mui/material";
 import Head from "next/head";
-
 import classes from "../utils/classes";
-
+import Footer from "../components/Footer";
 export default function Layout({ title, description, children }) {
   return (
     <>
@@ -11,9 +10,7 @@ export default function Layout({ title, description, children }) {
 
         {description && <meta name="description" content={description}></meta>}
       </Head>
-
       <CssBaseline />
-
       <div
         style={{
           width: "100%",
@@ -28,7 +25,7 @@ export default function Layout({ title, description, children }) {
         {children}
       </div>
       <Box component="footer" sx={classes.footer}>
-        <Typography>All rights reserved. Miody Konarscy.</Typography>
+        <Footer />
       </Box>
     </>
   );
