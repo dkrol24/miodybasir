@@ -1,4 +1,4 @@
-import { Box, CssBaseline, Typography } from "@mui/material";
+import { Box, CssBaseline } from "@mui/material";
 import Head from "next/head";
 import classes from "../utils/classes";
 import Footer from "../components/Footer";
