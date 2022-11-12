@@ -5,6 +5,7 @@ import { useScroll } from "./useScroll";
 import { motion } from "framer-motion";
 import { portfolioAnimations } from "./animation";
 import { AiOutlinePhone } from "react-icons/ai";
+
 const Contact = () => {
   const [element, controls] = useScroll();
   const [checkboxChecked, setCheckboxChecked] = useState(false);
@@ -47,15 +48,7 @@ const Contact = () => {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        width: "100%",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <div className="contact-test-bg">
       <h1 className="banner-h1">Kontakt</h1>
 
       {!status ? (
@@ -89,6 +82,7 @@ const Contact = () => {
               maxWidth: "600px",
               borderRadius: "32px",
               marginBottom: "1rem",
+              background: "transparent",
             }}
             required
             type="text"
@@ -110,6 +104,7 @@ const Contact = () => {
               padding: "1rem",
               border: "2px dotted rgba(222,151,9,255)",
               outline: "none",
+              background: "transparent",
               width: "100%",
               maxWidth: "600px",
               borderRadius: "32px",
@@ -139,6 +134,7 @@ const Contact = () => {
               maxWidth: "600px",
               marginBottom: "1rem",
               borderRadius: "32px",
+              background: "transparent",
             }}
             type="phone"
             placeholder="Numer telefonu"
@@ -164,6 +160,7 @@ const Contact = () => {
               minHeight: "150px",
               maxWidth: "600px",
               borderRadius: "32px",
+              background: "transparent",
               marginBottom: "1rem",
             }}
             placeholder="Napisz do Nas"

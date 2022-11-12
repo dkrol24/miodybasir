@@ -240,7 +240,7 @@ display: none;
     border-right: 5px dotted rgba(222,151,9,255);
 }
 .index-productitem{
-  max-width: 100%;
+  max-width: 420px;
   width: 100%;
   height: 100%;
   margin: 2rem;
@@ -262,7 +262,6 @@ display: none;
     width: 100%;
     height: 100%;
     margin: 2rem;
-
 }
 }   
 @media only screen and (min-width: 820px) {
@@ -315,7 +314,7 @@ list-style-type: none;
 display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: space-between;
+justify-content: center;
 padding: 0;
 }
 .navbar-brand{
@@ -366,7 +365,7 @@ padding: 0;
 
 .navbar-nav li{
   transition: ease-in 0.3s;
-  margin: 1.5rem;
+  margin: 0.9rem;
   height: auto;
 
 }
@@ -385,7 +384,7 @@ padding: 0;
   justify-content: flex-start;
 align-items: flex-start;
     width: 100%;
-
+    max-height: 40vh;
   }
 
 
@@ -446,6 +445,7 @@ align-items: flex-start;
   .navbar-collapse-content{
       display: flex;
       height: 100%;
+      width: 100%;
       align-items: center;
       justify-content: center;
       position: relative;
@@ -467,9 +467,7 @@ align-items: flex-start;
   .nav-li-active{
     color: white;
   }
-  .navbar-nav li{
-    margin: 0 1.5rem 0 0;
-  }
+
  
 }
 
@@ -627,7 +625,20 @@ padding: 0;
     padding: 1rem;
 
 }
+.contact-test-bg{
+  background: linear-gradient(rgba(255, 255, 255, 0.83),rgba(255, 255, 255, 0.83),rgba(255, 255, 255, 0.86)),url(../public/images/testowo.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+}
 @media only screen and (max-width: 800px) {
   .app__ulo-page-container{
     flex-direction: column-reverse;
@@ -639,9 +650,20 @@ padding: 0;
     flex-direction: column;
 }
 .app__ulo-text{ 
- 
   max-width: 95%;
+}
+.contact-test-bg{
+  background: linear-gradient(rgba(255, 255, 255, 0.83),rgba(255, 255, 255, 0.83),rgba(255, 255, 255, 0.86)),url(../public/images/testowo.jpg);
+  background-position: center;
+  background-attachment: scroll;
+  background-size: contain;
+  background-repeat: no-repeat;
 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 }
 /*ULOTERAPIA END */
@@ -692,3 +714,4 @@ padding: 0;
     width: 100%;
 }
 }
+
