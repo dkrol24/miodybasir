@@ -23,7 +23,11 @@ export default function ProductItem({ product, addToCartHandler }) {
         }}
       >
         <CardMedia
-          style={{ padding: "1rem", height: "370px", width: "100%" }}
+          style={{
+            padding: "1rem",
+            height: "300px",
+            width: "100%",
+          }}
           component="img"
           image={urlForThumbnail(product.image)}
           title={product.name}

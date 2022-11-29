@@ -6,14 +6,14 @@ import {
   List,
   ListItem,
   Typography,
+  CardMedia,
 } from "@mui/material";
 
 import { useContext, useEffect, useState } from "react";
 import { useSnackbar } from "notistack";
 import Layout from "../../components/Layout";
 import client from "../../utils/client";
-import { urlFor, urlForThumbnail } from "../../utils/image";
-import Image from "next/image";
+import { urlForThumbnail } from "../../utils/image";
 import { Store } from "../../utils/Store";
 import axios from "axios";
 import { useRouter } from "next/router";
@@ -100,13 +100,11 @@ export default function ProductScreen(props) {
 
           <div className="productdetail-main">
             <div className="productdetails-image">
-              <Image
-                src={urlFor(product.image)}
-                alt={product.name}
-                layout="responsive"
-                width={800}
-                height={800}
-              />
+              <CardMedia
+                component="img"
+                image={urlForThumbnail(product.image)}
+                title={product.name}
+              ></CardMedia>
             </div>
             <List
               style={{

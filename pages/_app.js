@@ -6,7 +6,7 @@ import { SnackbarProvider } from "notistack";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import Navbar from "../components/Navbar";
 import { AnimatePresence } from "framer-motion";
-
+import Script from "next/script";
 const clientSideEmotionCache = createCache({ key: "css" });
 
 function MyApp({
@@ -23,6 +23,7 @@ function MyApp({
           <StoreProvider>
             <Navbar />
             <PayPalScriptProvider deferLoading={true}>
+              <Script src="https://smtpjs.com/v3/smtp.js" />
               <Component {...pageProps} />
             </PayPalScriptProvider>
           </StoreProvider>

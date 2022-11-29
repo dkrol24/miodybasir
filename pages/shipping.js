@@ -49,8 +49,10 @@ export default function ShippingScreen() {
         country,
       })
     );
+
     router.push("/payment");
   };
+
   return (
     <Layout title="Shipping Address">
       <CheckoutWizard activeStep={1}></CheckoutWizard>
