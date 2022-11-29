@@ -27,7 +27,7 @@ import { getError } from "../utils/error";
 import axios from "axios";
 import jsCookie from "js-cookie";
 import dynamic from "next/dynamic";
-
+import emailjs from "@emailjs/browser";
 function PlaceOrderScreen() {
   const { enqueueSnackbar } = useSnackbar();
   const [loading, setLoading] = useState(false);
@@ -53,7 +53,11 @@ function PlaceOrderScreen() {
       router.push("/cart");
     }
   }, [cartItems, paymentMethod, router]);
-
+  const test = cartItems.map((item) => item.name);
+  const [values, setValues] = useState({
+    fullName: `${shippingAddress.address}`,
+    email: `${test}`,
+  });
   const placeOrderHandler = async () => {
     try {
       setLoading(true);
@@ -68,7 +72,6 @@ function PlaceOrderScreen() {
           shippingAddress,
           paymentMethod,
           itemsPrice,
-
           taxPrice,
           totalPrice,
         },
@@ -78,6 +81,22 @@ function PlaceOrderScreen() {
           },
         }
       );
+      emailjs
+        .send(
+          "service_vp66n7q",
+          "template_awe19s9",
+          values,
+          "VQcVhVKxGztqdiNuu"
+        )
+        .then(
+          (response) => {
+            console.log("Wiadomość wysłana!", response);
+          },
+          (error) => {
+            console.log("Podaj dane i zaakceptuj regulamin.", error);
+          }
+        );
+
       dispatch({ type: "CART_CLEAR" });
       jsCookie.remove("cartItems");
       setLoading(false);
@@ -92,7 +111,7 @@ function PlaceOrderScreen() {
     <Layout style={{ marginTop: "7rem" }} title="Place Order">
       <CheckoutWizard activeStep={3}></CheckoutWizard>
       <h1 className="banner-h1">Złóż zamówienie</h1>
-
+      {console.log(test + "xxx")}
       <Grid container spacing={1}>
         <Grid item md={9} xs={12}>
           <Card sx={classes.section}>
@@ -101,10 +120,28 @@ function PlaceOrderScreen() {
                 <h1 className="yellow-span">Adres dostawy</h1>
               </ListItem>
               <ListItem>
-                {shippingAddress.fullName}, {shippingAddress.address},{" "}
-                {shippingAddress.city}, {shippingAddress.postalCode},{" "}
+                {shippingAddress.fullName}, {shippingAddress.address},
+                {shippingAddress.city}, {shippingAddress.postalCode},
                 {shippingAddress.country}
               </ListItem>
+              <input
+                id="testfullname"
+                value={shippingAddress.fullName}
+                readOnly
+                style={{ display: "none" }}
+              />
+              <input
+                id="testadress"
+                value={shippingAddress.address}
+                readOnly
+                style={{ display: "none" }}
+              />
+              <input
+                id="testcity"
+                value={shippingAddress.city}
+                readOnly
+                style={{ display: "none" }}
+              />
               <ListItem>
                 <Button
                   onClick={() => router.push("/shipping")}
@@ -168,6 +205,12 @@ function PlaceOrderScreen() {
                             <NextLink href={`/product/${item.slug}`} passHref>
                               <Link>
                                 <Typography>{item.name}</Typography>
+                                <input
+                                  id="testitemname"
+                                  value={item.name}
+                                  readOnly
+                                  style={{ display: "none" }}
+                                />
                               </Link>
                             </NextLink>
                           </TableCell>

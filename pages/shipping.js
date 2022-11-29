@@ -26,7 +26,6 @@ export default function ShippingScreen() {
     if (!userInfo) {
       return router.push("/login?redirect=/shipping");
     }
-
     setValue("fullName", shippingAddress.fullName);
     setValue("address", shippingAddress.address);
     setValue("city", shippingAddress.city);
@@ -49,7 +48,6 @@ export default function ShippingScreen() {
         country,
       })
     );
-
     router.push("/payment");
   };
 

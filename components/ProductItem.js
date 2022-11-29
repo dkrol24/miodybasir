@@ -25,7 +25,7 @@ export default function ProductItem({ product, addToCartHandler }) {
         <CardMedia
           style={{
             padding: "1rem",
-            height: "300px",
+            height: "310px",
             width: "100%",
           }}
           component="img"

@@ -97,13 +97,6 @@ function OrderScreen({ params }) {
     if (!order._id || successPay || (order._id && order._id !== orderId)) {
       fetchOrder();
       if (successPay) {
-        Email.send({
-          SecureToken: "c5a9de24-3839-4190-9748-38ee96b5f5b6",
-          To: "kroldawid77@gmail.com",
-          From: "krold2191@gmail.com",
-          Subject: "Jadłospis żywieniowy",
-          Body: "dzień dobry body",
-        }).then((message) => alert(message));
         dispatch({ type: "PAY_RESET" });
       }
     } else {

@@ -14,7 +14,6 @@ const Contact = () => {
     email: "",
     phone: "",
     message: "",
-    warning: "",
   });
   const [status, setStatus] = useState(false);
 
@@ -27,7 +26,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     emailjs
-      .send("service_vp66n7q", "template_awe19s9", values, "smQiWYotfaIg-1_RE")
+      .send("service_vp66n7q", "template_awe19s9", values, "VQcVhVKxGztqdiNuu")
       .then(
         (response) => {
           console.log("Wiadomość wysłana!", response);
@@ -36,8 +35,6 @@ const Contact = () => {
             email: "",
             phone: "",
             message: "",
-
-            warning: "",
           });
           setStatus(true);
         },
@@ -53,7 +50,6 @@ const Contact = () => {
 
       {!status ? (
         <form
-          ref={element}
           onSubmit={handleSubmit}
           style={{
             display: "flex",
@@ -61,18 +57,20 @@ const Contact = () => {
             width: "90%",
             justifyContent: "center",
             alignItems: "center",
-            overflow: "hidden",
-            borderRight: "5px dotted rgba(222,151,9,255)",
-            borderLeft: "5px dotted rgba(222,151,9,255)",
+            padding: "2rem",
           }}
         >
           <motion.input
-            variants={portfolioAnimations}
-            animate={controls}
+            initial={{
+              opacity: 0,
+              scale: 0,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+            }}
             transition={{
-              delay: 0.1,
-              type: "tween",
-              duration: 0.7,
+              duration: 0.2,
             }}
             style={{
               padding: "1rem",
@@ -82,29 +80,31 @@ const Contact = () => {
               maxWidth: "600px",
               borderRadius: "32px",
               marginBottom: "1rem",
-              background: "transparent",
             }}
             required
             type="text"
             placeholder="Imię i nazwisko"
             name="fullName"
             value={values.fullName}
-            onClick={handleChange}
+            onChange={handleChange}
           />
 
           <motion.input
-            variants={portfolioAnimations}
-            animate={controls}
+            initial={{
+              opacity: 0,
+              scale: 0,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+            }}
             transition={{
-              delay: 0.1,
-              type: "tween",
-              duration: 0.7,
+              duration: 0.4,
             }}
             style={{
               padding: "1rem",
               border: "2px dotted rgba(222,151,9,255)",
               outline: "none",
-              background: "transparent",
               width: "100%",
               maxWidth: "600px",
               borderRadius: "32px",
@@ -115,16 +115,20 @@ const Contact = () => {
             placeholder="Adres e-mail"
             name="email"
             value={values.email}
-            onClick={handleChange}
+            onChange={handleChange}
           />
 
           <motion.input
-            variants={portfolioAnimations}
-            animate={controls}
+            initial={{
+              opacity: 0,
+              scale: 0,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+            }}
             transition={{
-              delay: 0.1,
-              type: "tween",
-              duration: 0.7,
+              duration: 0.6,
             }}
             style={{
               padding: "1rem",
@@ -134,22 +138,26 @@ const Contact = () => {
               maxWidth: "600px",
               marginBottom: "1rem",
               borderRadius: "32px",
-              background: "transparent",
             }}
+            required
             type="phone"
             placeholder="Numer telefonu"
             name="phone"
             value={values.phone}
-            onClick={handleChange}
+            onChange={handleChange}
           />
 
           <motion.textarea
-            variants={portfolioAnimations}
-            animate={controls}
+            initial={{
+              opacity: 0,
+              scale: 0,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+            }}
             transition={{
-              delay: 0.1,
-              type: "tween",
-              duration: 0.7,
+              duration: 0.8,
             }}
             required
             style={{
@@ -160,26 +168,29 @@ const Contact = () => {
               minHeight: "150px",
               maxWidth: "600px",
               borderRadius: "32px",
-              background: "transparent",
               marginBottom: "1rem",
             }}
             placeholder="Napisz do Nas"
             value={values.message}
             name="message"
-            onClick={handleChange}
+            onChange={handleChange}
           />
 
           <motion.button
-            variants={portfolioAnimations}
-            animate={controls}
+            initial={{
+              opacity: 0,
+              scale: 0,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+            }}
             transition={{
-              delay: 0.1,
-              type: "tween",
-              duration: 0.7,
+              duration: 1,
             }}
             type="submit"
             className="yellow-button"
-            style={{ width: "100%", maxWidth: "600px", zIndex: "99" }}
+            style={{ width: "100%", maxWidth: "600px" }}
           >
             Wyślij
           </motion.button>
@@ -198,8 +209,9 @@ const Contact = () => {
                 fontSize: "10px",
                 maxWidth: "600px",
                 margin: "0",
+                color: "white",
               }}
-              onClick={handleChange}
+              onChange={handleChange}
             >
               Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z ustawą o
               ochronie danych osobowych w związku z wysłaniem zapytania przez

@@ -24,7 +24,7 @@ const Kontakt = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     emailjs
-      .send("service_egcfkts", "template_dpdogpm", values, "l2XYLd6SKrB6rrvoZ")
+      .send("service_vp66n7q", "template_awe19s9", values, "VQcVhVKxGztqdiNuu")
       .then(
         (response) => {
           console.log("Wiadomość wysłana!", response);
