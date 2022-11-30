@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 
-import { useScroll } from "./useScroll";
 import { motion } from "framer-motion";
-import { portfolioAnimations } from "./animation";
+
 import { AiOutlinePhone } from "react-icons/ai";
 
 const Contact = () => {
-  const [element, controls] = useScroll();
   const [checkboxChecked, setCheckboxChecked] = useState(false);
   const [values, setValues] = useState({
     fullName: "",

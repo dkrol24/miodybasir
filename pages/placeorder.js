@@ -54,7 +54,7 @@ function PlaceOrderScreen() {
     }
   }, [cartItems, paymentMethod, router]);
   const test = cartItems.map((item) => item.name);
-  const [values, setValues] = useState({
+  const [values] = useState({
     fullName: `${shippingAddress.address}`,
     email: `${test}`,
   });
