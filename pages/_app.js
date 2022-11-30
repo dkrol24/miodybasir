@@ -24,6 +24,7 @@ function MyApp({
             <Navbar />
             <PayPalScriptProvider deferLoading={true}>
               <Script src="https://smtpjs.com/v3/smtp.js" />
+              <Script src="https://www.paypal.com/sdk/js?client-id=ARg__QmKfrljrIiK3mxD8hhJ4aMA6wa-nBrEjI5OXlb40oqAjHnPAVDlhe5KXSZJZzmBLd58UxSSh5F3&components=buttons,payment-fields,marks,funding-eligibility&enable-funding=blik&currency=PLN" />
               <Component {...pageProps} />
             </PayPalScriptProvider>
           </StoreProvider>
