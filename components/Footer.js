@@ -10,7 +10,7 @@ const Footer = () => {
             <Link
               style={{ textDecoration: "none", color: "rgba(222,151,9,255)" }}
             >
-              regulamin
+              Regulamin
             </Link>
           </NextLink>
         </div>
