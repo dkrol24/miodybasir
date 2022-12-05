@@ -44,6 +44,7 @@ const Uloterapia = () => {
             type: "tween",
             duration: 1.3,
           }}
+          style={{ margin: "1rem 0 2rem 0" }}
           className="grey-ptext"
         >
           <span className="yellow-span">Uloterapia</span> (apiinhalacja), to nic

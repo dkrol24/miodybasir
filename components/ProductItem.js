@@ -47,7 +47,11 @@ export default function ProductItem({ product, addToCartHandler }) {
         </CardContent>
       </div>
 
-      <CardActions style={{ justifyContent: "center" }}>
+      <CardActions
+        style={{
+          justifyContent: "center",
+        }}
+      >
         <p
           style={{
             fontWeight: "700",
@@ -56,7 +60,7 @@ export default function ProductItem({ product, addToCartHandler }) {
             padding: "0",
           }}
         >
-          {product.price}zł
+          900 ml / {product.price}zł
         </p>
       </CardActions>
       <CardActions

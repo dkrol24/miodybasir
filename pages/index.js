@@ -96,7 +96,6 @@ export default function Home() {
               maxWidth: "1500px",
               width: "100%",
               marginTop: "2rem",
-
               borderRadius: "16px",
               background: "rgba(222,151,9,0.1)",
             }}
