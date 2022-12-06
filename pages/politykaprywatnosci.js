@@ -30,13 +30,13 @@ const politykaprywatnosci = () => {
           kwietnia 2016 roku w sprawie ochrony osób fizycznych w związku z
           przetwarzaniem danych osobowych i w sprawie swobodnego przepływu
           takich danych oraz uchylenia dyrektywy 95/46/WE ( określane jako
-          ,,RODO", ,,ORODO", ,,GDPR" lub ,, Ogólne Rozporządzenie o Ochronie
-          Danych"). Z tego powodu informujemy o przetwarzaniu Państwa danych
-          oraz o zasadach, na jakich będzie się to odbywało po dniu 25 maja 2018
-          roku. Szanujemy i chronimy Państwa prywatność prywatność. Dlatego
-          opracowaliśmy dokument, który precyzuje zagadnienia związane z
-          gromadzeniem i wykorzystywaniem informacji o użytkownikach i klientach
-          sklepu Chłodnice Konarscy.
+          &quot;RODO&quot;, &quot;ORODO&quot;, &quot;GDPR&quot; lub &quot;Ogólne
+          Rozporządzenie o Ochronie Danych&quot;). Z tego powodu informujemy o
+          przetwarzaniu Państwa danych oraz o zasadach, na jakich będzie się to
+          odbywało po dniu 25 maja 2018 roku. Szanujemy i chronimy Państwa
+          prywatność prywatność. Dlatego opracowaliśmy dokument, który precyzuje
+          zagadnienia związane z gromadzeniem i wykorzystywaniem informacji o
+          użytkownikach i klientach sklepu Chłodnice Konarscy.
         </p>
         <h4>Zakres przetwarzanych danych osobowych</h4>
         <p>
@@ -118,9 +118,9 @@ const politykaprywatnosci = () => {
         <h4>Cookies</h4>
         <p>
           Twoja przeglądarka internetowa przechowuje pliki tekstowe (ang.
-          "cookies") na dysku Twojego komputera. W plikach tych znajdują się
-          informacje niezbędne do prawidłowego funkcjonowania serwisów
-          internetowych, w szczególności tych wymagających autoryzacji.
+          &quot;cookies&quot;) na dysku Twojego komputera. W plikach tych
+          znajdują się informacje niezbędne do prawidłowego funkcjonowania
+          serwisów internetowych, w szczególności tych wymagających autoryzacji.
         </p>
         <p>
           Zawartość plików cookies nie pozwala na identyfikację użytkownika, na
