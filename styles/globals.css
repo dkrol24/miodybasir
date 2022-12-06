@@ -15,6 +15,7 @@ h1,h2,h3,p,span{font-family: 'Poppins', sans-serif;}
 @media screen and (min-width: 280px) and (max-width: 1080px) {
   body::-webkit-scrollbar {
     display: none;
+
   }
 }
 :root{
@@ -158,6 +159,7 @@ display: none;
 
   .banner-h2{
     color: rgba(222,151,9,255);
+
     font-size: 1.5rem;
     margin: 0;
     z-index: 1;
@@ -475,8 +477,8 @@ z-index: 99;
       width: 100%;
   }
   .navbar-collapse-content{
-      display: flex;
-      height: 100%;
+    height: 100%;
+    display: flex;
       width: 100%;
       align-items: center;
       justify-content: center;

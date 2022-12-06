@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 
 import { motion } from "framer-motion";
-
-import { AiOutlinePhone } from "react-icons/ai";
-
 const Contact = () => {
   const [checkboxChecked, setCheckboxChecked] = useState(false);
   const [values, setValues] = useState({
@@ -207,7 +204,7 @@ const Contact = () => {
                 fontSize: "10px",
                 maxWidth: "600px",
                 margin: "0",
-                color: "white",
+                color: "black",
               }}
               onChange={handleChange}
             >
@@ -228,9 +225,6 @@ const Contact = () => {
           </h3>
         </div>
       )}
-      <h1 className="yellow-span">
-        <AiOutlinePhone /> 507 101 771
-      </h1>
     </div>
   );
 };

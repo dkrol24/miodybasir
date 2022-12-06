@@ -88,6 +88,7 @@ export default function Home() {
         >
           <Banner />
           <div
+            id="sklep"
             style={{
               display: "flex",
               flexWrap: "wrap",

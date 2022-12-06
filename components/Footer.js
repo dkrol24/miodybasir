@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "@mui/material";
 import NextLink from "next/link";
+import { AiOutlinePhone } from "react-icons/ai";
 const Footer = () => {
   return (
     <div style={{ width: "100%", display: "flex", flexDirection: "column" }}>
@@ -15,7 +16,7 @@ const Footer = () => {
           </NextLink>
         </div>
         <div className="footer-column">
-          <NextLink href="/Privacy" passHref>
+          <NextLink href="/politykaprywatnosci" passHref>
             <Link
               style={{ textDecoration: "none", color: "rgba(222,151,9,255)" }}
             >
@@ -24,13 +25,9 @@ const Footer = () => {
           </NextLink>
         </div>
         <div className="footer-column">
-          <NextLink href="/Sklep" passHref>
-            <Link
-              style={{ textDecoration: "none", color: "rgba(222,151,9,255)" }}
-            >
-              Sklep
-            </Link>
-          </NextLink>
+          <p style={{ color: "rgba(222,151,9,255)" }}>
+            <AiOutlinePhone /> 507 101 771
+          </p>
         </div>
       </div>
       <div className="footer-down">
