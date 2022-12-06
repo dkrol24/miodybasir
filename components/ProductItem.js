@@ -25,7 +25,6 @@ export default function ProductItem({ product, addToCartHandler }) {
         <CardMedia
           style={{
             padding: "1rem",
-            background: "red",
           }}
           component="img"
           image={urlForThumbnail(product.image)}
