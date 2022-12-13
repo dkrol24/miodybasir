@@ -702,7 +702,6 @@ padding: 0;
 /*ULOTERAPIA END */
 /*LOGIN REGISTER*/
 .loginregister{
-  
   display: flex;
   flex-direction: column;
   width: 100%;

@@ -38,9 +38,7 @@ export default function ProductScreen(props) {
     const fetchData = async () => {
       try {
         const product = await client.fetch(
-          `
-            *[_type == "product" && slug.current == $slug][0]`,
-          { slug }
+          `*[_type == "product" && slug.current == '${slug}'][0]`
         );
         setState({ ...state, product, loading: false });
       } catch (err) {
@@ -80,9 +78,7 @@ export default function ProductScreen(props) {
   return (
     <Layout title={product?.title}>
       {loading ? (
-        <div style={{ width: "100%", height: "100vh" }}>
-          <CircularProgress />
-        </div>
+        <CircularProgress />
       ) : error ? (
         <Alert variant="error">{error}</Alert>
       ) : (

@@ -10,10 +10,19 @@ export default class MyDocument extends Document {
         <Head>
           <title>Naturalne miody w Warce</title>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
-
           <link
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
+          />
+          <meta
+            name="description"
+            content="naturalne miody warka miodek miód w warce"
+            key="desc"
+          />
+          <meta property="og:title" content="Naturalne miody w Warce" />
+          <meta
+            property="og:description"
+            content="naturalne miody warka miodek miód w warce"
           />
         </Head>
         <body>
