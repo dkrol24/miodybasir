@@ -14,11 +14,20 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
           />
+          <link rel="icon" href="favicon.ico" />
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width,initial-scale=1" />
           <meta
             name="description"
             content="naturalne miody warka miodek miód w warce"
             key="desc"
           />
+          <meta name="robots" content="noodp" />
+          <meta
+            name="keywords"
+            content="miód, miody, warka, konarscy,konarski,miody warka,miody w warce,naturalny miód, naturalne miody"
+          />
+          <meta name="googlebot" content="noodp" />
           <meta property="og:title" content="Naturalne miody w Warce" />
           <meta
             property="og:description"
