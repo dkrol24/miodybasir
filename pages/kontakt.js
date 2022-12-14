@@ -44,7 +44,10 @@ const Kontakt = () => {
   };
 
   return (
-    <Layout title="Kontakt">
+    <Layout
+      title="Kontakt - Miody Konarscy"
+      description="Miody Warka - Miody Konarscy kontakt"
+    >
       <div className="loginregister">
         <div className="productdetails-banner" />
         <h1 className="banner-h1">Kontakt</h1>

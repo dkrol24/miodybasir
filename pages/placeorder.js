@@ -108,7 +108,11 @@ function PlaceOrderScreen() {
   };
 
   return (
-    <Layout style={{ marginTop: "7rem" }} title="Place Order">
+    <Layout
+      style={{ marginTop: "7rem" }}
+      title="Zamówienie - Miody Konarscy"
+      description="Miody Warka - Miody Konarscy"
+    >
       <CheckoutWizard activeStep={3}></CheckoutWizard>
       <h1 className="banner-h1">Złóż zamówienie</h1>
       {console.log(test + "xxx")}

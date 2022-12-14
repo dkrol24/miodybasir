@@ -6,7 +6,7 @@ import createCache from "@emotion/cache";
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html lang="pl">
         <Head>
           <title>Naturalne miody w Warce</title>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,19 +14,33 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
           />
+          <link rel="canonical" href="https://miodykonarscy.pl/" />
           <link rel="icon" href="favicon.ico" />
           <meta charset="UTF-8" />
           <meta name="viewport" content="width=device-width,initial-scale=1" />
           <meta
             name="description"
-            content="naturalne miody warka miodek miód w warce"
+            content="Naturalne miody
+            z własnej pasieki w warce
+            Miód akacjowy, wielokwiatowy, rzepakowy czy miody spadziowe?
+            
+            Wybór zależy od pożądanych rezultatów: zwiększona energia, złagodzony przebieg przeziębienia czy też zdrowszy żołądek. Istnieje wiele rodzajów miodów pszczelich i każdy z nich ma inną charakterystykę, właściwości odżywcze i walory lecznicze."
             key="desc"
           />
-          <meta name="robots" content="noodp" />
           <meta
-            name="keywords"
-            content="miód, miody, warka, konarscy,konarski,miody warka,miody w warce,naturalny miód, naturalne miody"
+            name="og:description"
+            content="Naturalne miody
+            z własnej pasieki w warce
+            Miód akacjowy, wielokwiatowy, rzepakowy czy miody spadziowe?
+            
+            Wybór zależy od pożądanych rezultatów: zwiększona energia, złagodzony przebieg przeziębienia czy też zdrowszy żołądek. Istnieje wiele rodzajów miodów pszczelich i każdy z nich ma inną charakterystykę, właściwości odżywcze i walory lecznicze."
           />
+          <meta name="og:url" content="https://miodykonarscy.pl/" />
+          <meta name="og:locale" content="pl_PL" />
+          <meta name="og:type" content="website" />
+          <meta name="og:site_name" content="Miody Konarscy" />
+          <meta name="robots" content="noodp" />
+          <meta name="keywords" content="miody,miód,warka,konarscy" />
           <meta name="googlebot" content="noodp" />
           <meta property="og:title" content="Naturalne miody w Warce" />
           <meta

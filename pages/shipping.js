@@ -52,7 +52,10 @@ export default function ShippingScreen() {
   };
 
   return (
-    <Layout title="Shipping Address">
+    <Layout
+      title="Adres dostawy - Miody Konarscy"
+      description="Miody Warka - Miody Konarscy"
+    >
       <CheckoutWizard activeStep={1}></CheckoutWizard>
       <Form
         style={{ marginTop: "7rem" }}

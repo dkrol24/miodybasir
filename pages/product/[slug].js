@@ -76,7 +76,11 @@ export default function ProductScreen(props) {
     router.push("/cart");
   };
   return (
-    <Layout title={product?.title}>
+    <Layout
+      title={product?.title}
+      description={product?.description}
+      name={product?.name}
+    >
       {loading ? (
         <CircularProgress />
       ) : error ? (

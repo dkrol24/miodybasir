@@ -43,7 +43,10 @@ export default function PaymentScreen() {
     }
   };
   return (
-    <Layout title="Payment Method">
+    <Layout
+      title="Metoda płatności - Miody Konarscy"
+      description="Miody Warka - Miody Konarscy"
+    >
       <CheckoutWizard activeStep={2}></CheckoutWizard>
       <Form style={{ marginTop: "7rem" }} onSubmit={submitHandler}>
         <h1 className="banner-h1">Metoda płatności</h1>

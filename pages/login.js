@@ -42,7 +42,10 @@ export default function LoginScreen() {
     }
   };
   return (
-    <Layout title="Login">
+    <Layout
+      title="Zaloguj - Miody Konarscy"
+      description="Miody Warka - Miody Konarscy"
+    >
       <div className="loginregister">
         <Form onSubmit={handleSubmit(submitHandler)}>
           <h1 className="banner-h1">Zaloguj się</h1>

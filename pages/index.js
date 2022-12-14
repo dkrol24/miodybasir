@@ -70,7 +70,10 @@ export default function Home() {
   };
 
   return (
-    <Layout title="Strona główna">
+    <Layout
+      title="Strona główna - Miody Konarscy"
+      description="Miody Warka - Miody Konarscy"
+    >
       {loading ? (
         <CircularProgress />
       ) : error ? (

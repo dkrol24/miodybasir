@@ -4,7 +4,10 @@ import Image from "next/image";
 import Layout from "../components/Layout";
 const uloterapia = () => {
   return (
-    <Layout title="Uloterapia">
+    <Layout
+      title="Uloterapia - Miody Konarscy"
+      description="Miody Warka - Miody Konarscy"
+    >
       <div className="app__ulo-page">
         <div className="productdetails-banner" />
         <p

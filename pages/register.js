@@ -50,7 +50,10 @@ export default function RegisterScreen() {
     }
   };
   return (
-    <Layout title="Rejestracja">
+    <Layout
+      title="Rejestracja - Miody Konarscy"
+      description="Miody Warka - Miody Konarscy"
+    >
       <div className="loginregister">
         <Form onSubmit={handleSubmit(submitHandler)}>
           <h1 className="banner-h1">Zarejestruj się</h1>
