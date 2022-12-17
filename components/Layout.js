@@ -14,6 +14,9 @@ export default function Layout({ title, description, children, name }) {
         <meta name="og:locale" content="pl_PL" />
         {name && <meta name="og:title" content={name}></meta>}
         {description && <meta name="description" content={description}></meta>}
+        {description && (
+          <meta name="og:description" content={description}></meta>
+        )}
       </Head>
       <CssBaseline />
       <div

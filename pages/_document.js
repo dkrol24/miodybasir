@@ -23,9 +23,7 @@ export default class MyDocument extends Document {
             content="Naturalne miody
             z własnej pasieki w warce
             Miód akacjowy, wielokwiatowy, rzepakowy czy miody spadziowe?
-            
             Wybór zależy od pożądanych rezultatów: zwiększona energia, złagodzony przebieg przeziębienia czy też zdrowszy żołądek. Istnieje wiele rodzajów miodów pszczelich i każdy z nich ma inną charakterystykę, właściwości odżywcze i walory lecznicze."
-            key="desc"
           />
           <meta
             name="og:description"
@@ -40,13 +38,12 @@ export default class MyDocument extends Document {
           <meta name="og:type" content="website" />
           <meta name="og:site_name" content="Miody Konarscy" />
           <meta name="robots" content="noodp" />
-          <meta name="keywords" content="miody,miód,warka,konarscy" />
+          <meta
+            name="keywords"
+            content="miody warka,miód warka,miody konarscy"
+          />
           <meta name="googlebot" content="noodp" />
           <meta property="og:title" content="Naturalne miody w Warce" />
-          <meta
-            property="og:description"
-            content="naturalne miody warka miodek miód w warce"
-          />
         </Head>
         <body>
           <Main />
