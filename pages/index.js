@@ -71,7 +71,7 @@ export default function Home() {
 
   return (
     <Layout
-      title="Strona główna - Miody Konarscy"
+      title="Strona główna - Miody Warka"
       description="Miody Warka - Miody Konarscy"
     >
       {loading ? (
