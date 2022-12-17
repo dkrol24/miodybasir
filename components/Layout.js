@@ -6,7 +6,7 @@ export default function Layout({ title, description, children, name }) {
   return (
     <>
       <Head>
-        <title>{title ? `${title} - Miody Konarscy` : "Miody Konarscy"}</title>
+        <title>{title ? `${title} - Miody Warka` : "Miody Konarscy"}</title>
         <meta
           property="og:title"
           content={`Naturalne miody w Warce - ${title}`}
