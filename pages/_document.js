@@ -38,10 +38,7 @@ export default class MyDocument extends Document {
           <meta name="og:type" content="website" />
           <meta name="og:site_name" content="Miody Konarscy" />
           <meta name="robots" content="noodp" />
-          <meta
-            name="keywords"
-            content="miody warka,miód warka,miody konarscy"
-          />
+          <meta name="keywords" content="miód,miody,konarscy,warka" />
           <meta name="googlebot" content="noodp" />
           <meta property="og:title" content="Naturalne miody w Warce" />
         </Head>
