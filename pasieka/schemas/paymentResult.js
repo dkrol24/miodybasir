@@ -1,5 +1,5 @@
 export default {
-  title: 'paymentResult',
+  title: 'Wynik płatności',
   name: 'paymentResult',
   type: 'object',
   fields: [
@@ -9,14 +9,14 @@ export default {
       type: 'string',
     },
     {
-      title: 'status',
+      title: 'Status',
       name: 'status',
       type: 'string',
     },
     {
-      title: 'email_address',
+      title: 'Adres e-mail',
       name: 'email_address',
       type: 'string',
     },
   ],
-};
+}

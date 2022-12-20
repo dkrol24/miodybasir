@@ -42,8 +42,12 @@ function PlaceOrderScreen() {
     cartItems.reduce((a, c) => a + c.price * c.quantity, 0)
   );
 
-  const taxPrice = round2(itemsPrice * 0.15);
-  const totalPrice = round2(itemsPrice + taxPrice);
+  const shippingPrice = 12;
+  const itemanddelivery = round2(itemsPrice + 12);
+
+  const testownik = () =>
+    paymentMethod === "Gotówka" ? itemsPrice : itemanddelivery;
+  const totalPrice = testownik();
 
   useEffect(() => {
     if (!paymentMethod) {
@@ -72,7 +76,7 @@ function PlaceOrderScreen() {
           shippingAddress,
           paymentMethod,
           itemsPrice,
-          taxPrice,
+          shippingPrice,
           totalPrice,
         },
         {
@@ -83,10 +87,10 @@ function PlaceOrderScreen() {
       );
       emailjs
         .send(
-          "service_vp66n7q",
-          "template_awe19s9",
+          "service_fd4t93h",
+          "template_8fxj7qm",
           values,
-          "VQcVhVKxGztqdiNuu"
+          "mT-xZh8APxwP8KF2z"
         )
         .then(
           (response) => {
@@ -249,6 +253,20 @@ function PlaceOrderScreen() {
                   </Grid>
                 </Grid>
               </ListItem>
+              {paymentMethod == "Gotówka" ? (
+                ""
+              ) : (
+                <ListItem>
+                  <Grid container>
+                    <Grid item xs={6}>
+                      <Typography>Dostawa:</Typography>
+                    </Grid>
+                    <Grid item xs={6}>
+                      <Typography align="right">12zł</Typography>
+                    </Grid>
+                  </Grid>
+                </ListItem>
+              )}
 
               <ListItem>
                 <Grid container>

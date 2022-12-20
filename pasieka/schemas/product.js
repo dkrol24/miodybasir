@@ -1,62 +1,44 @@
 export default {
-  name: "product",
-  title: "Product",
-  type: "document",
+  name: 'product',
+  title: 'Produkt',
+  type: 'document',
   fields: [
     {
-      name: "name",
-      title: "Name",
-      type: "string",
+      name: 'name',
+      title: 'Nazwa',
+      type: 'string',
     },
     {
-      name: "price",
-      title: "Price",
-      type: "number",
+      name: 'price',
+      title: 'Cena',
+      type: 'number',
     },
     {
-      name: "image",
-      title: "Image",
-      type: "image",
+      name: 'image',
+      title: 'Zdjęcie',
+      type: 'image',
       options: {
         hotspot: true,
       },
     },
     {
-      name: "description",
-      title: "Description",
-      type: "string",
+      name: 'description',
+      title: 'Opis',
+      type: 'string',
     },
-
     {
-      name: "slug",
-      title: "Slug",
-      type: "slug",
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
       options: {
-        source: "name",
+        source: 'name',
         maxLength: 96,
       },
     },
-
     {
-      name: "category",
-      title: "Category",
-      type: "string",
-    },
-    {
-      name: "countInStock",
-      title: "CountInStock",
-      type: "number",
-    },
-    // Pierzga / PROPOLIS / PYŁEK PSZCZELI
-    {
-      name: "description2",
-      title: "Description2",
-      type: "string",
-    },
-    {
-      name: "description3",
-      title: "Description3",
-      type: "string",
+      name: 'countInStock',
+      title: 'Ilość w magazynie',
+      type: 'number',
     },
   ],
-};
+}

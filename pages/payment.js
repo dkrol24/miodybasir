@@ -67,7 +67,7 @@ export default function PaymentScreen() {
 
                 <FormControlLabel
                   label="Gotówka"
-                  value="Cash"
+                  value="Gotówka"
                   control={<Radio />}
                 ></FormControlLabel>
               </RadioGroup>

@@ -1,27 +1,27 @@
 export default {
-  title: 'Order Item',
+  title: 'Zamówione przedmioty',
   name: 'orderItem',
   type: 'object',
   fields: [
     {
-      title: 'Name',
+      title: 'Nazwa',
       name: 'name',
       type: 'string',
     },
     {
-      title: 'quantity',
+      title: 'Ilość',
       name: 'quantity',
       type: 'number',
     },
     {
-      title: 'image',
+      title: 'Zdjęcie',
       name: 'image',
       type: 'string',
     },
     {
-      title: 'price',
+      title: 'Cena',
       name: 'price',
       type: 'number',
     },
   ],
-};
+}

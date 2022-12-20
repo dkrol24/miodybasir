@@ -63,7 +63,6 @@ function OrderScreen({ params }) {
     paymentMethod,
     orderItems,
     itemsPrice,
-    taxPrice,
     shippingPrice,
     totalPrice,
     isPaid,
@@ -266,24 +265,21 @@ function OrderScreen({ params }) {
                     </Grid>
                   </Grid>
                 </ListItem>
-                <ListItem>
-                  <Grid container>
-                    <Grid item xs={6}>
-                      <Typography>Podatek:</Typography>
-                    </Grid>
-                    <Grid item xs={6}>
-                      <Typography align="right">{taxPrice}zł</Typography>
-                    </Grid>
-                  </Grid>
-                </ListItem>
+
                 <ListItem>
                   <Grid container>
                     <Grid item xs={6}>
                       <Typography>Dostawa:</Typography>
                     </Grid>
-                    <Grid item xs={6}>
-                      <Typography align="right">{shippingPrice}zł</Typography>
-                    </Grid>
+                    {paymentMethod == "Gotówka" ? (
+                      <Grid item xs={6}>
+                        <Typography align="right">0zł</Typography>
+                      </Grid>
+                    ) : (
+                      <Grid item xs={6}>
+                        <Typography align="right">{shippingPrice}zł</Typography>
+                      </Grid>
+                    )}
                   </Grid>
                 </ListItem>
                 <ListItem>

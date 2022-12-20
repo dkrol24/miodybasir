@@ -1,28 +1,28 @@
 export default {
   name: 'user',
-  title: 'User',
+  title: 'Użytkownik',
   type: 'document',
   fields: [
     {
       name: 'name',
-      title: 'Name',
+      title: 'Nazwa',
       type: 'string',
     },
 
     {
       name: 'email',
-      title: 'Email',
+      title: 'E-mail',
       type: 'string',
     },
     {
       name: 'password',
-      title: 'Password',
+      title: 'Hasło',
       type: 'string',
     },
     {
       name: 'isAdmin',
-      title: 'Is Admin',
+      title: 'Admin?',
       type: 'boolean',
     },
   ],
-};
+}

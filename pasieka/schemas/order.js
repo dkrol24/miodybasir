@@ -1,92 +1,87 @@
 export default {
   name: 'order',
-  title: 'Order',
+  title: 'Zamówienia',
   type: 'document',
   fields: [
     {
-      title: 'User',
+      title: 'Użytkownik',
       name: 'user',
       type: 'reference',
-      to: [{ type: 'user' }],
+      to: [{type: 'user'}],
       options: {
         disableNew: true,
       },
     },
     {
       name: 'userName',
-      title: 'User Name',
+      title: 'Nazwa użytkownika',
       type: 'string',
     },
     {
       name: 'itemsPrice',
-      title: 'itemsPrice',
+      title: 'Cena jednostkowa',
       type: 'number',
     },
     {
       name: 'shippingPrice',
-      title: 'shippingPrice',
-      type: 'number',
-    },
-    {
-      name: 'taxPrice',
-      title: 'taxPrice',
+      title: 'Cena dostawy',
       type: 'number',
     },
     {
       name: 'totalPrice',
-      title: 'totalPrice',
+      title: 'Cena całkowita',
       type: 'number',
     },
     {
       name: 'paymentMethod',
-      title: 'paymentMethod',
+      title: 'Metoda płatności',
       type: 'string',
     },
     {
-      title: 'shippingAddress',
+      title: 'Adres dostawy',
       name: 'shippingAddress',
       type: 'shippingAddress',
     },
     {
-      title: 'paymentResult',
+      title: 'Wynik płatności',
       name: 'paymentResult',
       type: 'paymentResult',
     },
     {
-      title: 'Order Items',
+      title: 'Zamówione przedmioty',
       name: 'orderItems',
       type: 'array',
       of: [
         {
-          title: 'Order Item',
+          title: 'Zamówiony przedmiot',
           type: 'orderItem',
         },
       ],
     },
     {
-      title: 'IsPaid',
+      title: 'Zapłacone?',
       name: 'isPaid',
       type: 'boolean',
     },
     {
-      title: 'Paid Date',
+      title: 'Data płatności',
       name: 'paidAt',
       type: 'datetime',
     },
     {
-      title: 'IsDelivered',
+      title: 'Dostarczone?',
       name: 'isDelivered',
       type: 'boolean',
     },
     {
-      title: 'DeliveredAt',
+      title: 'Dostarczone dnia',
       name: 'deliveredAt',
       type: 'datetime',
     },
     {
-      title: 'CreatedAt',
+      title: 'Stworzone dnia',
       name: 'createdAt',
       type: 'datetime',
     },
   ],
-};
+}
