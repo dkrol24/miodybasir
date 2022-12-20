@@ -66,7 +66,7 @@ export default function PaymentScreen() {
                 ></FormControlLabel>
 
                 <FormControlLabel
-                  label="Gotówka"
+                  label="Gotówka - odbiór w sklepie"
                   value="Gotówka"
                   control={<Radio />}
                 ></FormControlLabel>
