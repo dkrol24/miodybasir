@@ -1,5 +1,5 @@
 const config = {
-  projectId: "evirf4mj",
+  projectId: "qtsycnzx",
   dataset: "production",
 };
 export default config;
