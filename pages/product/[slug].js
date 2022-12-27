@@ -38,7 +38,9 @@ export default function ProductScreen(props) {
     const fetchData = async () => {
       try {
         const product = await client.fetch(
-          `*[_type == "product" && slug.current == '${slug}'][0]`
+          `
+            *[_type == "product" && slug.current == $slug][0]`,
+          { slug }
         );
         setState({ ...state, product, loading: false });
       } catch (err) {
