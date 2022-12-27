@@ -60,10 +60,7 @@ function OrderHistoryScreen() {
     fetchOrders();
   }, [router, userInfo]);
   return (
-    <Layout
-      title="Historia zamówień - Miody Konarscy"
-      description="Miody Warka - Miody Konarscy"
-    >
+    <Layout title="Historia zamówień" description="Miody Warka">
       <div className="productdetails-banner" />
       <h1 className="banner-h1" style={{ marginTop: "7rem" }}>
         Historia zamówień

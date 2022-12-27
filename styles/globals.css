@@ -72,7 +72,6 @@ height: 100%;
 }
 .banner-logo{
 display: flex;
-width: auto;
 height: 100%;
 }
 
@@ -302,7 +301,7 @@ position: fixed;
   margin-left: 1rem;
   justify-content: center;
   align-items: center;
-  height: 100%;
+
 }
 .navbar__later{
   border-radius: 212px;
@@ -403,7 +402,6 @@ z-index: 99;
 
       }
       .navbar-nav {
-
         margin: 0rem;
       }
       .navbar-nav li{

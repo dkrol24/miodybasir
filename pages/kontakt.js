@@ -11,7 +11,6 @@ const Kontakt = () => {
     email: "",
     phone: "",
     message: "",
-    warning: "",
   });
   const [status, setStatus] = useState(false);
 
@@ -33,7 +32,6 @@ const Kontakt = () => {
             email: "",
             phone: "",
             message: "",
-            warning: "",
           });
           setStatus(true);
         },
@@ -44,10 +42,7 @@ const Kontakt = () => {
   };
 
   return (
-    <Layout
-      title="Kontakt - Miody Konarscy"
-      description="Miody Warka - Miody Konarscy kontakt"
-    >
+    <Layout title="Kontakt" description="Miody Warka">
       <div className="loginregister">
         <div className="productdetails-banner" />
         <h1 className="banner-h1">Kontakt</h1>

@@ -59,8 +59,9 @@ function PlaceOrderScreen() {
   }, [cartItems, paymentMethod, router]);
   const test = cartItems.map((item) => item.name);
   const [values] = useState({
-    fullName: `${shippingAddress.address}`,
-    email: `${test}`,
+    fullName: `${"Adres dostawy: " + shippingAddress.address}`,
+    email: `${"Produkt: " + test}`,
+    phone: `${"Kwota: " + totalPrice + " zł"}`,
   });
   const placeOrderHandler = async () => {
     try {

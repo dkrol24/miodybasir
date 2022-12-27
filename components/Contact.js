@@ -1,15 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import emailjs from "@emailjs/browser";
-
 import { motion } from "framer-motion";
+import { Store } from "../utils/Store";
+
 const Contact = () => {
   const [checkboxChecked, setCheckboxChecked] = useState(false);
+  const { state } = useContext(Store);
+  const { userInfo } = state;
+  const username = userInfo.name;
+  const useremail = userInfo.email;
   const [values, setValues] = useState({
     fullName: "",
     email: "",
     phone: "",
     message: "",
+    useremail: useremail,
+    username: username,
   });
+
   const [status, setStatus] = useState(false);
 
   const handleChange = (e) => {
@@ -21,7 +29,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     emailjs
-      .send("service_vp66n7q", "template_awe19s9", values, "VQcVhVKxGztqdiNuu")
+      .send("service_fd4t93h", "template_8fxj7qm", values, "mT-xZh8APxwP8KF2z")
       .then(
         (response) => {
           console.log("Wiadomość wysłana!", response);
@@ -55,63 +63,125 @@ const Contact = () => {
             padding: "2rem",
           }}
         >
-          <motion.input
-            initial={{
-              opacity: 0,
-              scale: 0,
-            }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-            }}
-            transition={{
-              duration: 0.2,
-            }}
-            style={{
-              padding: "1rem",
-              border: "2px dotted rgba(222,151,9,255)",
-              outline: "none",
-              width: "100%",
-              maxWidth: "600px",
-              borderRadius: "32px",
-              marginBottom: "1rem",
-            }}
-            required
-            type="text"
-            placeholder="Imię i nazwisko"
-            name="fullName"
-            value={values.fullName}
-            onChange={handleChange}
-          />
-
-          <motion.input
-            initial={{
-              opacity: 0,
-              scale: 0,
-            }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-            }}
-            transition={{
-              duration: 0.4,
-            }}
-            style={{
-              padding: "1rem",
-              border: "2px dotted rgba(222,151,9,255)",
-              outline: "none",
-              width: "100%",
-              maxWidth: "600px",
-              borderRadius: "32px",
-              marginBottom: "1rem",
-            }}
-            required
-            type="email"
-            placeholder="Adres e-mail"
-            name="email"
-            value={values.email}
-            onChange={handleChange}
-          />
+          {userInfo ? (
+            <>
+              <motion.input
+                initial={{
+                  opacity: 0,
+                  scale: 0,
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                }}
+                transition={{
+                  duration: 0.2,
+                }}
+                style={{
+                  padding: "1rem",
+                  border: "2px dotted rgba(222,151,9,255)",
+                  outline: "none",
+                  width: "100%",
+                  maxWidth: "600px",
+                  borderRadius: "32px",
+                  marginBottom: "1rem",
+                }}
+                required
+                type="text"
+                placeholder={username}
+                name="fullName"
+                value={values.username}
+                onChange={handleChange}
+              />
+              <motion.input
+                initial={{
+                  opacity: 0,
+                  scale: 0,
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                }}
+                transition={{
+                  duration: 0.4,
+                }}
+                style={{
+                  padding: "1rem",
+                  border: "2px dotted rgba(222,151,9,255)",
+                  outline: "none",
+                  width: "100%",
+                  maxWidth: "600px",
+                  borderRadius: "32px",
+                  marginBottom: "1rem",
+                }}
+                required
+                type="email"
+                placeholder={useremail}
+                name="email"
+                value={values.useremail}
+                onChange={handleChange}
+              />
+            </>
+          ) : (
+            <>
+              <motion.input
+                initial={{
+                  opacity: 0,
+                  scale: 0,
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                }}
+                transition={{
+                  duration: 0.2,
+                }}
+                style={{
+                  padding: "1rem",
+                  border: "2px dotted rgba(222,151,9,255)",
+                  outline: "none",
+                  width: "100%",
+                  maxWidth: "600px",
+                  borderRadius: "32px",
+                  marginBottom: "1rem",
+                }}
+                required
+                type="text"
+                placeholder="Imię i nazwisko"
+                name="fullName"
+                value={values.fullName}
+                onChange={handleChange}
+              />
+              <motion.input
+                initial={{
+                  opacity: 0,
+                  scale: 0,
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                }}
+                transition={{
+                  duration: 0.4,
+                }}
+                style={{
+                  padding: "1rem",
+                  border: "2px dotted rgba(222,151,9,255)",
+                  outline: "none",
+                  width: "100%",
+                  maxWidth: "600px",
+                  borderRadius: "32px",
+                  marginBottom: "1rem",
+                }}
+                required
+                type="email"
+                placeholder="Adres e-mail"
+                name="email"
+                value={values.email}
+                onChange={handleChange}
+              />
+            </>
+          )}
 
           <motion.input
             initial={{
@@ -134,7 +204,6 @@ const Contact = () => {
               marginBottom: "1rem",
               borderRadius: "32px",
             }}
-            required
             type="phone"
             placeholder="Numer telefonu"
             name="phone"

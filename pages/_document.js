@@ -8,7 +8,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="pl">
         <Head>
-          <title>Naturalne miody w Warce</title>
+          <title>Miody Konarscy - Warka</title>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -20,17 +20,16 @@ export default class MyDocument extends Document {
           <meta name="viewport" content="width=device-width,initial-scale=1" />
           <meta
             name="description"
-            content="Naturalne miody
+            content="Miody Konarscy - Naturalne miody
             z własnej pasieki w warce
             Miód akacjowy, wielokwiatowy, rzepakowy czy miody spadziowe?
             Wybór zależy od pożądanych rezultatów: zwiększona energia, złagodzony przebieg przeziębienia czy też zdrowszy żołądek. Istnieje wiele rodzajów miodów pszczelich i każdy z nich ma inną charakterystykę, właściwości odżywcze i walory lecznicze."
           />
           <meta
             name="og:description"
-            content="Naturalne miody
+            content="Miody Konarscy - Naturalne miody
             z własnej pasieki w warce
             Miód akacjowy, wielokwiatowy, rzepakowy czy miody spadziowe?
-            
             Wybór zależy od pożądanych rezultatów: zwiększona energia, złagodzony przebieg przeziębienia czy też zdrowszy żołądek. Istnieje wiele rodzajów miodów pszczelich i każdy z nich ma inną charakterystykę, właściwości odżywcze i walory lecznicze."
           />
           <meta name="og:url" content="https://miodykonarscy.pl/" />

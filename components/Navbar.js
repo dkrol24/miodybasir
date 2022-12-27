@@ -45,8 +45,6 @@ const Navbar = () => {
           width: "100%",
           justifyContent: "center",
           alignContent: "center",
-
-          overflow: "hidden",
         }}
       >
         <div
@@ -56,7 +54,6 @@ const Navbar = () => {
             height: "100%",
             justifyContent: "center",
             alignContent: "center",
-            overflow: "hidden",
           }}
         >
           <div
@@ -65,8 +62,6 @@ const Navbar = () => {
               justifyContent: "space-between",
               alignItems: "center",
               width: "100%",
-
-              overflow: "hidden",
             }}
           >
             <div className="logo">
