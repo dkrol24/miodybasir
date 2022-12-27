@@ -11,7 +11,7 @@ import {
 
 import { useContext, useEffect, useState } from "react";
 import { useSnackbar } from "notistack";
-import Layout from "../../components/Layout";
+
 import client from "../../utils/client";
 import { urlForThumbnail } from "../../utils/image";
 import { Store } from "../../utils/Store";
