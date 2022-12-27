@@ -7,8 +7,11 @@ const Contact = () => {
   const [checkboxChecked, setCheckboxChecked] = useState(false);
   const { state } = useContext(Store);
   const { userInfo } = state;
-  const username = userInfo.name;
-  const useremail = userInfo.email;
+
+  const testownik = () => (userInfo === true ? userInfo.email : userInfo.email);
+  const useremail = testownik();
+  const testownik2 = () => (userInfo === true ? userInfo.name : userInfo.name);
+  const username = testownik2();
   const [values, setValues] = useState({
     fullName: "",
     email: "",
