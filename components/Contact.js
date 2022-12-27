@@ -1,12 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
-import { Store } from "../utils/Store";
 
 const Contact = () => {
   const [checkboxChecked, setCheckboxChecked] = useState(false);
-  const { state } = useContext(Store);
-  const { userInfo } = state;
+
   const [values, setValues] = useState({
     fullName: "",
     email: "",
