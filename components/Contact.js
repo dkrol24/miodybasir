@@ -7,18 +7,11 @@ const Contact = () => {
   const [checkboxChecked, setCheckboxChecked] = useState(false);
   const { state } = useContext(Store);
   const { userInfo } = state;
-
-  const testownik = () => (userInfo === true ? userInfo.email : userInfo.email);
-  const useremail = testownik();
-  const testownik2 = () => (userInfo === true ? userInfo.name : userInfo.name);
-  const username = testownik2();
   const [values, setValues] = useState({
     fullName: "",
     email: "",
     phone: "",
     message: "",
-    useremail: useremail,
-    username: username,
   });
 
   const [status, setStatus] = useState(false);
@@ -66,126 +59,62 @@ const Contact = () => {
             padding: "2rem",
           }}
         >
-          {userInfo ? (
-            <>
-              <motion.input
-                initial={{
-                  opacity: 0,
-                  scale: 0,
-                }}
-                animate={{
-                  opacity: 1,
-                  scale: 1,
-                }}
-                transition={{
-                  duration: 0.2,
-                }}
-                style={{
-                  padding: "1rem",
-                  border: "2px dotted rgba(222,151,9,255)",
-                  outline: "none",
-                  width: "100%",
-                  maxWidth: "600px",
-                  borderRadius: "32px",
-                  marginBottom: "1rem",
-                }}
-                required
-                type="text"
-                placeholder={username}
-                name="fullName"
-                value={values.username}
-                onChange={handleChange}
-              />
-              <motion.input
-                initial={{
-                  opacity: 0,
-                  scale: 0,
-                }}
-                animate={{
-                  opacity: 1,
-                  scale: 1,
-                }}
-                transition={{
-                  duration: 0.4,
-                }}
-                style={{
-                  padding: "1rem",
-                  border: "2px dotted rgba(222,151,9,255)",
-                  outline: "none",
-                  width: "100%",
-                  maxWidth: "600px",
-                  borderRadius: "32px",
-                  marginBottom: "1rem",
-                }}
-                required
-                type="email"
-                placeholder={useremail}
-                name="email"
-                value={values.useremail}
-                onChange={handleChange}
-              />
-            </>
-          ) : (
-            <>
-              <motion.input
-                initial={{
-                  opacity: 0,
-                  scale: 0,
-                }}
-                animate={{
-                  opacity: 1,
-                  scale: 1,
-                }}
-                transition={{
-                  duration: 0.2,
-                }}
-                style={{
-                  padding: "1rem",
-                  border: "2px dotted rgba(222,151,9,255)",
-                  outline: "none",
-                  width: "100%",
-                  maxWidth: "600px",
-                  borderRadius: "32px",
-                  marginBottom: "1rem",
-                }}
-                required
-                type="text"
-                placeholder="Imię i nazwisko"
-                name="fullName"
-                value={values.fullName}
-                onChange={handleChange}
-              />
-              <motion.input
-                initial={{
-                  opacity: 0,
-                  scale: 0,
-                }}
-                animate={{
-                  opacity: 1,
-                  scale: 1,
-                }}
-                transition={{
-                  duration: 0.4,
-                }}
-                style={{
-                  padding: "1rem",
-                  border: "2px dotted rgba(222,151,9,255)",
-                  outline: "none",
-                  width: "100%",
-                  maxWidth: "600px",
-                  borderRadius: "32px",
-                  marginBottom: "1rem",
-                }}
-                required
-                type="email"
-                placeholder="Adres e-mail"
-                name="email"
-                value={values.email}
-                onChange={handleChange}
-              />
-            </>
-          )}
-
+          <motion.input
+            initial={{
+              opacity: 0,
+              scale: 0,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+            }}
+            transition={{
+              duration: 0.2,
+            }}
+            style={{
+              padding: "1rem",
+              border: "2px dotted rgba(222,151,9,255)",
+              outline: "none",
+              width: "100%",
+              maxWidth: "600px",
+              borderRadius: "32px",
+              marginBottom: "1rem",
+            }}
+            required
+            type="text"
+            placeholder="Imię i nazwisko"
+            name="fullName"
+            value={values.fullName}
+            onChange={handleChange}
+          />
+          <motion.input
+            initial={{
+              opacity: 0,
+              scale: 0,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+            }}
+            transition={{
+              duration: 0.4,
+            }}
+            style={{
+              padding: "1rem",
+              border: "2px dotted rgba(222,151,9,255)",
+              outline: "none",
+              width: "100%",
+              maxWidth: "600px",
+              borderRadius: "32px",
+              marginBottom: "1rem",
+            }}
+            required
+            type="email"
+            placeholder="Adres e-mail"
+            name="email"
+            value={values.email}
+            onChange={handleChange}
+          />
           <motion.input
             initial={{
               opacity: 0,
