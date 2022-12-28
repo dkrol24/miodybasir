@@ -38,7 +38,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", transitionNavBar);
   }, []);
   return (
-    <nav className={`navbar ${show && "navbar navbar__later"}`}>
+    <nav className="navbar">
       <CssBaseline />
       <div
         style={{
