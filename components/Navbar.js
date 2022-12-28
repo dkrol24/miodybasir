@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 
 import NextLink from "next/link";
 
@@ -21,22 +21,11 @@ const Navbar = () => {
     jsCookie.remove("paymentMethod");
     router.push("/");
   };
-  const [show, handleShow] = useState(false);
   const [navToggle, setNavToggle] = useState(false);
   const navHandler = () => {
     setNavToggle((prevData) => !prevData);
   };
-  const transitionNavBar = () => {
-    if (window.scrollY > 100) {
-      handleShow(true);
-    } else {
-      handleShow(false);
-    }
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", transitionNavBar);
-    return () => window.removeEventListener("scroll", transitionNavBar);
-  }, []);
+
   return (
     <nav className="navbar">
       <CssBaseline />
@@ -67,11 +56,7 @@ const Navbar = () => {
             <div className="logo">
               <NextLink href="/" passHref>
                 <Link style={{ textDecoration: "none" }}>
-                  <h1
-                    className={`nav-li-a ${show && "nav-li-a nav-li-active"}`}
-                  >
-                    Miody Konarscy
-                  </h1>
+                  <h1 className="nav-li-a ">Miody Konarscy</h1>
                 </Link>
               </NextLink>
             </div>
@@ -102,12 +87,7 @@ const Navbar = () => {
                 <li>
                   <NextLink href="/" passHref>
                     <Link style={{ textDecoration: "none" }}>
-                      <a
-                        className={`nav-li-a ${
-                          show && "nav-li-a nav-li-active"
-                        }`}
-                        onClick={navHandler}
-                      >
+                      <a className="nav-li-a" onClick={navHandler}>
                         Start
                       </a>
                     </Link>
@@ -116,12 +96,7 @@ const Navbar = () => {
                 <li>
                   <NextLink href="/uloterapia" passHref>
                     <Link style={{ textDecoration: "none" }}>
-                      <a
-                        className={`nav-li-a ${
-                          show && "nav-li-a nav-li-active"
-                        }`}
-                        onClick={navHandler}
-                      >
+                      <a className="nav-li-a" onClick={navHandler}>
                         Uloterapia
                       </a>
                     </Link>
@@ -131,12 +106,7 @@ const Navbar = () => {
                 <li>
                   <NextLink href="/kontakt" passHref>
                     <Link style={{ textDecoration: "none" }}>
-                      <a
-                        className={`nav-li-a ${
-                          show && "nav-li-a nav-li-active"
-                        }`}
-                        onClick={navHandler}
-                      >
+                      <a className="nav-li-a" onClick={navHandler}>
                         Kontakt
                       </a>
                     </Link>
@@ -147,22 +117,10 @@ const Navbar = () => {
                     <Link style={{ textDecoration: "none" }}>
                       {cart.cartItems.length > 0 ? (
                         <Badge badgeContent={cart.cartItems.length}>
-                          <a
-                            className={`nav-li-a ${
-                              show && "nav-li-a nav-li-active"
-                            }`}
-                          >
-                            Koszyk
-                          </a>
+                          <a className="nav-li-a">Koszyk</a>
                         </Badge>
                       ) : (
-                        <a
-                          className={`nav-li-a ${
-                            show && "nav-li-a nav-li-active"
-                          }`}
-                        >
-                          Koszyk
-                        </a>
+                        <a className="nav-li-a">Koszyk</a>
                       )}
                     </Link>
                   </NextLink>
@@ -173,36 +131,19 @@ const Navbar = () => {
                       <li onClick={navHandler}>
                         <NextLink href="/order-history" passHref>
                           <Link style={{ textDecoration: "none" }}>
-                            <a
-                              className={`nav-li-a ${
-                                show && "nav-li-a nav-li-active"
-                              }`}
-                            >
-                              Zamówienia
-                            </a>
+                            <a className="nav-li-a">Zamówienia</a>
                           </Link>
                         </NextLink>
                       </li>
                       <li onClick={logoutClickHandler}>
-                        <a
-                          className={`nav-li-a ${
-                            show && "nav-li-a nav-li-active"
-                          }`}
-                        >
-                          Wyloguj
-                        </a>
+                        <a className="nav-li-a">Wyloguj</a>
                       </li>
                     </ul>
                   ) : (
                     <NextLink href="/login" passHref>
                       <Link style={{ textDecoration: "none" }}>
                         {" "}
-                        <a
-                          onClick={navHandler}
-                          className={`nav-li-a ${
-                            show && "nav-li-a nav-li-active"
-                          }`}
-                        >
+                        <a onClick={navHandler} className="nav-li-a">
                           Zaloguj
                         </a>
                       </Link>
