@@ -24,7 +24,7 @@ function MyApp({
             <Navbar />
             <PayPalScriptProvider deferLoading={true}>
               <Script src="https://smtpjs.com/v3/smtp.js" />
-              <Script src="https://www.paypal.com/sdk/js?client-id=ASLdhRsIpIksoyV3vApNYJ9ezY6Nh5T5lTETuSsfglGZPlezKD6AmJBamNOUFCWSgOrvRzeJpdSMAWb1&components=buttons,payment-fields,marks,funding-eligibility&enable-funding=blik&currency=PLN" />
+              <Script src="https://www.paypal.com/sdk/js?client-id=AYEDfukURsLl5xogkHQ3pb5ICxecxsaSvNrx0KUyfzBs4E_lzyKOJ_wnSfYvSJI7J9ZRgcyEfgWFQgpl&components=buttons,payment-fields,marks,funding-eligibility&enable-funding=blik&currency=PLN" />
               <Component {...pageProps} />
             </PayPalScriptProvider>
           </StoreProvider>
